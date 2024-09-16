@@ -174,19 +174,6 @@ CREATE TABLE DoacaoVitima --vitima recebe
   Vitima(vitimaCpf)
 );
 
-/* não tem mais
-relacionamento 1:n, fica adição de coluna na tabela doacao
-CREATE TABLE DoacaoDoador --doador faz doacao
-( 
- codDoacao INT,  
- doadorCpf char(11),
- CONSTRAINT PK_codDoacao_doadorCpf_DoacaoDoador PRIMARY KEY (codDoacao, doadorCpf),
- CONSTRAINT FK_codDoacao_DoacaoDoador FOREIGN KEY (codDoacao) REFERENCES 
- Doacao(codDoacao),
- CONSTRAINT FK_doadorCpf_DoacaoDoador FOREIGN KEY (doadorCpf) REFERENCES 
- Doador(doadorCpf)  
-); */
-
 CREATE TABLE atuacao
 (
  cnpjAgencia char(14),  
@@ -232,86 +219,6 @@ CREATE TABLE voluntarioAbrigo (
   Voluntario(CPFVoluntario)
 );
  
- /*
- não tem mais para cardinalidade: doacao (0,n) tem (1,1) categoria
- CREATE TABLE DoacaoCategoria --possui
-( 
- codDoacao INT,  
- codCateg INT,
- CONSTRAINT PK_codDoacao_codCateg_DoacaoCategoria PRIMARY KEY (codDoacao, codCateg),
- CONSTRAINT FK_codDoacao_DoacaoCategoria FOREIGN KEY (codDoacao) REFERENCES 
- Doacao(codDoacao),
- CONSTRAINT FK_codCateg_DoacaoCategoria FOREIGN KEY (codCateg) REFERENCES 
- Categoria(codCateg)
-);
-*/
-
-/*
-não tem mais
-CREATE TABLE IF NOT EXISTS contatoVitima
-(
-	vitimaCpf varchar(11) NOT NULL,
-	telefone VARCHAR(12) NOT NULL,
-	CONSTRAINT CHK_telefoneVitima CHECK(LENGTH(telefone) >= 12),
-	CONSTRAINT PK_vitimaCpf_telefone_contatoVitima PRIMARY KEY (vitimaCpf, telefone),
-	CONSTRAINT FK_vitimaCpf_contatoVitima FOREIGN KEY (vitimaCpf)
-	REFERENCES vitima(vitimaCpf)
-);
-
-CREATE TABLE IF NOT EXISTS contatoTestemunha
-(
-	testemunhaCpf varchar(11) NOT NULL,
-	telefone VARCHAR(12) NOT NULL,
-	CONSTRAINT CHK_telefoneTestemunha CHECK(LENGTH(telefone) >= 12),
-	CONSTRAINT PK_testemunhaCpf_telefone_contatoTestemunha 	PRIMARY KEY 
-	(testemunhaCpf, telefone),
-	CONSTRAINT FK_testemunhaCpf_contatoTestemunha FOREIGN KEY (testemunhaCpf)
-	REFERENCES testemunha(testemunhaCpf)
-);
-
-CREATE TABLE AtuacaoAbrigo 
-(
-    cnpjAbrigo varchar(14),
-    codDesastre INT,
-    dataDeAtuacao date NOT NULL,
-    CONSTRAINT PK_cnpjAbrigo_codDesastre_AtuacaoAbrigo PRIMARY KEY 
-    (cnpjAbrigo, codDesastre),
-    CONSTRAINT FK_cnpjAbrigo_AtuacaoAbrigo FOREIGN KEY (cnpjAbrigo) REFERENCES 
-    Abrigo(cnpj),
-    CONSTRAINT FK_codDesastre_AtuacaoAbrigo FOREIGN KEY (codDesastre) REFERENCES 
-    DesastreNatural(codDesastre)
-);
-*/
-
-/*
-não tem mais
-CREATE TABLE TestemunhaRelato --faz
-(
- codRelato INT, 
- testemunhaCpf varchar(11),
- CONSTRAINT PK_codRelato_testemunhaCpf_TestemunhaRelato PRIMARY KEY 
- (codRelato, testemunhaCpf),
- CONSTRAINT FK_codRelato_TestemunhaRelato FOREIGN KEY (codRelato) REFERENCES 
- Relato(codRelato),
- CONSTRAINT FK_testemunhaCpf_TestemunhaRelato FOREIGN KEY (testemunhaCpf) REFERENCES
- testemunha(testemunhaCpf)    
-); */
-
-/*
-não tem mais
-CREATE TABLE DoacaoAbrigo --abrigo recebe
-(
-  codDoacao INT,
-  cnpjAbrigo VARCHAR(14),
-  CONSTRAINT PK_codDoacao_cnpjAbrigo_doacaoAbrigo PRIMARY KEY (codDoacao, cnpjAbrigo),
-  CONSTRAINT FK_codDoacao_doacaoAbrigo FOREIGN KEY (codDoacao) REFERENCES 
-  Doacao(codDoacao),
-  CONSTRAINT FK_cnpjAbrigo_doacaoAbrigo FOREIGN KEY (cnpjAbrigo) REFERENCES 
-  Abrigo(cnpj)
-);
-*/
-
-
 
 INSERT INTO Regiao (codigoRegiao, nomeRegiao) VALUES
 (1, 'Centro-Oeste'),
@@ -453,12 +360,3 @@ INSERT INTO atuacao (cnpjAgencia, codDesastre, dataDeAtuacao) VALUES
 ('23456789000125', 3, '2024-08-10'),
 ('34567890000126', 4, '2024-08-15'),
 ('45678901000127', 5, '2024-08-20');
-
-/*
-INSERT INTO DoacaoDoador (codDoacao, doadorCpf) VALUES
-(1, '12345678901'),
-(2, '23456789012'),
-(3, '34567890123'),
-(4, '45678901234'),
-(5, '56789012345');
-*/
