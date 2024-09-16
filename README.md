@@ -23,10 +23,13 @@ O sistema deve permitir o registro de dados detalhados sobre os desastres natura
 + Agências de Resgate
 + Relatos 
 + Voluntários 
-### 2. 	Diagrama Entidade-Relacionamento em nível Conceitual (versão 1)
+### 2. 	Diagrama Entidade-Relacionamento em nível Conceitual 
 Especifique uma versão inicial do seu DER conceitual com as entidades, relacionamentos e principais atributos. As entidades e relacionamentos devem ser especificados conforme requisitos e escopo descritos na seção anterior.
+![image](https://github.com/user-attachments/assets/9bfbc946-534c-44bc-a80b-a1ce726f0d76)
 
-![image](https://github.com/user-attachments/assets/40fd71cb-7927-400f-932e-4f1982f70a38)
+### 3. 	Diagrama em nível Lógico
+![image](https://github.com/user-attachments/assets/fd511d87-ab90-476e-a78a-4fc62c33254c)
+
 
 
 ### Alunas
