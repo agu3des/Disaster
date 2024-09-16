@@ -35,7 +35,7 @@ Especifique uma versão inicial do seu DER conceitual com as entidades, relacion
 
 
 ### 4. Apresentação 
-![Apresentação](https://docs.google.com/presentation/d/10J5DkW3M3-hAtSzzY8U_MRPrAJAU2ixy63SGctiw-Wk/edit?usp=sharing)
+[Link da Apresentação](https://docs.google.com/presentation/d/10J5DkW3M3-hAtSzzY8U_MRPrAJAU2ixy63SGctiw-Wk/edit?usp=sharing)
 
 ### Alunas
 
