@@ -310,3 +310,155 @@ CREATE TABLE DoacaoAbrigo --abrigo recebe
   Abrigo(cnpj)
 );
 */
+
+
+
+INSERT INTO Regiao (codigoRegiao, nomeRegiao) VALUES
+(1, 'Centro-Oeste'),
+(2, 'Nordeste'),
+(3, 'Norte'),
+(4, 'Sudeste'),
+(5, 'Sul');
+
+INSERT INTO Desastre_Natural (codDesastre, dataDeOcorrencia, duracao, intensidade, qtdVitimas) VALUES
+(1, '2023-01-15', 72, 5, 120),
+(2, '2023-02-10', 48, 7, 80),
+(3, '2023-03-25', 36, 4, 50),
+(4, '2023-04-12', 60, 6, 90),
+(5, '2023-05-05', 24, 8, 150);
+
+INSERT INTO Testemunha (testemunhaCpf, nome, genero, dataDeNascimento, nacionalidade, contato) VALUES
+('12345678901', 'Maria Silva', 'F', '1985-06-25', 'Brasileira', '11987654321'),
+('10987654321', 'João Santos', 'M', '1978-11-15', 'Brasileiro', '11876543210'),
+('23456789012', 'Ana Costa', 'F', '1990-02-20', 'Brasileira', '11765432109'),
+('34567890123', 'Carlos Almeida', 'M', '1982-07-30', 'Brasileiro', '11654321098'),
+('45678901234', 'Lucia Pereira', 'F', '1995-09-10', 'Brasileira', '11543210987');
+
+INSERT INTO Relato (codigoRelato, relato, dataDeEmissao, codDesastre, testemunha) VALUES
+(1, 'Muitas casas foram destruídas e pessoas estão desabrigadas.', '2023-01-16', 1, '12345678901'),
+(2, 'Há necessidade urgente de assistência médica.', '2023-02-11', 2, '10987654321'),
+(3, 'Há relatos de danos a infraestruturas importantes.', '2023-03-26', 3, '23456789012'),
+(4, 'O número de vítimas está aumentando.', '2023-04-13', 4, '34567890123'),
+(5, 'A situação é crítica e precisa de ajuda urgente.', '2023-05-06', 5, '45678901234');
+
+INSERT INTO Tipo (codTipo, descricao) VALUES 
+(1, 'Enxurrada'),
+(2, 'Furacão'),
+(3, 'Inundação'),
+(4, 'Deslizamento Terra'),
+(5, 'Incêndio Florestal');
+
+INSERT INTO Abrigo (cnpj, nome, cep, numero, rua, bairro, cidade, estado, disponibilidade) VALUES
+('12345678000195', 'Abrigo Centro', '01001000', 100, 'Rua A', 'Centro', 'São Paulo', 'SP', TRUE),
+('23456789000196', 'Abrigo Norte', '02002000', 200, 'Rua B', 'Norte', 'Rio de Janeiro', 'RJ', TRUE),
+('34567890000197', 'Abrigo Sul', '03003000', 300, 'Rua C', 'Sul', 'Porto Alegre', 'RS', TRUE),
+('45678901000198', 'Abrigo Leste', '04004000', 400, 'Rua D', 'Leste', 'Fortaleza', 'CE', TRUE),
+('56789012000199', 'Abrigo Oeste', '05005000', 500, 'Rua E', 'Oeste', 'Brasília', 'DF', TRUE);
+
+INSERT INTO Vitima (vitimaCpf, nome, dataDeNascimento, genero, nacionalidade, condicaoMedica, cnpjAbrigo, dataEntrada, dataSaida, contato) VALUES
+('67890123456', 'Pedro Oliveira', '1987-05-12', 'M', 'Brasileiro', 'Ferido', '12345678000195', '2023-01-16', NULL, '11912345678'),
+('78901234567', 'Juliana Lima', '1990-08-23', 'F', 'Brasileira', 'Leve', '23456789000196', '2023-02-11', NULL, '11876543210'),
+('89012345678', 'Marcelo Santos', '1985-12-30', 'M', 'Brasileiro', 'Grave', '34567890000197', '2023-03-26', NULL, '11765432109'),
+('90123456789', 'Fernanda Souza', '1992-11-11', 'F', 'Brasileira', 'Leve', '45678901000198', '2023-04-13', NULL, '11654321098'),
+('01234567890', 'Ricardo Almeida', '1980-07-22', 'M', 'Brasileiro', 'Ferido', '56789012000199', '2023-05-06', NULL, '11543210987');
+
+INSERT INTO Categoria (codCateg, descricao, valor, perecivel, validade) VALUES
+(1, 'Roupas', 200.00, FALSE, NULL),
+(2, 'Alimentos', 150.00, TRUE, '2023-06-01'),
+(3, 'Medicamentos', 300.00, TRUE, '2023-07-01'),
+(4, 'Água', 100.00, FALSE, NULL),
+(5, 'Móveis', 500.00, FALSE, NULL);
+
+INSERT INTO Doador (doadorCpf, nome) VALUES
+('12345678901', 'Carlos Martins'),
+('23456789012', 'Patrícia Oliveira'),
+('34567890123', 'Roberto Silva'),
+('45678901234', 'Ana Paula Costa'),
+('56789012345', 'Eduardo Santos');
+
+INSERT INTO Doacao (codDoacao, qtdEstoque, dataDoacao, localArmazenamento, codCateg, doadorCPF) VALUES
+(1, 100, '2023-01-20', 'Depósito A', 1, '12345678901'),
+(2, 50, '2023-02-15', 'Depósito B', 2, '23456789012'),
+(3, 75, '2023-03-10', 'Depósito C', 3, '34567890123'),
+(4, 120, '2023-04-05', 'Depósito D', 4, '45678901234'),
+(5, 80, '2023-05-01', 'Depósito E', 5, '56789012345');
+
+INSERT INTO AgenciaDeResgate (cnpj, nomeAgencia, telefone, cep, numero, rua, bairro, cidade, estado) VALUES
+('01234567000123', 'Agência Centro', '1122334455', '06060600', 10, 'Rua X', 'Centro', 'São Paulo', 'SP'),
+('12345678000124', 'Agência Norte', '2233445566', '07070700', 20, 'Rua Y', 'Norte', 'Rio de Janeiro', 'RJ'),
+('23456789000125', 'Agência Sul', '3344556677', '08080800', 30, 'Rua Z', 'Sul', 'Porto Alegre', 'RS'),
+('34567890000126', 'Agência Leste', '4455667788', '09090900', 40, 'Rua W', 'Leste', 'Fortaleza', 'CE'),
+('45678901000127', 'Agência Oeste', '5566778899', '10101010', 50, 'Rua V', 'Oeste', 'Brasília', 'DF');
+
+INSERT INTO Voluntario (cpfVoluntario, nomeVoluntario) VALUES
+('11122334455', 'Lucas Ferreira'),
+('22233445566', 'Juliana Rocha'),
+('33344556677', 'Marcos Lima'),
+('44455667788', 'Fernanda Castro'),
+('55566778899', 'Gabriel Pereira');
+
+INSERT INTO voluntarioAbrigo (cnpjAbrigo, CPFVoluntario) VALUES
+('12345678000195', '11122334455'),
+('23456789000196', '22233445566'),
+('34567890000197', '33344556677'),
+('45678901000198', '44455667788'),
+('56789012000199', '55566778899');
+
+INSERT INTO voluntarioAgencia (cnpjAgencia, CPFVoluntario) VALUES
+('01234567000123', '11122334455'),
+('12345678000124', '22233445566'),
+('23456789000125', '33344556677'),
+('34567890000126', '44455667788'),
+('45678901000127', '55566778899');
+
+INSERT INTO ocorrencia (codigoRegiao, codDesastre) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
+
+
+INSERT INTO TipoDesastre (codTipo, codDesastre) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
+
+INSERT INTO VitimaDesastre (codDesastre, vitimaCpf) VALUES
+(1, '67890123456'),
+(2, '78901234567'),
+(3, '89012345678'),
+(4, '90123456789'),
+(5, '01234567890');
+
+INSERT INTO DoacaoVitima (codDoacao, vitimaCpf) VALUES
+(1, '67890123456'),
+(2, '78901234567'),
+(3, '89012345678'),
+(4, '90123456789'),
+(5, '01234567890');
+
+INSERT INTO DoacaoAgencia (codDoacao, cnpjAgencia) VALUES
+(1, '01234567000123'),
+(2, '12345678000124'),
+(3, '23456789000125'),
+(4, '34567890000126'),
+(5, '45678901000127');
+
+INSERT INTO atuacao (cnpjAgencia, codDesastre, dataDeAtuacao) VALUES
+('01234567000123', 1, '2024-08-01'),
+('12345678000124', 2, '2024-08-05'),
+('23456789000125', 3, '2024-08-10'),
+('34567890000126', 4, '2024-08-15'),
+('45678901000127', 5, '2024-08-20');
+
+/*
+INSERT INTO DoacaoDoador (codDoacao, doadorCpf) VALUES
+(1, '12345678901'),
+(2, '23456789012'),
+(3, '34567890123'),
+(4, '45678901234'),
+(5, '56789012345');
+*/
