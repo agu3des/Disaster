@@ -1,4 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const content = {
+        pt: {
+            button: "Mudar para Inglês"
+        },
+        en: {
+            button: "Switch to Portuguese"
+        }
+    };
+    
+    let currentLanguage = 'en'; // Idioma inicial
+
+    const buttonElement = document.getElementById('language-toggle');
+    const iconElement = document.getElementById('language-icon');
+
+    // Função para atualizar o conteúdo da página
+    function updateContent() {
+        // Atualiza textos e ícones aqui, se necessário
+        buttonElement.children[1].textContent = content[currentLanguage].button;
+        iconElement.className = 'fas fa-language'; // Se você quiser trocar por outros ícones, adicione a lógica aqui
+    }
+
+    // Evento para mudar o idioma
+    buttonElement.addEventListener('click', () => {
+        currentLanguage = currentLanguage === 'en' ? 'pt' : 'en';
+        updateContent();
+    });
+
+    // Chamada inicial para definir o conteúdo correto
+    updateContent();
+    
+    
     const cancelBtn = document.getElementById('cancel-btn');
     const confirmBtn = document.getElementById('confirm-btn');
     const menuBtn = document.getElementById('menu-btn');
