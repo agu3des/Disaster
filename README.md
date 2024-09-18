@@ -1,4 +1,35 @@
-## Projeto de Banco de Dados ll
+<h1 align="center">DISASTER</h1>
+
+`"News"` - Aplicação que simula um sistema de um de desastres naturais. 
+
+## Projeto
+O projeto não está completo!
+[Figma](https://www.figma.com/proto/GfJj1OcpbLFdcacud3tjMJ/Disaster?node-id=0-1&t=ScnaJCYNNuzUwkCP-1)
+[Replit]()
+
+## Requisitos
++ `React`
++ `Supabase`
++ `Next`
++ `VS Code`
+
+## Instalação
+1. Instale `React` na sua máquina (caso não tenha).
+2. Instale `Supabase` na sua máquina (caso não tenha).
+3. Baixe ou clone o projeto para o seu computador.
+4. Adicone variáveis API_KEY e API_URL, em um arquivo chamado ´.env.local´
+5. Abra o terminal ou prompt de comando e navegue até o diretório do projeto.
+6. Execute o comando `npm run dev` para iniciar o programa.
+
+## Uso
+> Este projeto está sendo desenvolvido para melhor compreenssão nas seguintes funcionalidades:
++ `JavaScript`
++ `Regex`
++ `React`
++ `Supabase`
++ `SQL`
++ `plpgsql`
+
 
 ### Roteiro para Projeto de Banco de Dados Relacional (Requisitos)
 ### 1.  Descreva o escopo da aplicação que precise do banco de dados (seu projeto).
@@ -40,4 +71,5 @@ Especifique uma versão inicial do seu DER conceitual com as entidades, relacion
 ### Alunas
 
 - [Ananda Guedes](https://github.com/agu3des)
+- [Angêlica Araújo](https://github.com/araujo-angel)
 - [Letícia Leite](https://github.com/l-e-t-i-c-i-a)
