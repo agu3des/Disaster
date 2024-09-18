@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button: "Switch to Portuguese"
         }
     };
-    
+
     let currentLanguage = 'en'; // Idioma inicial
 
     const buttonElement = document.getElementById('language-toggle');
@@ -171,6 +171,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const entityInfo = {
+        entity1: {
+            title: "Entidade 1",
+            description: "Descrição completa da entidade 1.",
+            cnpj: "00.000.000/0001-00",
+            address: "Rua Exemplo, 123, Bairro, Cidade - UF",
+            phone: "(00) 0000-0000",
+            email: "contato@entidade1.com"
+        },
+        entity2: {
+            title: "Entidade 2",
+            description: "Descrição completa da entidade 2.",
+            cnpj: "11.111.111/1111-11",
+            address: "Rua Exemplo, 456, Bairro, Cidade - UF",
+            phone: "(11) 1111-1111",
+            email: "contato@entidade2.com"
+        },
+        entity3: {
+            title: "Entidade 3",
+            description: "Descrição completa da entidade 3.",
+            cnpj: "22.222.222/2222-22",
+            address: "Rua Exemplo, 789, Bairro, Cidade - UF",
+            phone: "(22) 2222-2222",
+            email: "contato@entidade3.com"
+        }
+    };
+
+    const infoModal = document.getElementById('info-modal');
+
+    function openModal(entity) {
+        const info = entityInfo[entity];
+        document.getElementById('modal-title').textContent = info.title;
+        document.getElementById('modal-description').textContent = info.description;
+        document.getElementById('modal-cnpj').textContent = info.cnpj;
+        document.getElementById('modal-address').textContent = info.address;
+        document.getElementById('modal-phone').textContent = info.phone;
+        document.getElementById('modal-email').textContent = info.email;
+        infoModal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+        infoModal.classList.add('hidden');
+    }
+
+    // Fechar modal ao clicar fora dele
+    infoModal.addEventListener('click', (event) => {
+        if (event.target === infoModal) {
+            closeModal();
+        }
+    });
+
+    // Adicione a lógica para os botões "Saiba Mais" nos cards
+    document.querySelectorAll('.entity-button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const entityId = e.target.getAttribute('data-entity');
+            openModal(entityId);
+        });
+    });
+
+    
     // Functionality for form submission
     const form = document.getElementById('testimony-form');
 
