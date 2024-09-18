@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Voluntariado - Disaster</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" type="icon" href="img/disaster-logo-bg.png">
+        <link rel="shortcut icon" type="icon" href="img/disaster-logo-bg.png">
 </head>
 <body class="bg-white text-black">
 
@@ -33,48 +33,129 @@
 
     <!-- Sidebar + Main Content -->
     <div class="flex flex-col sm:flex-row">
-        <!-- Sidebar -->
         <aside id="sidebar" class="sm:w-1/4 bg-blue-100 p-4 sm:block hidden">
             <div class="relative w-full max-w-xs mb-4">
-                <input id="search-input" type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg">
+                <input id="search-input" type="text" placeholder="Search..."
+                    class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg">
                 <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-black"></i>
             </div>
             <nav>
                 <ul class="list-none p-0">
-                    <!-- Links de navegação -->
-                    <li class="mt-2 mb-2 search-item"><a href="#" class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md"><i class="fas fa-home mr-2"></i> Home</a></li>
-                    <li class="mt-2 mb-2 search-item"><a href="#origin" class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md"><i class="fas fa-map-marker-alt mr-2"></i> Origin of Disaster</a></li>
-                    <li class="mt-2 mb-2 search-item"><a href="#news" class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md"><i class="fas fa-newspaper mr-2"></i> Disaster News</a></li>
-                    <li class="mt-2 mb-2 search-item"><a href="#testimonials" class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md"><i class="fas fa-quote-left mr-2"></i> Testimonials</a></li>
-                    <li class="mt-2 mb-2 search-item"><a href="#donation" class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md"><i class="fas fa-donate"></i> Donate</a></li>
-                    <li class="mt-2 mb-2 search-item"><a href="#about" class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md"><i class="fas fa-info-circle mr-2"></i> About Us</a></li>
-                    <li class="mt-2 mb-2 search-item"><a href="volunteer.html" class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md"><i class="fas fa-hands-helping mr-2"></i> Voluntariado</a></li>
+                    <li class="mt-2 mb-2 search-item">
+                        <a href="#"
+                            class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md">
+                            <i class="fas fa-home mr-2"></i> Home
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-0.5 bg-white transition-all duration-300 transform scale-x-0 hover:scale-x-100"></span>
+                        </a>
+                    </li>
+                    <li class="mt-2 mb-2 search-item">
+                        <a href="#origin"
+                            class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Origin of Disaster
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-0.5 bg-white transition-all duration-300 transform scale-x-0 hover:scale-x-100"></span>
+                        </a>
+                    </li>
+                    <li class="mt-2 mb-2 search-item">
+                        <a href="#news"
+                            class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md">
+                            <i class="fas fa-newspaper mr-2"></i> Disaster News
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-0.5 bg-white transition-all duration-300 transform scale-x-0 hover:scale-x-100"></span>
+                        </a>
+                    </li>
+                    <li class="mt-2 mb-2 search-item">
+                        <a href="#testimonials"
+                            class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md">
+                            <i class="fas fa-quote-left mr-2"></i> Testimonials
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-0.5 bg-white transition-all duration-300 transform scale-x-0 hover:scale-x-100"></span>
+                        </a>
+                    </li>
+                    <li class="mt-2 mb-2 search-item">
+                        <a href="#donation"
+                            class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md">
+                            <i class="fas fa-donate"></i> Donate
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-0.5 bg-white transition-all duration-300 transform scale-x-0 hover:scale-x-100"></span>
+                        </a>
+                    </li>
+                    <li class="mt-2 mb-2 search-item">
+                        <a href="voluntariado.html" class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md">
+                            <i class="fas fa-hands-helping mr-2"></i> Voluntariado
+                        </a>
+                    </li>
+                    <li class="mt-2 mb-2 search-item">
+                        <a href="#about"
+                            class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md">
+                            <i class="fas fa-info-circle mr-2"></i> About Us
+                            <span
+                                class="absolute bottom-0 left-0 w-full h-0.5 bg-white transition-all duration-300 transform scale-x-0 hover:scale-x-100"></span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </aside>
-
         <!-- Main Content -->
         <main class="sm:w-3/4 p-4">
-            <h2 class="text-3xl font-bold mb-4">Inscreva-se como Voluntário</h2>
-            <form id="volunteer-form" class="bg-gray-100 p-6 rounded-lg shadow-md">
-                <div class="mb-4">
-                    <label for="name" class="block text-gray-700">Nome:</label>
-                    <input type="text" id="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700">E-mail:</label>
-                    <input type="email" id="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
-                </div>
-                <div class="mb-4">
-                    <label for="phone" class="block text-gray-700">Telefone:</label>
-                    <input type="tel" id="phone" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
-                </div>
-                <div class="mb-4">
-                    <label for="message" class="block text-gray-700">Mensagem:</label>
-                    <textarea id="message" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="w-full bg-black text-white rounded-md py-2 hover:bg-blue-800 transition duration-300">Enviar Inscrição</button>
-            </form>
+            <div id="volunteer" class="mt-8 ml-5 p-3 bg-white border border-gray-200 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-center">Inscreva-se como Voluntário</h2>
+                <form action="#" method="POST">
+                    <!-- Name Field -->
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-bold mb-2">Nome</label>
+                        <input type="text" id="name" name="name" placeholder="Digite seu nome"
+                            class="w-full p-2 border border-gray-300 rounded-lg" required>
+                    </div>
+            
+                    <!-- Email Field -->
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu email"
+                            class="w-full p-2 border border-gray-300 rounded-lg" required>
+                    </div>
+            
+                    <!-- Phone Number Field -->
+                    <div class="mb-4">
+                        <label for="phone" class="block text-gray-700 font-bold mb-2">Telefone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Digite seu telefone"
+                            class="w-full p-2 border border-gray-300 rounded-lg">
+                    </div>
+            
+                    <!-- Volunteer Preferences -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-bold mb-2">Preferências de Voluntariado</label>
+                        <div class="flex items-center space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="preferences" value="event" class="form-checkbox text-blue-500">
+                                <span class="ml-2">Eventos</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="preferences" value="education" class="form-checkbox text-blue-500">
+                                <span class="ml-2">Educação</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="preferences" value="community" class="form-checkbox text-blue-500">
+                                <span class="ml-2">Comunidade</span>
+                            </label>
+                        </div>
+                    </div>
+            
+                    <!-- Message Field -->
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 font-bold mb-2">Mensagem (opcional)</label>
+                        <textarea id="message" name="message" placeholder="Deixe uma mensagem"
+                            class="w-full p-2 border border-gray-300 rounded-lg"></textarea>
+                    </div>
+            
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg">Inscrever-se</button>
+                    </div>
+                </form>
+            </div>
+            
 
             <h3 class="text-2xl font-bold mt-8 mb-4">Relatos de Voluntários</h3>
             <div id="testimonials" class="mb-6">
