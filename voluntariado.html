@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-black">
+
+<body class="bg-white text-black font-oswald">
 
     <!-- Header -->
     <header class="bg-blue-200 text-black p-4 flex justify-around items-center">
@@ -174,11 +175,32 @@
             </div>
 
             <h3 class="text-2xl font-bold mt-8 mb-4">Entidades Associadas</h3>
-            <ul class="list-disc ml-5 mb-6">
-                <li>Instituto de Ação Solidária</li>
-                <li>ONG Vida e Esperança</li>
-                <li>Projeto Cidadania Ativa</li>
-            </ul>
+            <div class="mt-8 mx-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4">
+                    <img src="path/to/image1.jpg" alt="Entidade 1" class="w-full h-32 object-cover rounded-md">
+                    <h3 class="text-xl font-bold mt-4">Entidade 1</h3>
+                    <p class="text-gray-700 mt-2">Descrição breve da entidade 1, explicando suas atividades e impacto na comunidade.</p>
+                    <a href="https://example.com/entity1" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200">Saiba Mais</a>
+                </div>
+            
+                <!-- Card 2 -->
+                <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4">
+                    <img src="path/to/image2.jpg" alt="Entidade 2" class="w-full h-32 object-cover rounded-md">
+                    <h3 class="text-xl font-bold mt-4">Entidade 2</h3>
+                    <p class="text-gray-700 mt-2">Descrição breve da entidade 2, explicando suas atividades e impacto na comunidade.</p>
+                    <a href="https://example.com/entity2" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200">Saiba Mais</a>
+                </div>
+            
+                <!-- Card 3 -->
+                <div class="bg-white border border-gray-200 rounded-lg shadow-md p-4">
+                    <img src="path/to/image3.jpg" alt="Entidade 3" class="w-full h-32 object-cover rounded-md">
+                    <h3 class="text-xl font-bold mt-4">Entidade 3</h3>
+                    <p class="text-gray-700 mt-2">Descrição breve da entidade 3, explicando suas atividades e impacto na comunidade.</p>
+                    <a href="https://example.com/entity3" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-200">Saiba Mais</a>
+                </div>
+            </div>
+            
 
             <h3 class="text-2xl font-bold mt-8 mb-4">Vídeos de Propaganda</h3>
             <div class="carousel relative" data-carousel="static">
