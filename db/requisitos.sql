@@ -274,7 +274,7 @@ SELECT desastre_mais_recente();
 
 
 --1. Esta função contará a quantidade de relatos associados a um desastre natural
-drop function contar_relatos_por_desastre(codigoDesastre INT);
+--drop function contar_relatos_por_desastre(codigoDesastre INT);
 CREATE OR REPLACE FUNCTION contar_relatos_por_desastre(codigoDesastre INT)
 RETURNS INT AS $$
 DECLARE
@@ -296,7 +296,7 @@ select contar_relatos_por_desastre(1);
 /*2. função recebe como parametro o codigo do desastre e mostra a quantidade de 
 vitimas no banco de dados*/
 
-drop function contar_vitimas_por_desastre(INT);
+--drop function contar_vitimas_por_desastre(INT);
 CREATE OR REPLACE FUNCTION contar_vitimas_por_desastre(codigoDesastre INT)
 RETURNS INT AS $$
 DECLARE
