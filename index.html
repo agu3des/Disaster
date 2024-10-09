@@ -19,9 +19,9 @@
 <body class="bg-black-100 font-oswald">
 
     <!-- Header -->
-    <header class="bg-blue-200 text-black p-4 flex justify-around items-center">
+    <header class="bg-blue-200 text-black p-4 flex items-center">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center ">
+            <div class="flex items-center">
                 <img src="img/disaster-logo-bg.png" alt="Disaster Logo" class="max-w-[50px]">
                 <h1 class="text-2xl font-bold"><a href="index.html">DISASTER</a></h1>
             </div>
@@ -100,6 +100,11 @@
                         </a>
                     </li>
                     <li class="mt-2 mb-2 search-item">
+                        <a href="#ongs" class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md">
+                            <i class="fas fa-hands-helping mr-2"></i> Ongs
+                        </a>
+                    </li>
+                    <li class="mt-2 mb-2 search-item">
                         <a href="#about"
                             class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md">
                             <i class="fas fa-info-circle mr-2"></i> About Us
@@ -114,49 +119,117 @@
 
         <!-- Main Content -->
         <main class="sm:w-4/4 p-4">
-
-            <!-- Carrossel -->
-            <div>
-                <h1 class="text-2xl font-bold pt-6 pb-2 ml-6">Recent News</h1>
-                <div class="relative w-full max-w-4xl mx-auto mt-8 carousel">
-                    <div class="overflow-hidden relative rounded-lg">
-                        <div class="carousel-inner">
-                            <div class="carousel-item">
-                                <iframe src="https://www.youtube.com/embed/uXSx65S-htY?si=M3yHGwD2JPmtLga_"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen class="w-full h-full object-cover"></iframe>
+            <div class="flex max-sm:flex-col"></div>
+                <!-- Carrossel -->
+                <div>
+                    <h1 class="text-2xl font-bold pt-6 pb-2 ml-6">In The Last 24h</h1>
+                    <div class="relative w-full mx-auto mt-8 carousel">
+                        <div class="overflow-hidden relative rounded-lg">
+                            <div class="carousel-inner">
+                                <div class="carousel-item">
+                                    <iframe src="https://www.youtube.com/embed/uXSx65S-htY?si=M3yHGwD2JPmtLga_"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen class="w-full h-full object-cover"></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe src="https://www.youtube.com/embed/iSOdNTnkKu0?si=UQS1mWr3lZxNhCFt"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen class="w-full h-full object-cover"></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe src="https://www.youtube.com/embed/bLtk_K1IJtE?si=kL014mIqibtMHZf7"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen class="w-full h-full object-cover"></iframe>
+                                </div>
                             </div>
-                            <div class="carousel-item">
-                                <iframe src="https://www.youtube.com/embed/iSOdNTnkKu0?si=UQS1mWr3lZxNhCFt"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen class="w-full h-full object-cover"></iframe>
+                            <div class="carousel-controls">
+                                <button class="carousel-control" id="prev">&#10094;</button>
+                                <button class="carousel-control" id="next">&#10095;</button>
                             </div>
-                            <div class="carousel-item">
-                                <iframe src="https://www.youtube.com/embed/bLtk_K1IJtE?si=kL014mIqibtMHZf7"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen class="w-full h-full object-cover"></iframe>
-                            </div>
-                        </div>
-                        <div class="carousel-controls">
-                            <button class="carousel-control" id="prev">&#10094;</button>
-                            <button class="carousel-control" id="next">&#10095;</button>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Origin -->
-            <div id="origin"
-                class="w-full mx-auto mt-8 mb-8 bg-blue-900 bg-cover bg-center text-white py-6 px-4 rounded-lg">
-                <div class="bg-opacity-50 p-6 rounded-lg">
-                    <div class="flex">
-                        <img src="img/disaster-logo-bg.png" alt="logo disaster" width="90" height="90">
-                        <h1 class="text-2xl font-bold pt-3 pb-2 text-center">Origin of Disaster</h1>
+                <!-- This week-->
+                <div>
+                    <div>
+                        <h1 class="text-xl font-bold pt-3 pb-2 pl-5">This Week</h1> <!-- Removido o pl-5 -->
+                        <div class="flex items-center">
+                            <!-- Card 1 (Reduzido em 2x) -->
+                            <div class="max-w-xl p-3 hover:scale-105 transition-transform duration-300">
+                                <a href="#" class="block relative group">
+                                    <!-- Imagem de fundo -->
+                                    <div class="relative h-[18rem] rounded-lg overflow-hidden">
+                                        <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2020/09/14/675x450/1_barra-6283780.jpg"
+                                            alt="Background Image" class="w-full h-full object-cover">
+                                        <!-- Overlay -->
+                                        <div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-75">
+                                        </div>
+                                    </div>
+                                    <!-- Conteúdo do Card -->
+                                    <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-2">
+                                        <h3 class="text-white text-2xl font-bold mb-1">Card Title</h3>
+                                        <p class="text-white text-lg">This is a brief description that appears on the card.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div>
+                                <!-- Card 2 (Reduzido em 2x) -->
+                                <div class="max-w-xs p-3 hover:scale-105 transition-transform duration-300">
+                                    <a href="#" class="block relative group">
+                                        <!-- Imagem de fundo -->
+                                        <div class="relative h-32 rounded-lg overflow-hidden">
+                                            <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2020/09/14/675x450/1_barra-6283780.jpg"
+                                                alt="Background Image" class="w-full h-full object-cover">
+                                            <!-- Overlay -->
+                                            <div
+                                                class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-75">
+                                            </div>
+                                        </div>
+                                        <!-- Conteúdo do Card -->
+                                        <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-2">
+                                            <h3 class="text-white text-xl font-bold mb-1">Card Title</h3>
+                                            <p class="text-white text-sm">This is a brief description that appears on the card.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- Card 3 (Reduzido em 2x) -->
+                                <div class="max-w-xs p-3 hover:scale-105 transition-transform duration-300">
+                                    <a href="#" class="block relative group">
+                                        <!-- Imagem de fundo -->
+                                        <div class="relative h-32 rounded-lg overflow-hidden">
+                                            <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2020/09/14/675x450/1_barra-6283780.jpg"
+                                                alt="Background Image" class="w-full h-full object-cover">
+                                            <!-- Overlay -->
+                                            <div
+                                                class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-75">
+                                            </div>
+                                        </div>
+                                        <!-- Conteúdo do Card -->
+                                        <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-2">
+                                            <h3 class="text-white text-xl font-bold mb-1">Card Title</h3>
+                                            <p class="text-white text-sm">This is a brief description that appears on the card.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                    
+                        </div>
                     </div>
-                    <p>
+                    
+                </div>
+
+                <!-- Origin -->
+                <div id="origin"
+                    class="max-w-4xl mx-auto mt-8 mb-8 bg-blue-900 bg-cover bg-center text-white py-6 px-4 rounded-lg">
+                    <div class="flex max-sm:flex-col items-center">
+                        <img src="img/disaster-logo-bg.png" alt="logo disaster" width="90" height="50">
+                        <h1 class="text-2xl font-bold pt-3 pb-2 align-center text-center">Origin of Disaster</h1>
+                    </div>
+                    <p class="pt-3 pb-2 pl-4">
                         According to CNN Brasil, "1,161 disaster events were recorded, with 716 associated with
                         hydrological events, such as river overflow, and 445 of geological origin, such as landslides.
                         On average, at least three disasters were recorded per day." Given the occurrence of these
@@ -166,326 +239,367 @@
                         create the Disaster system to assist and support victims, donors, and researchers.
                     </p>
                 </div>
-            </div>
-
-
-            <div class="flex max-sm:flex-col">
-                <!-- News -->
-                <div>
-                    <!-- News-->
-                    <div id="news" class="m-2 flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-md">
-                        <h1 class="text-2xl font-bold pt-3 pb-2">Last 5 disasters</h1>
-                        <div class="w-full flex-grow">
-                            <div
-                                class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-md hover:bg-blue-100 hover:scale-105 transition-transform duration-300">
-                                <h1 class="text-lg font-bold">Título 1</h1>
-                                <h2 class="text-base text-gray-700">Subtítulo 1</h2>
-                                <p class="text-sm text-gray-500">15 de agosto de 2024</p>
-                            </div>
-
-                            <div
-                                class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-md hover:bg-blue-100 hover:scale-105 transition-transform duration-300">
-                                <h1 class="text-lg font-bold">Título 2</h1>
-                                <h2 class="text-base text-gray-700">Subtítulo 2</h2>
-                                <p class="text-sm text-gray-500">16 de agosto de 2024</p>
-                            </div>
-
-                            <div
-                                class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-md hover:bg-blue-100 hover:scale-105 transition-transform duration-300">
-                                <h1 class="text-lg font-bold">Título 3</h1>
-                                <h2 class="text-base text-gray-700">Subtítulo 3</h2>
-                                <p class="text-sm text-gray-500">17 de agosto de 2024</p>
-                            </div>
-
-                            <div
-                                class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-md hover:bg-blue-100 hover:scale-105 transition-transform duration-300">
-                                <h1 class="text-lg font-bold">Título 4</h1>
-                                <h2 class="text-base text-gray-700">Subtítulo 4</h2>
-                                <p class="text-sm text-gray-500">18 de agosto de 2024</p>
-                            </div>
-
-                            <div
-                                class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-md hover:bg-blue-100 hover:scale-105 transition-transform duration-300">
-                                <h1 class="text-lg font-bold">Título 5</h1>
-                                <h2 class="text-base text-gray-700">Subtítulo 5</h2>
-                                <p class="text-sm text-gray-500">19 de agosto de 2024</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- New-->
-                    <div class="max-w-sm mx-auto p-6 hover:scale-105 transition-transform duration-300">
-                        <a href="#" class="block relative group">
-                            <!-- Imagem de fundo -->
-                            <div class="relative h-64 rounded-lg overflow-hidden">
-                                <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2020/09/14/675x450/1_barra-6283780.jpg"
-                                    alt="Background Image" class="w-full h-full object-cover">
-                                <!-- Overlay -->
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-75">
-                                </div>
-                            </div>
-                            <!-- Conteúdo do Card -->
-                            <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-                                <h3 class="text-white text-2xl font-bold mb-2">Card Title</h3>
-                                <p class="text-white text-lg">This is a brief description that appears on the card.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- New-->
-                    <div class="max-w-sm mx-auto p-6 hover:scale-105 transition-transform duration-300">
-                        <a href="#" class="block relative group">
-                            <!-- Imagem de fundo -->
-                            <div class="relative h-64 rounded-lg overflow-hidden">
-                                <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2020/09/14/675x450/1_barra-6283780.jpg"
-                                    alt="Background Image" class="w-full h-full object-cover">
-                                <!-- Overlay -->
-                                <div
-                                    class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-75">
-                                </div>
-                            </div>
-                            <!-- Conteúdo do Card -->
-                            <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-                                <h3 class="text-white text-2xl font-bold mb-2">Card Title</h3>
-                                <p class="text-white text-lg">This is a brief description that appears on the card.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- New-->
-                    <div class="max-w-sm mx-auto p-6 hover:scale-105 transition-transform duration-300">
-                    <a href="#" class="block relative group">
-                        <!-- Imagem de fundo -->
-                        <div class="relative h-64 rounded-lg overflow-hidden">
-                            <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2020/09/14/675x450/1_barra-6283780.jpg"
-                                alt="Background Image" class="w-full h-full object-cover">
-                            <!-- Overlay -->
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-75">
-                            </div>
-                        </div>
-                        <!-- Conteúdo do Card -->
-                        <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-                            <h3 class="text-white text-2xl font-bold mb-2">Card Title</h3>
-                            <p class="text-white text-lg">This is a brief description that appears on the card.</p>
-                        </div>
-                    </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h1 class="text-2xl font-bold pt-6 pb-2 ml-6">Testimonials</h1>
+                <div class="flex">
+                    <!-- News -->
                     <div>
-                        <!-- Cards  testimony-->
-                        <div id="testimonials" class="mt-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ml-6">
+                        <!-- News-->
+                        <div id="news" class="m-2 flex flex-col bg-white border border-gray-200 rounded-lg p-6 shadow-md">
+                            <h1 class="text-2xl font-bold pt-3 pb-2 text-center">Last 5 Worlwide</h1>
+                            <div class="w-full flex-grow">
+                                <div
+                                    class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-md hover:bg-blue-100 hover:scale-105 transition-transform duration-300">
+                                    <h1 class="text-lg font-bold">Título 1</h1>
+                                    <h2 class="text-base text-gray-700">Subtítulo 1</h2>
+                                    <p class="text-sm text-gray-500">15 de agosto de 2024</p>
+                                </div>
+    
+                                <div
+                                    class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-md hover:bg-blue-100 hover:scale-105 transition-transform duration-300">
+                                    <h1 class="text-lg font-bold">Título 2</h1>
+                                    <h2 class="text-base text-gray-700">Subtítulo 2</h2>
+                                    <p class="text-sm text-gray-500">16 de agosto de 2024</p>
+                                </div>
+    
+                                <div
+                                    class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-md hover:bg-blue-100 hover:scale-105 transition-transform duration-300">
+                                    <h1 class="text-lg font-bold">Título 3</h1>
+                                    <h2 class="text-base text-gray-700">Subtítulo 3</h2>
+                                    <p class="text-sm text-gray-500">17 de agosto de 2024</p>
+                                </div>
+    
+                                <div
+                                    class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-md hover:bg-blue-100 hover:scale-105 transition-transform duration-300">
+                                    <h1 class="text-lg font-bold">Título 4</h1>
+                                    <h2 class="text-base text-gray-700">Subtítulo 4</h2>
+                                    <p class="text-sm text-gray-500">18 de agosto de 2024</p>
+                                </div>
+    
+                                <div
+                                    class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-md hover:bg-blue-100 hover:scale-105 transition-transform duration-300">
+                                    <h1 class="text-lg font-bold">Título 5</h1>
+                                    <h2 class="text-base text-gray-700">Subtítulo 5</h2>
+                                    <p class="text-sm text-gray-500">19 de agosto de 2024</p>
+                                </div>
+                            </div>
+    
+                        </div>
+                        <!-- 3 big News-->
+                        <div>
+                            <h1 class="text-2xl font-bold pt-3 pb-2 text-center">Big 3 In The World</h1>
+                            <div class="flex max-sm:flex-col ">
+                                <!-- New-->
+                                <div class="max-w-sm mx-auto p-6 hover:scale-105 transition-transform duration-300">
+                                    <a href="#" class="block relative group">
+                                        <!-- Imagem de fundo -->
+                                        <div class="relative h-64 rounded-lg overflow-hidden">
+                                            <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2020/09/14/675x450/1_barra-6283780.jpg"
+                                                alt="Background Image" class="w-full h-full object-cover">
+                                            <!-- Overlay -->
+                                            <div
+                                                class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-75">
+                                            </div>
+                                        </div>
+                                        <!-- Conteúdo do Card -->
+                                        <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
+                                            <h3 class="text-white text-2xl font-bold mb-2">Card Title</h3>
+                                            <p class="text-white text-lg">This is a brief description that appears on the card.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- New-->
+                                <div class="max-w-sm mx-auto p-6 hover:scale-105 transition-transform duration-300">
+                                    <a href="#" class="block relative group">
+                                        <!-- Imagem de fundo -->
+                                        <div class="relative h-64 rounded-lg overflow-hidden">
+                                            <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2020/09/14/675x450/1_barra-6283780.jpg"
+                                                alt="Background Image" class="w-full h-full object-cover">
+                                            <!-- Overlay -->
+                                            <div
+                                                class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-75">
+                                            </div>
+                                        </div>
+                                        <!-- Conteúdo do Card -->
+                                        <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
+                                            <h3 class="text-white text-2xl font-bold mb-2">Card Title</h3>
+                                            <p class="text-white text-lg">This is a brief description that appears on the card.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- New-->
+                                <div class="max-w-sm mx-auto p-6 hover:scale-105 transition-transform duration-300">
+                                <a href="#" class="block relative group">
+                                    <!-- Imagem de fundo -->
+                                    <div class="relative h-64 rounded-lg overflow-hidden">
+                                        <img src="https://midias.correiobraziliense.com.br/_midias/jpg/2020/09/14/675x450/1_barra-6283780.jpg"
+                                            alt="Background Image" class="w-full h-full object-cover">
+                                        <!-- Overlay -->
+                                        <div
+                                            class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-75">
+                                        </div>
+                                    </div>
+                                    <!-- Conteúdo do Card -->
+                                    <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
+                                        <h3 class="text-white text-2xl font-bold mb-2">Card Title</h3>
+                                        <p class="text-white text-lg">This is a brief description that appears on the card.</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cards ONGs -->
+                        <div id="ongs" class="mt-8 max-w-4xl mx-auto flex flex-col gap-6 ml-6">
+                            <h1 class="text-2xl font-bold pt-3 pb-2 text-center">Ongs </h1>
                             <!-- Card 1 -->
-                            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                            <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
                                 <img src="https://coracaoevida.com.br/wp-content/uploads/2016/03/depress%C3%A3oidosos.jpg"
-                                    alt="Imagem Card 1" class="w-full h-64 h-auto object-cover rounded-lg">
-                                <div class="mt-4 mt-0 ml-4">
+                                    alt="Imagem Card 1" class="w-1/3 h-48 object-cover rounded-lg">
+                                <div class="ml-4 flex-grow">
                                     <h3 class="text-lg font-bold">Título 1</h3>
                                     <h4 class="text-sm text-gray-600">Subtítulo 1</h4>
                                     <p class="text-gray-700 mt-2">Este é um breve texto sobre o conteúdo do card 1.</p>
-                                    <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
-                                        Mais</button>
                                 </div>
+                                <button class="ml-auto px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba Mais</button>
                             </div>
 
                             <!-- Card 2 -->
-                            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                            <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
                                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXS0KBJxs7f834s86JYInz99QN9l0UN1BuZcwZqpR5jLsWp-L29Vuu4r1JRrH0uopPK6oW55tts6Fb46wHkM5N3Ne2kicDEgPn4DMFRcCc55K4TbiBIEKo0YIfwCl-XbsEaZURs2D7Yt0/s1600/155385365.jpg"
-                                    alt="Imagem Card 2" class="w-full h-64 h-auto object-cover rounded-lg">
-                                <div class="mt-4 mt-0 ml-4">
+                                    alt="Imagem Card 2" class="w-1/3 h-48 object-cover rounded-lg">
+                                <div class="ml-4 flex-grow">
                                     <h3 class="text-lg font-bold">Título 2</h3>
                                     <h4 class="text-sm text-gray-600">Subtítulo 2</h4>
                                     <p class="text-gray-700 mt-2">Este é um breve texto sobre o conteúdo do card 2.</p>
-                                    <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
-                                        Mais</button>
                                 </div>
+                                <button class="ml-auto px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba Mais</button>
                             </div>
 
                             <!-- Card 3 -->
-                            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                            <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
                                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRpmfH_jlDoynG9DHgGtGD3OHsCQzPI9k3XBWl5N-TgCR3aMSC5ZWbXPepu0CDA_dD3fZFftgUtArG_eR2c9t8hHnvAVmZ2l1SADunt_MSw6KdvqyooPjRlLZLVJVLxF0scNPWDz5nI_iJ/s1600/Bateu+aquela+tristeza+-+Elaine+Ribeiro.jpg"
-                                    alt="Imagem Card 3" class="w-full h-64 h-auto object-cover rounded-lg">
-                                <div class="mt-4 mt-0 ml-4">
+                                    alt="Imagem Card 3" class="w-1/3 h-48 object-cover rounded-lg">
+                                <div class="ml-4 flex-grow">
                                     <h3 class="text-lg font-bold">Título 3</h3>
                                     <h4 class="text-sm text-gray-600">Subtítulo 3</h4>
                                     <p class="text-gray-700 mt-2">Este é um breve texto sobre o conteúdo do card 3.</p>
-                                    <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
-                                        Mais</button>
                                 </div>
+                                <button class="ml-auto px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba Mais</button>
                             </div>
-                        </div>
-
-                        <!-- Form Testimony-->
-                        <div class="mt-8 ml-5 p-3 bg-white border border-gray-200 rounded-lg shadow-md">
-                            <h2 class="text-2xl font-bold mb-4 text-center">Submit Your Testimony</h2>
-                            <form id="testimony-form">
-                                <div class="mb-4">
-                                    <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Name</label>
-                                    <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                    <span id="name-error" class="text-red-500 text-sm hidden">Name is required.</span>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email</label>
-                                    <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                    <span id="email-error" class="text-red-500 text-sm hidden">Valid email is required.</span>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="testimony" class="block text-gray-700 text-sm font-medium mb-2">Testimony</label>
-                                    <textarea id="testimony" name="testimony" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-                                    <span id="testimony-error" class="text-red-500 text-sm hidden">Testimony is required.</span>
-                                </div>
-
-                                <!-- Address Fields -->
-                                <div class="mb-4">
-                                    <label for="cep" class="block text-gray-700 text-sm font-medium mb-2">CEP</label>
-                                    <input type="text" id="cep" name="cep" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                    <span id="cepError" class="text-red-500 text-sm hidden">Invalid CEP.</span>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="street" class="block text-gray-700 text-sm font-medium mb-2">Street</label>
-                                    <input type="text" id="street" name="street" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="number" class="block text-gray-700 text-sm font-medium mb-2">Number</label>
-                                    <input type="text" id="number" name="number" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="neighborhood" class="block text-gray-700 text-sm font-medium mb-2">Neighborhood</label>
-                                    <input type="text" id="neighborhood" name="neighborhood" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="city" class="block text-gray-700 text-sm font-medium mb-2">City</label>
-                                    <input type="text" id="city" name="city" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="state" class="block text-gray-700 text-sm font-medium mb-2">State</label>
-                                    <input type="text" id="state" name="state" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
-                                </div>
-
-                                <button type="submit" class="w-full px-4 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Submit</button>
-                            </form>
                         </div>
                     </div>
-
-                    <h1 class="text-2xl font-bold pt-6 pb-2 ml-6">Donations</h1>
+    
                     <div>
-                        <!-- Cards donation-->
-                        <div class="mt-8 ml-5 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ml-6">
-                            <!-- Card 1 -->
-                            <div class="relative bg-white rounded-lg overflow-hidden shadow-md">
-                                <img src="https://oregional.net/wp-content/uploads/2022/03/b7c998a0-90b7-11ec-ae6c-bf08e81ec60d.jpg"
-                                    alt="Imagem Card 1" class="w-full h-48 object-cover">
-                                <div class="absolute inset-0 bg-black bg-opacity-50 p-4 flex flex-col justify-end">
-                                    <h3 class="text-white text-lg font-bold">Título 1</h3>
-                                    <h4 class="text-white text-sm">Subtítulo 1</h4>
-                                    <p class="text-white mt-2">Este é um breve texto sobre o conteúdo do card 1.</p>
-                                    <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
-                                        Mais</button>
-                                </div>
-                            </div>
-
-                            <!-- Card 2 -->
-                            <div class="relative bg-white rounded-lg overflow-hidden shadow-md">
-                                <img src="https://ciclovivo.com.br/wp-content/uploads/2015/11/en_ac_front05.jpg"
-                                    alt="Imagem Card 2" class="w-full h-48 object-cover">
-                                <div class="absolute inset-0 bg-black bg-opacity-50 p-4 flex flex-col justify-end">
-                                    <h3 class="text-white text-lg font-bold">Título 2</h3>
-                                    <h4 class="text-white text-sm">Subtítulo 2</h4>
-                                    <p class="text-white mt-2">Este é um breve texto sobre o conteúdo do card 2.</p>
-                                    <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
-                                        Mais</button>
-                                </div>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="relative bg-white rounded-lg overflow-hidden shadow-md">
-                                <img src="https://images01.brasildefato.com.br/54ad9c81de2474150ba3329b1e989c63.jpeg"
-                                    alt="Imagem Card 3" class="w-full h-48 object-cover">
-                                <div class="absolute inset-0 bg-black bg-opacity-50 p-4 flex flex-col justify-end">
-                                    <h3 class="text-white text-lg font-bold">Título 3</h3>
-                                    <h4 class="text-white text-sm">Subtítulo 3</h4>
-                                    <p class="text-white mt-2">Este é um breve texto sobre o conteúdo do card 3.</p>
-                                    <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
-                                        Mais</button>
-                                </div>
-                            </div>
-
-                            <!-- Card 4 -->
-                            <div class="relative bg-white rounded-lg overflow-hidden shadow-md">
-                                <img src="https://static.poder360.com.br/2021/08/221529256_1013571779470289_170599123179222568_n-768x511.jpg"
-                                    alt="Imagem Card 4" class="w-full h-48 object-cover">
-                                <div class="absolute inset-0 bg-black bg-opacity-50 p-4 flex flex-col justify-end">
-                                    <h3 class="text-white text-lg font-bold">Título 4</h3>
-                                    <h4 class="text-white text-sm">Subtítulo 4</h4>
-                                    <p class="text-white mt-2">Este é um breve texto sobre o conteúdo do card 4.</p>
-                                    <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
-                                        Mais</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Form Donation-->
-                        <div id="donation" class="mt-8 ml-5 p-3 bg-white border border-gray-200 rounded-lg shadow-md">
-                            <h2 class="text-2xl font-bold mb-6 text-center">Make your donation</h2>
-                            <form action="#" method="POST">
-                                <!-- Name Field -->
-                                <div class="mb-4">
-                                    <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
-                                    <input type="text" id="name" name="name" placeholder="Enter your name"
-                                        class="w-full p-2 border border-gray-300 rounded-lg">
-                                </div>
-
-                                <!-- Email Field -->
-                                <div class="mb-4">
-                                    <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter your email"
-                                        class="w-full p-2 border border-gray-300 rounded-lg">
-                                </div>
-
-                                <!-- Donation Amount -->
-                                <div class="mb-4">
-                                    <label for="amount" class="block text-gray-700 font-bold mb-2">Donation Amount</label>
-                                    <input type="number" id="amount" name="amount" placeholder="Enter amount in $"
-                                        class="w-full p-2 border border-gray-300 rounded-lg">
-                                </div>
-
-                                <!-- Donation Frequency -->
-                                <div class="mb-4">
-                                    <label class="block text-gray-700 font-bold mb-2">Donation Frequency</label>
-                                    <div class="flex items-center space-x-4">
-                                        <label class="inline-flex items-center">
-                                            <input type="radio" name="frequency" value="one-time"
-                                                class="form-radio text-blue-500">
-                                            <span class="ml-2">One-time</span>
-                                        </label>
-                                        <label class="inline-flex items-center">
-                                            <input type="radio" name="frequency" value="monthly"
-                                                class="form-radio text-blue-500">
-                                            <span class="ml-2">Monthly</span>
-                                        </label>
+                        <h1 class="text-2xl font-bold pt-6 pb-2 ml-6">Testimonials</h1>
+                        <div>
+                            <!-- Cards  testimony-->
+                            <div id="testimonials" class="mt-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ml-6">
+                                <!-- Card 1 -->
+                                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                                    <img src="https://coracaoevida.com.br/wp-content/uploads/2016/03/depress%C3%A3oidosos.jpg"
+                                        alt="Imagem Card 1" class="w-full h-64 h-auto object-cover rounded-lg">
+                                    <div class="mt-4 mt-0 ml-4">
+                                        <h3 class="text-lg font-bold">Título 1</h3>
+                                        <h4 class="text-sm text-gray-600">Subtítulo 1</h4>
+                                        <p class="text-gray-700 mt-2">Este é um breve texto sobre o conteúdo do card 1.</p>
+                                        <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
+                                            Mais</button>
                                     </div>
                                 </div>
-
-                                <!-- Message Field -->
-                                <div class="mb-4">
-                                    <label for="message" class="block text-gray-700 font-bold mb-2">Message
-                                        (optional)</label>
-                                    <textarea id="message" name="message" placeholder="Leave a message"
-                                        class="w-full p-2 border border-gray-300 rounded-lg"></textarea>
+    
+                                <!-- Card 2 -->
+                                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXS0KBJxs7f834s86JYInz99QN9l0UN1BuZcwZqpR5jLsWp-L29Vuu4r1JRrH0uopPK6oW55tts6Fb46wHkM5N3Ne2kicDEgPn4DMFRcCc55K4TbiBIEKo0YIfwCl-XbsEaZURs2D7Yt0/s1600/155385365.jpg"
+                                        alt="Imagem Card 2" class="w-full h-64 h-auto object-cover rounded-lg">
+                                    <div class="mt-4 mt-0 ml-4">
+                                        <h3 class="text-lg font-bold">Título 2</h3>
+                                        <h4 class="text-sm text-gray-600">Subtítulo 2</h4>
+                                        <p class="text-gray-700 mt-2">Este é um breve texto sobre o conteúdo do card 2.</p>
+                                        <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
+                                            Mais</button>
+                                    </div>
                                 </div>
-
-                                <!-- Submit Button -->
-                                <div class="text-center">
-                                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg">Donate
-                                        Now</button>
+    
+                                <!-- Card 3 -->
+                                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRpmfH_jlDoynG9DHgGtGD3OHsCQzPI9k3XBWl5N-TgCR3aMSC5ZWbXPepu0CDA_dD3fZFftgUtArG_eR2c9t8hHnvAVmZ2l1SADunt_MSw6KdvqyooPjRlLZLVJVLxF0scNPWDz5nI_iJ/s1600/Bateu+aquela+tristeza+-+Elaine+Ribeiro.jpg"
+                                        alt="Imagem Card 3" class="w-full h-64 h-auto object-cover rounded-lg">
+                                    <div class="mt-4 mt-0 ml-4">
+                                        <h3 class="text-lg font-bold">Título 3</h3>
+                                        <h4 class="text-sm text-gray-600">Subtítulo 3</h4>
+                                        <p class="text-gray-700 mt-2">Este é um breve texto sobre o conteúdo do card 3.</p>
+                                        <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
+                                            Mais</button>
+                                    </div>
                                 </div>
-                            </form>
+                            </div>
+    
+                            <!-- Form Testimony-->
+                            <div class="mt-8 ml-5 p-3 bg-white border border-gray-200 rounded-lg shadow-md">
+                                <h2 class="text-2xl font-bold mb-4 text-center">Submit Your Testimony</h2>
+                                <form id="testimony-form">
+                                    <div class="mb-4">
+                                        <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Name</label>
+                                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                        <span id="name-error" class="text-red-500 text-sm hidden">Name is required.</span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                        <span id="email-error" class="text-red-500 text-sm hidden">Valid email is required.</span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="testimony" class="block text-gray-700 text-sm font-medium mb-2">Testimony</label>
+                                        <textarea id="testimony" name="testimony" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                                        <span id="testimony-error" class="text-red-500 text-sm hidden">Testimony is required.</span>
+                                    </div>
+    
+                                    <!-- Address Fields -->
+                                    <div class="mb-4">
+                                        <label for="cep" class="block text-gray-700 text-sm font-medium mb-2">CEP</label>
+                                        <input type="text" id="cep" name="cep" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                        <span id="cepError" class="text-red-500 text-sm hidden">Invalid CEP.</span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="street" class="block text-gray-700 text-sm font-medium mb-2">Street</label>
+                                        <input type="text" id="street" name="street" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="number" class="block text-gray-700 text-sm font-medium mb-2">Number</label>
+                                        <input type="text" id="number" name="number" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="neighborhood" class="block text-gray-700 text-sm font-medium mb-2">Neighborhood</label>
+                                        <input type="text" id="neighborhood" name="neighborhood" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="city" class="block text-gray-700 text-sm font-medium mb-2">City</label>
+                                        <input type="text" id="city" name="city" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="state" class="block text-gray-700 text-sm font-medium mb-2">State</label>
+                                        <input type="text" id="state" name="state" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                                    </div>
+    
+                                    <button type="submit" class="w-full px-4 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+    
+                        <h1 class="text-2xl font-bold pt-6 pb-2 ml-6">Donations</h1>
+                        <div>
+                            <!-- Cards donation-->
+                            <div class="mt-8 ml-5 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ml-6">
+                                <!-- Card 1 -->
+                                <div class="relative bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://oregional.net/wp-content/uploads/2022/03/b7c998a0-90b7-11ec-ae6c-bf08e81ec60d.jpg"
+                                        alt="Imagem Card 1" class="w-full h-48 object-cover">
+                                    <div class="absolute inset-0 bg-black bg-opacity-50 p-4 flex flex-col justify-end">
+                                        <h3 class="text-white text-lg font-bold">Título 1</h3>
+                                        <h4 class="text-white text-sm">Subtítulo 1</h4>
+                                        <p class="text-white mt-2">Este é um breve texto sobre o conteúdo do card 1.</p>
+                                        <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
+                                            Mais</button>
+                                    </div>
+                                </div>
+    
+                                <!-- Card 2 -->
+                                <div class="relative bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://ciclovivo.com.br/wp-content/uploads/2015/11/en_ac_front05.jpg"
+                                        alt="Imagem Card 2" class="w-full h-48 object-cover">
+                                    <div class="absolute inset-0 bg-black bg-opacity-50 p-4 flex flex-col justify-end">
+                                        <h3 class="text-white text-lg font-bold">Título 2</h3>
+                                        <h4 class="text-white text-sm">Subtítulo 2</h4>
+                                        <p class="text-white mt-2">Este é um breve texto sobre o conteúdo do card 2.</p>
+                                        <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
+                                            Mais</button>
+                                    </div>
+                                </div>
+    
+                                <!-- Card 3 -->
+                                <div class="relative bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://images01.brasildefato.com.br/54ad9c81de2474150ba3329b1e989c63.jpeg"
+                                        alt="Imagem Card 3" class="w-full h-48 object-cover">
+                                    <div class="absolute inset-0 bg-black bg-opacity-50 p-4 flex flex-col justify-end">
+                                        <h3 class="text-white text-lg font-bold">Título 3</h3>
+                                        <h4 class="text-white text-sm">Subtítulo 3</h4>
+                                        <p class="text-white mt-2">Este é um breve texto sobre o conteúdo do card 3.</p>
+                                        <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
+                                            Mais</button>
+                                    </div>
+                                </div>
+    
+                                <!-- Card 4 -->
+                                <div class="relative bg-white rounded-lg overflow-hidden shadow-md">
+                                    <img src="https://static.poder360.com.br/2021/08/221529256_1013571779470289_170599123179222568_n-768x511.jpg"
+                                        alt="Imagem Card 4" class="w-full h-48 object-cover">
+                                    <div class="absolute inset-0 bg-black bg-opacity-50 p-4 flex flex-col justify-end">
+                                        <h3 class="text-white text-lg font-bold">Título 4</h3>
+                                        <h4 class="text-white text-sm">Subtítulo 4</h4>
+                                        <p class="text-white mt-2">Este é um breve texto sobre o conteúdo do card 4.</p>
+                                        <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Saiba
+                                            Mais</button>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Form Donation-->
+                            <div id="donation" class="mt-8 ml-5 p-3 bg-white border border-gray-200 rounded-lg shadow-md">
+                                <h2 class="text-2xl font-bold mb-6 text-center">Make your donation</h2>
+                                <form action="#" method="POST">
+                                    <!-- Name Field -->
+                                    <div class="mb-4">
+                                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                                        <input type="text" id="name" name="name" placeholder="Enter your name"
+                                            class="w-full p-2 border border-gray-300 rounded-lg">
+                                    </div>
+    
+                                    <!-- Email Field -->
+                                    <div class="mb-4">
+                                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="Enter your email"
+                                            class="w-full p-2 border border-gray-300 rounded-lg">
+                                    </div>
+    
+                                    <!-- Donation Amount -->
+                                    <div class="mb-4">
+                                        <label for="amount" class="block text-gray-700 font-bold mb-2">Donation Amount</label>
+                                        <input type="number" id="amount" name="amount" placeholder="Enter amount in $"
+                                            class="w-full p-2 border border-gray-300 rounded-lg">
+                                    </div>
+    
+                                    <!-- Donation Frequency -->
+                                    <div class="mb-4">
+                                        <label class="block text-gray-700 font-bold mb-2">Donation Frequency</label>
+                                        <div class="flex items-center space-x-4">
+                                            <label class="inline-flex items-center">
+                                                <input type="radio" name="frequency" value="one-time"
+                                                    class="form-radio text-blue-500">
+                                                <span class="ml-2">One-time</span>
+                                            </label>
+                                            <label class="inline-flex items-center">
+                                                <input type="radio" name="frequency" value="monthly"
+                                                    class="form-radio text-blue-500">
+                                                <span class="ml-2">Monthly</span>
+                                            </label>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Message Field -->
+                                    <div class="mb-4">
+                                        <label for="message" class="block text-gray-700 font-bold mb-2">Message
+                                            (optional)</label>
+                                        <textarea id="message" name="message" placeholder="Leave a message"
+                                            class="w-full p-2 border border-gray-300 rounded-lg"></textarea>
+                                    </div>
+    
+                                    <!-- Submit Button -->
+                                    <div class="text-center">
+                                        <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg">Donate
+                                            Now</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    
-
                 </div>
 
             </div>
