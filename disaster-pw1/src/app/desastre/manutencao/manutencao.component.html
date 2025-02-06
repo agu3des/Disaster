@@ -1,0 +1,60 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Cadastro de Morador</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <form (ngSubmit)="cadastrar()">
+        
+        <!-- Campo para Nome -->
+        <mat-form-field appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput [(ngModel)]="moradorDeCadastro.nome" name="nome" required placeholder="Digite o nome">
+        </mat-form-field>
+        <br>
+  
+        <!-- Campo para Apartamento -->
+        <mat-form-field appearance="fill">
+          <mat-label>Apartamento</mat-label>
+          <input matInput [(ngModel)]="moradorDeCadastro.apartamento" name="apartamento" required placeholder="Digite o número do apartamento">
+        </mat-form-field>
+        <br>
+  
+        <!-- Campo para Esportes Favoritos -->
+        <mat-form-field appearance="fill">
+          <mat-label>Esportes Favoritos</mat-label>
+          <mat-select [(ngModel)]="moradorDeCadastro.esportesFavoritos" name="esportes" multiple>
+            <mat-option *ngFor="let esporte of esportesDisponiveis" [value]="esporte">
+              {{ esporte }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+  
+        <!-- Campo para Seleção de Dias Disponíveis -->
+        <mat-form-field appearance="fill">
+          <mat-label>Disponibilidade (Dias da Semana)</mat-label>
+          <mat-select [(ngModel)]="moradorDeCadastro.disponibilidade.dias" name="dias" multiple>
+            <mat-option value="segunda">Segunda-feira</mat-option>
+            <mat-option value="terça">Terça-feira</mat-option>
+            <mat-option value="quarta">Quarta-feira</mat-option>
+            <mat-option value="quinta">Quinta-feira</mat-option>
+            <mat-option value="sexta">Sexta-feira</mat-option>
+            <mat-option value="sabado">Sábado</mat-option>
+            <mat-option value="domingo">Domingo</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+  
+        <!-- Campo para Horário de Disponibilidade -->
+        <mat-form-field appearance="fill">
+          <mat-label>Horário de Disponibilidade</mat-label>
+          <input matInput [(ngModel)]="moradorDeCadastro.disponibilidade.horario" name="horario" placeholder="Ex: 18:00 - 20:00" required>
+        </mat-form-field>
+        <br>
+  
+        <!-- Botão para Cadastrar -->
+        <button mat-raised-button color="primary" type="submit">Cadastrar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>

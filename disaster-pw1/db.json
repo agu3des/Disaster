@@ -1,0 +1,41 @@
+{
+    "desastres": [
+        {
+            "id": 1,
+            "dataDeOcorrencia": "13/05/2024",
+            "duracaoDias": 90,
+            "intensidadeEscala": 7,
+            "qtdVitimas": 700000,
+            "tipo": "Enchente",
+            "regiao": "Sul"
+        },
+        {
+            "id": 2,
+            "dataDeOcorrencia": "22/08/2023",
+            "duracaoDias": 45,
+            "intensidadeEscala": 5,
+            "qtdVitimas": 150000,
+            "tipo": "Terremoto",
+            "regiao": "Sudeste"
+        },
+        {
+            "id": 3,
+            "dataDeOcorrencia": "10/01/2022",
+            "duracaoDias": 30,
+            "intensidadeEscala": 6,
+            "qtdVitimas": 30000,
+            "tipo": "Deslizamento de Terra",
+            "regiao": "Norte"
+        },
+        {
+            "id": 4,
+            "dataDeOcorrencia": "05/11/2021",
+            "duracaoDias": 15,
+            "intensidadeEscala": 4,
+            "qtdVitimas": 5000,
+            "tipo": "Seca",
+            "regiao": "Nordeste"
+        }
+        
+    ]
+}
