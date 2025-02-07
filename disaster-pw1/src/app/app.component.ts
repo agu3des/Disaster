@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Desastre } from './shared/model/desastre';
+
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'disaster';
+
 }

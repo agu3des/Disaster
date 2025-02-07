@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { MatFormFieldModule} from "@angular/material/form-field";
@@ -27,6 +28,7 @@ import { provideHttpClient } from "@angular/common/http";
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         MatFormFieldModule,
         MatIconModule,
         MatBadgeModule,

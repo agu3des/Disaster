@@ -6,7 +6,7 @@ import { MensagemSweetService } from "../../shared/services/mensagem-sweet.servi
 
 
 @Component({
-  selector: 'manutencao-desastres',
+  selector: 'app-manutencao',
   standalone: false,
   
   templateUrl: './manutencao.component.html',

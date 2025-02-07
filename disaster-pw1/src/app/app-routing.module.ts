@@ -5,15 +5,15 @@ import { ManutencaoComponent } from "./desastre/manutencao/manutencao.component"
 
 export const routes: Routes = [
     {
-    path: 'listagem-desastres',
+    path: 'app-listagem',
     component: ListagemComponent
     },
     {
-    path: 'cadastro-desastre',
+    path: 'app-manutencao',
     component: ManutencaoComponent
     },
     {
-    path: 'edicao-desastre/:id',
+    path: 'app-manutencao/:id',
     component: ManutencaoComponent
     },
 

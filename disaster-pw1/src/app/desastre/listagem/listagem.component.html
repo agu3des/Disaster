@@ -1,28 +1,15 @@
-@for (desastre of DESASTRES; track desastre.matricula) {
+@for (desastre of DESASTRES; track desastre.dataDeOcorrencia) {
     <mat-card class="card-desastre" appearance="outlined">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>{{ desastre.nome }}</mat-card-title>
-            <mat-card-subtitle>{{ desastre.matricula | matricula }}</mat-card-subtitle>
+            <mat-card-title>{{ desastre.dataDeOcorrencia }}</mat-card-title>
+            <mat-card-subtitle>{{ desastre.intensidadeEscala | id }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
             <p>
-                O desastre {{ desastre.nome | titlecase }} do IFPB...
+                O desastre {{ desastre.regiao | titlecase }} de campinas
             </p>
         </mat-card-content>
-        <mat-card-actions>
-            <button mat-button [matBadge]="desastre.likes" (click)="curtir(desastre)">Gostei</button>
-            <button mat-button (click)="descurtir(desastre)">Não gostei!</button>
-            <button mat-icon-button (click)="alterar(desastre)">
-                <mat-icon>edit</mat-icon>
-            </button>
-            <button mat-icon-button (click)="remover(desastre)">
-                <mat-icon>delete</mat-icon>
-            </button>
-            <button mat-icon-button (click)="avaliar(desastre)">
-                <mat-icon>{{ nomeIconeCurtir(desastre) }}</mat-icon>
-            </button>
-        </mat-card-actions>
     </mat-card>
 
 }
