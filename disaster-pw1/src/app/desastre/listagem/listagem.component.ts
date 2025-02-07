@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { Desastre } from '../../shared/model/desastre';
 import { DESASTRES } from '../../shared/model/DESASTRES';
