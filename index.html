@@ -79,7 +79,7 @@
                         </a>
                     </li>
                     <li class="mt-2 mb-2 search-item">
-                        <a href="#testimonials"
+                        <a href="testemunhos.html"
                             class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md">
                             <i class="fas fa-quote-left mr-2"></i> Testimonials
                             <span
@@ -87,7 +87,7 @@
                         </a>
                     </li>
                     <li class="mt-2 mb-2 search-item">
-                        <a href="#donation"
+                        <a href="doacoes.html"
                             class="text-black block sm:text-left relative hover:text-white hover:bg-blue-800 hover:scale-105 transition-transform duration-300 hover:shadow-md">
                             <i class="fas fa-donate"></i> Donate
                             <span
@@ -433,57 +433,6 @@
                                     </div>
                                 </div>
                             </div>
-    
-                            <!-- Form Testimony-->
-                            <div class="mt-8 ml-5 p-3 bg-white border border-gray-200 rounded-lg shadow-md">
-                                <h2 class="text-2xl font-bold mb-4 text-center">Submit Your Testimony</h2>
-                                <form id="testimony-form">
-                                    <div class="mb-4">
-                                        <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Name</label>
-                                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                        <span id="name-error" class="text-red-500 text-sm hidden">Name is required.</span>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email</label>
-                                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                        <span id="email-error" class="text-red-500 text-sm hidden">Valid email is required.</span>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="testimony" class="block text-gray-700 text-sm font-medium mb-2">Testimony</label>
-                                        <textarea id="testimony" name="testimony" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-                                        <span id="testimony-error" class="text-red-500 text-sm hidden">Testimony is required.</span>
-                                    </div>
-    
-                                    <!-- Address Fields -->
-                                    <div class="mb-4">
-                                        <label for="cep" class="block text-gray-700 text-sm font-medium mb-2">CEP</label>
-                                        <input type="text" id="cep" name="cep" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                        <span id="cepError" class="text-red-500 text-sm hidden">Invalid CEP.</span>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="street" class="block text-gray-700 text-sm font-medium mb-2">Street</label>
-                                        <input type="text" id="street" name="street" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="number" class="block text-gray-700 text-sm font-medium mb-2">Number</label>
-                                        <input type="text" id="number" name="number" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="neighborhood" class="block text-gray-700 text-sm font-medium mb-2">Neighborhood</label>
-                                        <input type="text" id="neighborhood" name="neighborhood" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="city" class="block text-gray-700 text-sm font-medium mb-2">City</label>
-                                        <input type="text" id="city" name="city" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="state" class="block text-gray-700 text-sm font-medium mb-2">State</label>
-                                        <input type="text" id="state" name="state" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
-                                    </div>
-    
-                                    <button type="submit" class="w-full px-4 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Submit</button>
-                                </form>
-                            </div>
                         </div>
     
                         <h1 class="text-2xl font-bold pt-6 pb-2 ml-6">Donations</h1>
@@ -541,64 +490,6 @@
                                             Mais</button>
                                     </div>
                                 </div>
-                            </div>
-    
-                            <!-- Form Donation-->
-                            <div id="donation" class="mt-8 ml-5 p-3 bg-white border border-gray-200 rounded-lg shadow-md">
-                                <h2 class="text-2xl font-bold mb-6 text-center">Make your donation</h2>
-                                <form action="#" method="POST">
-                                    <!-- Name Field -->
-                                    <div class="mb-4">
-                                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
-                                        <input type="text" id="name" name="name" placeholder="Enter your name"
-                                            class="w-full p-2 border border-gray-300 rounded-lg">
-                                    </div>
-    
-                                    <!-- Email Field -->
-                                    <div class="mb-4">
-                                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-                                        <input type="email" id="email" name="email" placeholder="Enter your email"
-                                            class="w-full p-2 border border-gray-300 rounded-lg">
-                                    </div>
-    
-                                    <!-- Donation Amount -->
-                                    <div class="mb-4">
-                                        <label for="amount" class="block text-gray-700 font-bold mb-2">Donation Amount</label>
-                                        <input type="number" id="amount" name="amount" placeholder="Enter amount in $"
-                                            class="w-full p-2 border border-gray-300 rounded-lg">
-                                    </div>
-    
-                                    <!-- Donation Frequency -->
-                                    <div class="mb-4">
-                                        <label class="block text-gray-700 font-bold mb-2">Donation Frequency</label>
-                                        <div class="flex items-center space-x-4">
-                                            <label class="inline-flex items-center">
-                                                <input type="radio" name="frequency" value="one-time"
-                                                    class="form-radio text-blue-500">
-                                                <span class="ml-2">One-time</span>
-                                            </label>
-                                            <label class="inline-flex items-center">
-                                                <input type="radio" name="frequency" value="monthly"
-                                                    class="form-radio text-blue-500">
-                                                <span class="ml-2">Monthly</span>
-                                            </label>
-                                        </div>
-                                    </div>
-    
-                                    <!-- Message Field -->
-                                    <div class="mb-4">
-                                        <label for="message" class="block text-gray-700 font-bold mb-2">Message
-                                            (optional)</label>
-                                        <textarea id="message" name="message" placeholder="Leave a message"
-                                            class="w-full p-2 border border-gray-300 rounded-lg"></textarea>
-                                    </div>
-    
-                                    <!-- Submit Button -->
-                                    <div class="text-center">
-                                        <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg">Donate
-                                            Now</button>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>

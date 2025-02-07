@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="icon" href="img/disaster-logo-bg.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8ca23e5339.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+    <body class="bg-black-100 font-oswald">
+        <!-- Form Donation-->
+        <div id="donation" class="mt-8 ml-5 p-3 bg-white border border-gray-200 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-6 text-center">Make your donation</h2>
+            <form action="#" method="POST">
+                <!-- Name Field -->
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name"
+                        class="w-full p-2 border border-gray-300 rounded-lg">
+                </div>
+
+                <!-- Email Field -->
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email"
+                        class="w-full p-2 border border-gray-300 rounded-lg">
+                </div>
+
+                <!-- Donation Amount -->
+                <div class="mb-4">
+                    <label for="amount" class="block text-gray-700 font-bold mb-2">Donation Amount</label>
+                    <input type="number" id="amount" name="amount" placeholder="Enter amount in $"
+                        class="w-full p-2 border border-gray-300 rounded-lg">
+                </div>
+
+                <!-- Donation Frequency -->
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2">Donation Frequency</label>
+                    <div class="flex items-center space-x-4">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="frequency" value="one-time"
+                                class="form-radio text-blue-500">
+                            <span class="ml-2">One-time</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="frequency" value="monthly"
+                                class="form-radio text-blue-500">
+                            <span class="ml-2">Monthly</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Message Field -->
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 font-bold mb-2">Message
+                        (optional)</label>
+                    <textarea id="message" name="message" placeholder="Leave a message"
+                        class="w-full p-2 border border-gray-300 rounded-lg"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg">Donate
+                        Now</button>
+                </div>
+            </form>
+        </div>
+    </body>
+
+
+</html>
