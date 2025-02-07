@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
-import { Desastre } from '../../shared/modelo/desastre';
+import { Desastre } from '../../shared/model/desastre';
 import { DesastreRestService } from "../../shared/services/desastre-rest.service";
 import { MensagemSweetService } from "../../shared/services/mensagem-sweet.service";
 
 
 @Component({
-  selector: 'app-manutencao',
+  selector: 'manutencao-desastres',
   standalone: false,
   
   templateUrl: './manutencao.component.html',

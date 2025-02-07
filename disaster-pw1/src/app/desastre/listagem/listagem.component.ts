@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-listagem',
+  selector: 'listagem-desastres',
   standalone: false,
   
   templateUrl: './listagem.component.html',
