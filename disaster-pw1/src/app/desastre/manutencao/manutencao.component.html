@@ -1,38 +1,54 @@
-<!--
+
 
 <mat-form-field>
-  <mat-label>Data de ocorrêencia</mat-label>
-  <input matInput [(ngModel)]="desastre.dataDeOcorrencia" placeholder="dataDeOcorrencia">
+  <mat-label>Data de ocorrência</mat-label>
+  <input matInput [(ngModel)]="desastre.dataDeOcorrencia" placeholder="Data">
 </mat-form-field>
 <br>
 <mat-form-field>
   <mat-label>Duração em dias</mat-label>
-  <input matInput [(ngModel)]="desastre.duracaoDias" placeholder="duracaoDias">
+  <input matInput [(ngModel)]="desastre.duracaoDias" placeholder="Duração em dias">
 </mat-form-field>
 <br>
 <mat-form-field>
   <mat-label>Intensidade</mat-label>
-  <input matInput [(ngModel)]="desastre.intensidadeEscala" placeholder="intensidadeEscala">
+  <input matInput [(ngModel)]="desastre.intensidadeEscala" placeholder="Intensidade 0 - 10">
 </mat-form-field>
 <br>
 <br>
 <mat-form-field>
   <mat-label>Quantidade de Vítimas</mat-label>
-  <input matInput [(ngModel)]="desastre.qtdVitimas" placeholder="qtdVitimas">
+  <input matInput [(ngModel)]="desastre.qtdVitimas" placeholder="Quantidade de vítimas">
 </mat-form-field>
 <br>
 <br>
 <mat-form-field>
   <mat-label>Tipo</mat-label>
-  <input matInput [(ngModel)]="desastre.tipo" placeholder="tipo">
+  <mat-select [(ngModel)]="desastre.tipo">
+    <mat-option value="enxurrada">Enxurrada</mat-option>
+    <mat-option value="deslizamento">Deslizamento</mat-option>
+    <mat-option value="incendio">Incêndio</mat-option>
+    <mat-option value="seca">Seca</mat-option>
+    <mat-option value="inundacao">Inundação</mat-option>
+    <mat-option value="vendaval">Vendaval</mat-option>
+    <mat-option value="granizo">Granizo</mat-option>
+  </mat-select>
+  <!--
+  <input matInput [(ngModel)]="desastre.tipo" placeholder="Tipo">
+  -->
 </mat-form-field>
 <br>
 <br>
 <mat-form-field>
   <mat-label>Região</mat-label>
-  <input matInput [(ngModel)]="desastre.regiao" placeholder="regiao">
+  <mat-select [(ngModel)]="desastre.regiao" multiple>
+    <mat-option value="norte">Norte</mat-option>
+    <mat-option value="sul">Sul</mat-option>
+    <mat-option value="nordeste">Nordeste</mat-option>
+    <mat-option value="sudeste">Sudeste</mat-option>
+    <mat-option value="centroOeste">Centro-Oeste</mat-option>
+  </mat-select>
 </mat-form-field>
 <br>
 <button mat-raised-button (click)="cadastrarOuAtualizar()">{{nomeBotaoAcao}}</button>
--->
-<p>vai</p>
+

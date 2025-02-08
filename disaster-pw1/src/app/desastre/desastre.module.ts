@@ -12,6 +12,9 @@ import { MatInput, MatInputModule } from "@angular/material/input";
 import { MatCard, MatCardModule } from "@angular/material/card";
 import { MatIcon, MatIconModule } from "@angular/material/icon";
 import { MatBadge, MatBadgeModule } from "@angular/material/badge";
+import { MatSelectModule } from '@angular/material/select'; // Para seleções
+
+
 
 
 
@@ -29,7 +32,8 @@ import { MatBadge, MatBadgeModule } from "@angular/material/badge";
     MatInputModule,
     MatCardModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSelectModule
   ],
   exports: [    
     ManutencaoComponent,

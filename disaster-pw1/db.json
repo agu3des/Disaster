@@ -1,41 +1,108 @@
 {
-    "desastres": [
-        {
-            "id": 1,
-            "dataDeOcorrencia": "13/05/2024",
-            "duracaoDias": 90,
-            "intensidadeEscala": 7,
-            "qtdVitimas": 700000,
-            "tipo": "Enchente",
-            "regiao": "Sul"
-        },
-        {
-            "id": 2,
-            "dataDeOcorrencia": "22/08/2023",
-            "duracaoDias": 45,
-            "intensidadeEscala": 5,
-            "qtdVitimas": 150000,
-            "tipo": "Terremoto",
-            "regiao": "Sudeste"
-        },
-        {
-            "id": 3,
-            "dataDeOcorrencia": "10/01/2022",
-            "duracaoDias": 30,
-            "intensidadeEscala": 6,
-            "qtdVitimas": 30000,
-            "tipo": "Deslizamento de Terra",
-            "regiao": "Norte"
-        },
-        {
-            "id": 4,
-            "dataDeOcorrencia": "05/11/2021",
-            "duracaoDias": 15,
-            "intensidadeEscala": 4,
-            "qtdVitimas": 5000,
-            "tipo": "Seca",
-            "regiao": "Nordeste"
-        }
-        
-    ]
+  "desastres": [
+    {
+      "id": "1",
+      "dataDeOcorrencia": "13/05/2024",
+      "duracaoDias": 90,
+      "intensidadeEscala": 7,
+      "qtdVitimas": 700000,
+      "tipo": "Enxurrada",
+      "regiao": "Sul"
+    },
+    {
+      "id": "2",
+      "dataDeOcorrencia": "22/08/2023",
+      "duracaoDias": 45,
+      "intensidadeEscala": 5,
+      "qtdVitimas": 150000,
+      "tipo": "Deslizamento de Terra",
+      "regiao": "Sudeste"
+    },
+    {
+      "id": "3",
+      "dataDeOcorrencia": "10/01/2022",
+      "duracaoDias": 30,
+      "intensidadeEscala": 6,
+      "qtdVitimas": 30000,
+      "tipo": "Inundação",
+      "regiao": "Norte"
+    },
+    {
+      "id": "4",
+      "dataDeOcorrencia": "05/11/2021",
+      "duracaoDias": 15,
+      "intensidadeEscala": 4,
+      "qtdVitimas": 5000,
+      "tipo": "Seca",
+      "regiao": "Nordeste"
+    },
+    {
+      "id": "3aa4",
+      "dataDeOcorrencia": "08/02/2024",
+      "duracaoDias": "3",
+      "intensidadeEscala": "5",
+      "qtdVitimas": "3",
+      "tipo": [
+        "enxurrada"
+      ],
+      "regiao": [
+        "sul"
+      ]
+    },
+    {
+      "id": "fae4",
+      "dataDeOcorrencia": "05/02/2023",
+      "duracaoDias": "10",
+      "intensidadeEscala": "7",
+      "qtdVitimas": "1",
+      "tipo": "seca",
+      "regiao": [
+        "nordeste"
+      ]
+    },
+    {
+      "id": "6093",
+      "dataDeOcorrencia": "01/01/1996",
+      "duracaoDias": "2",
+      "intensidadeEscala": "2",
+      "qtdVitimas": "2",
+      "tipo": "inundacao",
+      "regiao": [
+        "centroOeste"
+      ]
+    },
+    {
+      "id": "7de4",
+      "dataDeOcorrencia": "02/02/2002",
+      "duracaoDias": "1",
+      "intensidadeEscala": "1",
+      "qtdVitimas": "1",
+      "tipo": "deslizamento",
+      "regiao": [
+        "sul"
+      ]
+    },
+    {
+      "id": "d132",
+      "dataDeOcorrencia": "03/03/1993",
+      "duracaoDias": "3",
+      "intensidadeEscala": "3",
+      "qtdVitimas": "3",
+      "tipo": "seca",
+      "regiao": [
+        "nordeste"
+      ]
+    },
+    {
+      "id": "114d",
+      "dataDeOcorrencia": "04/04/2004",
+      "duracaoDias": "4",
+      "intensidadeEscala": "4",
+      "qtdVitimas": "4",
+      "tipo": "inundacao",
+      "regiao": [
+        "sudeste"
+      ]
+    }
+  ]
 }
