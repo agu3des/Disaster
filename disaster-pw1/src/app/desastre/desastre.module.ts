@@ -12,7 +12,8 @@ import { MatInput, MatInputModule } from "@angular/material/input";
 import { MatCard, MatCardModule } from "@angular/material/card";
 import { MatIcon, MatIconModule } from "@angular/material/icon";
 import { MatBadge, MatBadgeModule } from "@angular/material/badge";
-import { MatSelectModule } from '@angular/material/select'; // Para seleções
+import { MatSelectModule } from '@angular/material/select'; 
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 
@@ -33,7 +34,8 @@ import { MatSelectModule } from '@angular/material/select'; // Para seleções
     MatCardModule,
     MatIconModule,
     MatBadgeModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressBarModule 
   ],
   exports: [    
     ManutencaoComponent,

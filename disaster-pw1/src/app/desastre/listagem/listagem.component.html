@@ -1,15 +1,27 @@
-@for (desastre of DESASTRES; track desastre.dataDeOcorrencia) {
-    <mat-card class="card-desastre" appearance="outlined">
+<div class="container-cards">
+    @for (desastre of DESASTRES; track desastre.dataDeOcorrencia) {
+      <mat-card class="card-desastre" appearance="outlined">
+        
+        <!-- Imagem do desastre -->
+        <img mat-card-image src="{{desastre.imagemUrl}}" alt="Imagem do desastre de {{desastre.tipo}}">
+  
         <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>{{ desastre.dataDeOcorrencia }}</mat-card-title>
-            <mat-card-subtitle>{{ desastre.intensidadeEscala }}</mat-card-subtitle>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Data: {{ desastre.dataDeOcorrencia }}</mat-card-title>
+          <mat-card-subtitle>Região: {{ desastre.regiao}}</mat-card-subtitle>
+          <mat-card-subtitle>Intensidade: {{ desastre.intensidadeEscala }}</mat-card-subtitle>
+          <mat-card-subtitle>Vítimas: {{ desastre.qtdVitimas }}</mat-card-subtitle>
         </mat-card-header>
+  
         <mat-card-content>
-            <p>
-                O desastre da(s) região(ões) {{ desastre.regiao }}
-            </p>
+          <p>
+            O desastre de {{desastre.tipo}} ocorreu na data {{desastre.dataDeOcorrencia}}, 
+            pela região(ões) {{ desastre.regiao }} durante {{desastre.duracaoDias }} dias, 
+            deixando um rastro de {{desastre.qtdVitimas}} vítimas e atingindo 
+            {{desastre.intensidadeEscala}} na escala Richter.
+          </p>
         </mat-card-content>
-    </mat-card>
-
-}
+      </mat-card>
+    }
+  </div>
+  
