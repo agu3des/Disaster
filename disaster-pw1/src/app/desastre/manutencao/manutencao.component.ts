@@ -16,8 +16,6 @@ export class ManutencaoComponent {
   nomeBotaoAcao: string;
   estahCadastrando: boolean;
 
-  // Variável para controlar o progresso
-  progresso: number = 0;
 
   constructor(
     private desastreService: DesastreRestService, 
@@ -39,25 +37,6 @@ export class ManutencaoComponent {
     }
   }
 
-  // Função para calcular o progresso da barra com base nos campos preenchidos
-  calcularProgresso() {
-    // Contando os campos preenchidos
-    const camposPreenchidos = [
-      this.desastre.dataDeOcorrencia,
-      this.desastre.duracaoDias,
-      this.desastre.intensidadeEscala,
-      this.desastre.qtdVitimas,
-      this.desastre.tipo,
-      this.desastre.regiao
-    ].filter(value => value !== null && value !== undefined && value !== '').length;
-
-    // Total de campos
-    const totalCampos = 6;
-
-    // Calculando o progresso
-    this.progresso = (camposPreenchidos / totalCampos) * 100;
-  }
-
   cadastrarOuAtualizar() {
     if (this.estahCadastrando) {
       this.desastreService.cadastrar(this.desastre).subscribe(
@@ -76,8 +55,4 @@ export class ManutencaoComponent {
     }
   }
 
-  // Método que será chamado sempre que o valor de qualquer campo for alterado
-  onModelChange() {
-    this.calcularProgresso();
-  }
 }
