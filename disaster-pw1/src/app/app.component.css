@@ -1,0 +1,32 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o layout ocupe toda a altura da tela */
+}
+
+.conteudo {
+    flex-grow: 1; /* Faz com que o conteúdo ocupe o espaço restante */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos internos corretamente */
+}
+
+.footer {
+    background-color: #bfdbfe;
+    color: #1e293b;
+    padding: 24px;
+    text-align: center;
+    width: 100%;
+}

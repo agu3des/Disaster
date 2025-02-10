@@ -9,15 +9,18 @@ import { RouterLink } from "@angular/router";
 
 import { MatCard } from '@angular/material/card';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
-    MenuComponent
+    MenuComponent,
+    FooterComponent
   ],
   exports: [
-      MenuComponent
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
