@@ -9,18 +9,26 @@ import { RouterLink } from "@angular/router";
 
 import { MatCard } from '@angular/material/card';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { LoginModalComponent } from './login/login.component';
 
 
 
 @NgModule({
   declarations: [
     MenuComponent,
-    FooterComponent
+    HeaderComponent,
+    FooterComponent,
+    LoginModalComponent
   ],
   exports: [
     MenuComponent,
-    FooterComponent
+    HeaderComponent,
+    FooterComponent,
+    LoginModalComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +37,8 @@ import { FooterComponent } from './footer/footer.component';
     MatMenuModule,
     MatCard,
     MatFormFieldModule,
-    RouterLink
+    RouterLink,
+    FormsModule
   ]
 })
 export class LayoutModule { }
