@@ -1,8 +1,12 @@
-<div class="menu">
-    <button class="menu-btn">Menu</button>
-    <div class="menu-items">
-        <button class="menu-item" [routerLink]="['/cadastro-desastre']">Cadastrar Desastre</button>
-        <button class="menu-item" [routerLink]="['/listagem-desastres']">Listar Desastres</button>
-    </div>
-</div>
+<button class="menu" mat-button [matMenuTriggerFor]="menu">
+  <i class="fas fa-exclamation-triangle"></i> Desastres
+</button>
 
+<mat-menu #menu="matMenu">
+<button mat-menu-item [routerLink]="['/cadastro-desastre']">
+  <i class="fas fa-plus-circle"></i> Cadastrar Desastre
+</button>
+<button mat-menu-item [routerLink]="['/listagem-desastres']">
+  <i class="fas fa-list"></i> Listar Desastres
+</button>
+</mat-menu>

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginModalComponent } from './login/login.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -22,13 +23,15 @@ import { LoginModalComponent } from './login/login.component';
     MenuComponent,
     HeaderComponent,
     FooterComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    SidebarComponent
   ],
   exports: [
     MenuComponent,
     HeaderComponent,
     FooterComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,6 @@
 .footer {
-    background-color: #bfdbfe; /* bg-blue-200 */
-    color: #1e293b; /* text-black-800 */
+    background-color: #60A7DD;
+    color: #000000; 
     padding: 24px;
     text-align: center;
 }
@@ -14,7 +14,6 @@
     align-items: center;
 }
 
-/* Seções do footer */
 .footer-section {
     flex: 1;
     min-width: 250px;
@@ -31,7 +30,7 @@
     font-size: 0.875rem;
 }
 
-/* Ícones sociais */
+
 .social-icons {
     display: flex;
     justify-content: center;
@@ -66,6 +65,12 @@
     color: #3b82f6;
     transform: scale(1.1);
 }
+
+
+a:visited {
+    color: inherit; 
+}
+
 
 .footer-logo {
     text-align: center;

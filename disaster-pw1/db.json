@@ -1,16 +1,6 @@
 {
   "desastres": [
     {
-      "id": "6093",
-      "dataDeOcorrencia": "01/01/1996",
-      "duracaoDias": 2,
-      "intensidadeEscala": 2,
-      "qtdVitimas": 2,
-      "tipo": "Inundação",
-      "regiao": "Centro-Oeste",
-      "imagemUrl": "https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/08/46104_4E0BF309ECDE373E-4.jpg?w=1024"
-    },
-    {
       "id": "7de4",
       "dataDeOcorrencia": "02/02/2002",
       "duracaoDias": 1,

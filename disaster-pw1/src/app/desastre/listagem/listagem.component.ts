@@ -37,7 +37,7 @@ export class ListagemComponent implements OnInit {
   }
 
   alterar(desastre: Desastre) {
-    this.roteador.navigate([`manutencao-desastre`, desastre.id]);
+    this.roteador.navigate([`cadastro-desastre`, desastre.id]);
   }
 
 }

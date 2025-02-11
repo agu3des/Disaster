@@ -1,5 +1,5 @@
 <div class="container-cards">
-    @for (desastre of DESASTRES; track desastre.dataDeOcorrencia) {
+    @for (desastre of DESASTRES; track desastre.id) {
       <mat-card class="card-desastre" appearance="outlined">
         
         <!-- Imagem do desastre -->
@@ -7,7 +7,7 @@
   
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Data: {{ desastre.dataDeOcorrencia }}</mat-card-title>
+          <mat-card-subtitle>Data: {{ desastre.dataDeOcorrencia }}</mat-card-subtitle>
           <mat-card-subtitle>Região: {{ desastre.regiao}}</mat-card-subtitle>
           <mat-card-subtitle>Intensidade: {{ desastre.intensidadeEscala }}</mat-card-subtitle>
           <mat-card-subtitle>Vítimas: {{ desastre.qtdVitimas }}</mat-card-subtitle>
@@ -21,6 +21,14 @@
             {{desastre.intensidadeEscala}} na escala Richter.
           </p>
         </mat-card-content>
+        <mat-card-actions>
+          <button mat-icon-button (click)="alterar(desastre)">
+              <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="remover(desastre)">
+              <mat-icon>delete</mat-icon>
+          </button>
+      </mat-card-actions>
       </mat-card>
     }
   </div>

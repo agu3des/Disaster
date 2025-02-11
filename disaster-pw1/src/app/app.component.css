@@ -14,13 +14,12 @@ app-root {
 .layout {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o layout ocupe toda a altura da tela */
+    min-height: 100vh; 
 }
 
 .conteudo {
-    flex-grow: 1; /* Faz com que o conteúdo ocupe o espaço restante */
+    flex-grow: 1; 
     display: flex;
-    flex-direction: column; /* Organiza os elementos internos corretamente */
 }
 
 .footer {

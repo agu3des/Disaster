@@ -17,7 +17,7 @@ export const routes: Routes = [
         component: ManutencaoComponent
     },
     {
-        path: 'edicao-desastre/:id',
+        path: 'cadastro-desastre/:id',
         component: ManutencaoComponent
     },
     {
