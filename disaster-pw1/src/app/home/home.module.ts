@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { HomePageComponent } from './home-page/home-page.component';
 import { OriginComponent } from './origin/origin.component';
 
 import { FormsModule } from "@angular/forms";
@@ -20,6 +21,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
+    HomePageComponent,
     OriginComponent
   ],
   imports: [
@@ -36,6 +38,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatProgressBarModule 
   ],
   exports: [    
+    HomePageComponent,
     OriginComponent
   ]
 })

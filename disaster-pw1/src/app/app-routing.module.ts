@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListagemComponent } from "./desastre/listagem/listagem.component";
 import { ManutencaoComponent } from "./desastre/manutencao/manutencao.component";
 
+import { HomePageComponent } from './home/home-page/home-page.component';
 import { OriginComponent } from './home/origin/origin.component';
 import { LoginModalComponent } from './layout/login/login.component';
 
@@ -17,13 +18,17 @@ export const routes: Routes = [
         component: ManutencaoComponent
     },
     {
-        path: 'cadastro-desastre/:id',
+        path: 'edicao-desastre/:id',
         component: ManutencaoComponent
     },
     {
         path: 'app-origin',
         component: OriginComponent
     },    
+    {
+        path: 'app-home-page',
+        component: HomePageComponent
+    },
     {
         path: 'app-login',
         component: LoginModalComponent
