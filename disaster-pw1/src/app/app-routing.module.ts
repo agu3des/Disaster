@@ -9,6 +9,9 @@ import { OriginComponent } from './home/origin/origin.component';
 import { LoginModalComponent } from './layout/login/login.component';
 
 export const routes: Routes = [
+    { 
+        path: '', redirectTo: '/app-home-page', pathMatch: 'full' 
+    },
     {
         path: 'listagem-desastres',
         component: ListagemComponent

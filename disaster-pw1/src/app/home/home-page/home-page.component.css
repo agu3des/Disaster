@@ -51,7 +51,6 @@
     text-align: center;
     font-size: 1.25rem;
     margin-bottom: 2rem;
-    border: 2px solid  #1e40af;
 }
 
 .btn {
@@ -72,24 +71,32 @@
     display: flex;
     justify-content: space-around;
     padding: 4rem 2rem;
-    background-color: #e0f2fe;
 }
 
 .feature {
     text-align: center;
     max-width: 300px;
+    background: none; /* Remove o fundo */
+    color: black; /* Define a cor padrão do texto */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .feature i {
     font-size: 3rem;
-    color: #3b82f6;
+    color: black; /* Ícones pretos por padrão */
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
 }
 
-.feature h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.feature:hover {
+    transform: translateY(-10px); /* Efeito de "saltar" */
+    color: #3b82f6; /* Cor azul ao passar o mouse */
 }
+
+.feature:hover i {
+    color: #3b82f6; /* Ícones mudam para azul */
+}
+
 
 .container {
     display: flex;
@@ -101,11 +108,12 @@
 }
 
 .card {
+    color: white;
     background-color: #4d59c3;
     border-radius: 20px;
-    width: 280px;
+    width: 250px;
     margin: 10px;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
@@ -114,6 +122,8 @@
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #3c46a0;
+    background-color: rgb(184, 176, 226);
 }
 
 .card img {
@@ -128,18 +138,18 @@
 .card .name {
     font-size: 18px;
     font-weight: 500;
-    color: #1a1a1a;
+    color: #ffffff;
     margin-bottom: 5px;
 }
 
 .card .role {
     font-size: 15px;
-    color: #1a1a1a;
+    color: #ffffff;
     margin-bottom: 15px;
 }
 
 .card .description {
     font-size: 16px;
-    color: #1a1a1a;
+    color: #ffffff;
     line-height: 1.6;
 }
