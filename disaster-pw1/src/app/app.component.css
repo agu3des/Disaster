@@ -19,7 +19,6 @@ app-root {
     display: flex;
 }
 
-.padding {
-    margin-left: 5%;
-    margin-right: 2%;
+.conteudo-container {
+    width: 100%;
 }
