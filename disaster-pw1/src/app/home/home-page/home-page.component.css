@@ -1,7 +1,10 @@
 .header {
     position: relative;
     height: 500px;
-    background: url('/disaster-pw1/public/assets/img/fundo-azul.png') no-repeat center center/cover;
+    background: url('../../../../public/assets/img/fundo-azul.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
     display: flex;
     justify-content: center;
     align-items: center;
