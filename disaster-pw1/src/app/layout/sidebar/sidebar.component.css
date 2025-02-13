@@ -3,11 +3,13 @@
     background-color: #bfdbfe; 
     height: 100%;
     width: 100%;
-    padding: 2rem;
+    nav {
+        padding: 24px;
+    }
 }
   
 .search-item a {
-    display: block;
+    display: flex;
     padding: 10px 15px;
     color: #000;
     text-decoration: none;
