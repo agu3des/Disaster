@@ -1,9 +1,22 @@
 # Disaster PW1
 ### Título do Aplicativo: Disaster
 
+### Instalações necessárias:
+- Caso não tenha o nodejs, instale com:
+    1. winget install Schniz.fnm
+    2. fnm install 22
+- Instale os módulos com: `npm install`
+- Instale o angular com: `npm install -g @angular/cli`
+- Instale o json-server com: `npm install -g json-server`
+
+### Rodar o projeto:
+- Entre na pasta disaster-pw1
+- Rode o ng serve em um terminal
+- Rode o json-server db.json
+
 ### Descrição do Projeto
 
-### Temática: 
+#### Temática: 
 Sistema de Gerenciamento de Desastres Naturais
 
 #### Descrição do Problema:
