@@ -1,6 +1,6 @@
 <h1 align="center">DISASTER</h1>
 
-`"News"` - Aplicação que simula um sistema de um de desastres naturais. 
+`"Disaster"` - Aplicação que simula um sistema de um de desastres naturais. 
 
 ## Projeto
 O projeto não está completo!
@@ -10,9 +10,15 @@ O projeto não está completo!
 + `Angular`
 + `Typescript`
 + `DB Json Server`
-+ `Sql, Plpgsql`
++ `SQL e PlpgSQL`
 + `MongoDB`
-
++ `Html e Css`
++ `JavaScript`
 
 ## Uso
 > Este projeto está sendo desenvolvido para melhor compreenssão das tecnologias já citadas.
+
+## Acessos
+- Angular/Typescript/DB Json Server : Pasta disaster-pw1
+- SQL/PlpgSQL/MongoDB : Pasta database
+- Html/Css/Javascript : Pasta disaster-prototipo
