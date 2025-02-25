@@ -1,0 +1,23 @@
+<main>
+    <section id="volunteer">
+        <h2>{{ actionButtonName }} Volunteer</h2>
+        <form (ngSubmit)="registerOrUpdate()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" [(ngModel)]="volunteer.name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" [(ngModel)]="volunteer.email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" [(ngModel)]="volunteer.phone" name="phone" required>
+            </div>
+
+            <button type="submit" class="btn-submit">{{ actionButtonName }}</button>
+        </form>
+    </section>
+</main>

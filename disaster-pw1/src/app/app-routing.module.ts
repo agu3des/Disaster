@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListagemComponent } from "./desastre/listagem/listagem.component";
 import { ManutencaoComponent } from "./desastre/manutencao/manutencao.component";
 
+import { VolunteerManagerComponent } from './volunteer/volunteer-manager/volunteer-manager.component';
+
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { OriginComponent } from './home/origin/origin.component';
 import { LoginModalComponent } from './layout/login/login.component';
@@ -36,6 +38,11 @@ export const routes: Routes = [
         path: 'app-login',
         component: LoginModalComponent
     },
+    {
+        path: 'app-volunteer-manager',
+        component: VolunteerManagerComponent
+    },
+    
 ];
 
 @NgModule({

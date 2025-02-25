@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MenuComponent } from './menu/menu.component';
+import { VolunteerManagerComponent } from '../volunteer/volunteer-manager/volunteer-manager.component';
 
 import { MatButton, MatButtonModule } from "@angular/material/button";
 import { MatMenuModule, MatMenuTrigger } from "@angular/material/menu";
@@ -28,6 +29,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
   exports: [
     MenuComponent,
+    VolunteerManagerComponent,
     HeaderComponent,
     FooterComponent,
     LoginModalComponent,
