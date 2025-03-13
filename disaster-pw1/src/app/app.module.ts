@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { FirestoreModule } from "./firestore/firestore.module";
+
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -30,6 +32,8 @@ import { provideHttpClient } from "@angular/common/http";
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
+        AppRoutingModule,
+        FirestoreModule,
         MatFormFieldModule,
         MatIconModule,
         MatBadgeModule,
@@ -38,8 +42,7 @@ import { provideHttpClient } from "@angular/common/http";
         MatCardModule,
         LayoutModule,
         DesastreModule,
-        VolunteerModule,
-        AppRoutingModule
+        VolunteerModule
     ],
     providers: [
         provideAnimationsAsync(),
