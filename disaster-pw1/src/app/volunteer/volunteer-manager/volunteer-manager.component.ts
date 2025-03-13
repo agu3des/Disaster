@@ -41,14 +41,14 @@ export class VolunteerManagerComponent {
       this.volunteerService.register(this.volunteer).subscribe(
         registeredVolunteer => {
           this.mensagemService.sucesso('Volunteer successfully registered!');
-          this.router.navigate(['/volunteer-list']);
+          this.router.navigate(['/app-volunteer-list']);
         }
       );
     } else {
       this.volunteerService.update(this.volunteer).subscribe(
         updatedVolunteer => {
           this.mensagemService.sucesso('Volunteer successfully updated!');
-          this.router.navigate(['/volunteer-list']);
+          this.router.navigate(['/app-volunteer-list']);
         }
       );
     }

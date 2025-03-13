@@ -52,6 +52,10 @@ export const routes: Routes = [
         path: 'app-volunteer-list',
         component: VolunteerListComponent
     },
+    {
+        path: 'edit-volunteer/:id',
+        component: VolunteerManagerComponent
+    },
     
 ];
 
