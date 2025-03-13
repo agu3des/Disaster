@@ -5,14 +5,20 @@ import { ListagemComponent } from "./desastre/listagem/listagem.component";
 import { ManutencaoComponent } from "./desastre/manutencao/manutencao.component";
 
 import { VolunteerManagerComponent } from './volunteer/volunteer-manager/volunteer-manager.component';
+import { VolunteerListComponent } from './volunteer/volunteer-list/volunteer-list.component';
 
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { OriginComponent } from './home/origin/origin.component';
 import { LoginModalComponent } from './layout/login/login.component';
+import { MenuComponent } from './layout/menu/menu.component';
 
 export const routes: Routes = [
     { 
         path: '', redirectTo: '/app-home-page', pathMatch: 'full' 
+    },
+    {
+        path: 'app-menu',
+        component: MenuComponent
     },
     {
         path: 'listagem-desastres',
@@ -41,6 +47,10 @@ export const routes: Routes = [
     {
         path: 'app-volunteer-manager',
         component: VolunteerManagerComponent
+    },
+    {
+        path: 'app-volunteer-list',
+        component: VolunteerListComponent
     },
     
 ];

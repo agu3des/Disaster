@@ -22,19 +22,34 @@
                 </a>
             </li>
             <li class="search-item">
-                <a href="volunteer.html">
-                    <i class="fas fa-user"></i> Voluntariado
-                    <span></span>
-                </a>
-            </li>
-            <li class="search-item">
                 <a href="#ongs">
                     <i class="fas fa-hands-helping"></i> Ongs
                     <span></span>
                 </a>
             </li>
 
-            <app-menu></app-menu>
+<!-- Menu de Voluntariado -->
+            <li class="search-item dropdown">
+                <a (click)="toggleMenu('volunteer')">
+                    <i class="fas fa-user"></i> Voluntariado <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul *ngIf="menuOpen === 'volunteer'">
+                    <li><a [routerLink]="['/app-volunteer-manager']"><i class="fas fa-plus-circle"></i> Cadastrar</a></li>
+                    <li><a [routerLink]="['/app-volunteer-list']"><i class="fas fa-list"></i> Listar</a></li>
+                </ul>
+            </li>
+
+            <!-- Menu de Desastres -->
+            <li class="search-item dropdown">
+                <a (click)="toggleMenu('disaster')">
+                    <i class="fas fa-exclamation-triangle"></i> Desastres <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul *ngIf="menuOpen === 'disaster'">
+                    <li><a [routerLink]="['/cadastro-desastre']"><i class="fas fa-plus-circle"></i> Cadastrar</a></li>
+                    <li><a [routerLink]="['/listagem-desastres']"><i class="fas fa-list"></i> Listar</a></li>
+                </ul>
+            </li>
+
 
         </ul>
     </nav>

@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
+  menuOpen: string | null = null;
 
+  toggleMenu(menu: string) {
+    this.menuOpen = this.menuOpen === menu ? null : menu;
+  }
 }

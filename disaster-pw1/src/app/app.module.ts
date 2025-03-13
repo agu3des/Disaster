@@ -17,6 +17,7 @@ import { MatCardModule } from "@angular/material/card";
 
 import { LayoutModule } from "./layout/layout.module";
 import { DesastreModule } from "./desastre/desastre.module";
+import { VolunteerModule } from "./volunteer/volunteer.module";
 
 import { provideHttpClient } from "@angular/common/http";
 
@@ -37,6 +38,7 @@ import { provideHttpClient } from "@angular/common/http";
         MatCardModule,
         LayoutModule,
         DesastreModule,
+        VolunteerModule,
         AppRoutingModule
     ],
     providers: [

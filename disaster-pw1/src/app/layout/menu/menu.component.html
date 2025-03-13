@@ -1,12 +1,12 @@
-<button class="menu" mat-button [matMenuTriggerFor]="menu">
-  <i class="fas fa-exclamation-triangle"></i> Desastres
-</button>
-
-<mat-menu #menu="matMenu">
-<button mat-menu-item [routerLink]="['/cadastro-desastre']">
-  <i class="fas fa-plus-circle"></i> Cadastrar Desastre
-</button>
-<button mat-menu-item [routerLink]="['/listagem-desastres']">
-  <i class="fas fa-list"></i> Listar Desastres
-</button>
-</mat-menu>
+<form>
+    <button class="menu" mat-button [matMenuTriggerFor]="menu">
+      <i class="fas" [ngClass]="icon"></i> {{ title }}
+    </button>
+  
+    <mat-menu #menu="matMenu">
+      <button *ngFor="let route of routes" mat-menu-item [routerLink]="[route.path]">
+        <i class="fas" [ngClass]="route.icon"></i> {{ route.label }}
+      </button>
+    </mat-menu>
+</form>
+  

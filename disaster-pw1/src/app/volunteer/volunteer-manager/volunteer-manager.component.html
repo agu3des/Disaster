@@ -1,23 +1,26 @@
-<main>
-    <section id="volunteer">
-        <h2>{{ actionButtonName }} Volunteer</h2>
-        <form (ngSubmit)="registerOrUpdate()">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" [(ngModel)]="volunteer.name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" [(ngModel)]="volunteer.email" name="email" required>
-            </div>
+<div>
+    <h2>Volunteer</h2>
+    <form>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="volunteer.name" name="name" placeholder="Fulano de tal">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="volunteer.email" name="email" placeholder="fulanodetal@mail.com">
+        </mat-form-field>
 
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" [(ngModel)]="volunteer.phone" name="phone" required>
-            </div>
+        <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input matInput [(ngModel)]="volunteer.phone" name="phone" placeholder="82 98964-8761">
+        </mat-form-field>
 
-            <button type="submit" class="btn-submit">{{ actionButtonName }}</button>
-        </form>
-    </section>
-</main>
+        <mat-form-field>
+            <mat-label>Link de Imagem</mat-label>
+            <input matInput [(ngModel)]="volunteer.imagemUrl" name="imagemUrl" placeholder="Link Imagem">
+          </mat-form-field>
+        
+        <button mat-raised-button (click)="registerOrUpdate()">{{ actionButtonName }}</button>
+    </form>
+</div>
