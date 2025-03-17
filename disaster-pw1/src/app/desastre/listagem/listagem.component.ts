@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Desastre } from '../../shared/model/desastre';
 import { DESASTRES } from '../../shared/model/DESASTRES';
 import { DesastreRestService } from "../../shared/services/desastre-rest.service";
+import { DesastreFirestoreService } from "../../shared/services/desastre-firestore.service";
+
 
 
 @Component({
@@ -15,7 +17,7 @@ import { DesastreRestService } from "../../shared/services/desastre-rest.service
 export class ListagemComponent implements OnInit {
   DESASTRES: Desastre[] = [];
 
-  constructor(private desastreService: DesastreRestService, private roteador: Router) {
+  constructor(private desastreService: DesastreFirestoreService, private roteador: Router) {
   }
 
   ngOnInit() {

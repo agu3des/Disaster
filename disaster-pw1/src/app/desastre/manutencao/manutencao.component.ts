@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { Desastre } from '../../shared/model/desastre';
 import { DesastreRestService } from "../../shared/services/desastre-rest.service";
+import { DesastreFirestoreService } from "../../shared/services/desastre-firestore.service";
 import { MensagemSweetService } from "../../shared/services/mensagem-sweet.service";
 
 @Component({
@@ -18,7 +19,7 @@ export class ManutencaoComponent {
 
 
   constructor(
-    private desastreService: DesastreRestService, 
+    private desastreService: DesastreFirestoreService, 
     private mensagemService: MensagemSweetService,
     private roteador: Router, 
     private rotaAtivada: ActivatedRoute
@@ -27,7 +28,7 @@ export class ManutencaoComponent {
     this.estahCadastrando = true;
     this.desastre = new Desastre();
 
-    const idEdicao = this.rotaAtivada.snapshot.params['id'];
+    const idEdicao = this.rotaAtivada.snapshot.paramMap.get('id');
     if (idEdicao) {
       this.nomeBotaoAcao = 'Atualizar';
       this.estahCadastrando = false;

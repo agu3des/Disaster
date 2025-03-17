@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {from, Observable} from 'rxjs';
-import {Desastre} from '../model/desastre';
-import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
-import {map} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { from, Observable } from 'rxjs';
+import { Desastre } from '../model/desastre';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -25,13 +25,13 @@ export class DesastreFirestoreService {
   }
 
 
-  inserir(desastre: Desastre): Observable<object> {
+  cadastrar(desastre: Desastre): Observable<object> {
     delete desastre.id;
     return from(this.colecaoDesastres.add(Object.assign({}, desastre)));
   }
 
 
-  apagar(id: string): Observable<void> {
+  remover(id: string): Observable<void> {
     return from(this.colecaoDesastres.doc(id).delete());
   }
 
@@ -39,8 +39,7 @@ export class DesastreFirestoreService {
   pesquisarPorId(id: string): Observable<Desastre> {
     return this.colecaoDesastres.doc(id).get().pipe(map(document => new Desastre(document.id, document.data())));
   }
-
-
+  
   atualizar(desastre: Desastre): Observable<void> {
     const id = desastre.id;
     delete desastre.id;
