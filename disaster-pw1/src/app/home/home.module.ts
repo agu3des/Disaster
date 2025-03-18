@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from "@angular/router";
+import { AppRoutingModule } from '../app-routing.module';
+
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { OriginComponent } from './origin/origin.component';
+
+import { VolunteerModule } from '../volunteer/volunteer.module';
 
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
@@ -26,6 +31,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   ],
   imports: [
     CommonModule,
+    RouterModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -35,7 +42,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatIconModule,
     MatBadgeModule,
     MatSelectModule,
-    MatProgressBarModule 
+    MatProgressBarModule,
+    VolunteerModule
   ],
   exports: [    
     HomePageComponent,

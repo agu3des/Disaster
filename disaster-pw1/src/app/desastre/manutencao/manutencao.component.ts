@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { Desastre } from '../../shared/model/desastre';
 import { DesastreRestService } from "../../shared/services/desastre-rest.service";
-import { DesastreFirestoreService } from "../../shared/services/desastre-firestore.service";
+//import { DesastreFirestoreService } from "../../shared/services/desastre-firestore.service";
 import { MensagemSweetService } from "../../shared/services/mensagem-sweet.service";
 
 @Component({
@@ -19,7 +19,7 @@ export class ManutencaoComponent {
 
 
   constructor(
-    private desastreService: DesastreFirestoreService, 
+    private desastreService: DesastreRestService, 
     private mensagemService: MensagemSweetService,
     private roteador: Router, 
     private rotaAtivada: ActivatedRoute

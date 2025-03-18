@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Desastre } from "../model/desastre";
 import { Observable } from "rxjs";
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DesastreRestService {
 
-  private URL_DESASTRES = 'http://localhost:3000/desastres';
+  private URL_DESASTRES = environment.URL_DESASTRES;
 
   constructor(private http: HttpClient) { }
 

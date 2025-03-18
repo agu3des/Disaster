@@ -21,7 +21,14 @@ import { LayoutModule } from "./layout/layout.module";
 import { DesastreModule } from "./desastre/desastre.module";
 import { VolunteerModule } from "./volunteer/volunteer.module";
 
-import { provideHttpClient } from "@angular/common/http";
+import { MensagemIF } from './shared/model/MensagemIF';
+import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
+import { ErroInterceptor } from './interceptor/erro-interceptor';
+
+import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi} from "@angular/common/http";
+
+
+import { DesastreRestService } from './shared/services/desastre-rest.service';
 
 
 @NgModule({
@@ -46,7 +53,21 @@ import { provideHttpClient } from "@angular/common/http";
     ],
     providers: [
         provideAnimationsAsync(),
-        provideHttpClient()
+        provideHttpClient(),
+        provideHttpClient(withInterceptorsFromDi()),
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErroInterceptor,
+            multi: true
+        },
+        {
+        provide: MensagemIF,
+        useClass: MensagemSweetService
+        },
+        {
+        provide: DesastreRestService,
+        useClass: DesastreRestService
+        },
     ],
     exports: [
     ],

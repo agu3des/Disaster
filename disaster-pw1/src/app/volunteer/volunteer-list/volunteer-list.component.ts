@@ -22,6 +22,18 @@ export class VolunteerListComponent implements OnInit {
     );
   }
 
+  trackVolunteerId(index: number, volunteer: any): number {
+    return volunteer.id;  
+  }
+  
+  getVolunteerIcon(volunteer: any): string {
+    if (volunteer.name) {
+      return 'person';  
+    }
+    return 'account_circle'; 
+  }
+  
+
   remove(volunteerToRemove: Volunteer) {
     if (volunteerToRemove.id) {
       this.volunteerService.remove(volunteerToRemove.id).subscribe(

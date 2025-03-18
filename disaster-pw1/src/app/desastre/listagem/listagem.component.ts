@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Desastre } from '../../shared/model/desastre';
 import { DESASTRES } from '../../shared/model/DESASTRES';
 import { DesastreRestService } from "../../shared/services/desastre-rest.service";
-import { DesastreFirestoreService } from "../../shared/services/desastre-firestore.service";
+//import { DesastreFirestoreService } from "../../shared/services/desastre-firestore.service";
 
 
 
@@ -17,8 +17,36 @@ import { DesastreFirestoreService } from "../../shared/services/desastre-firesto
 export class ListagemComponent implements OnInit {
   DESASTRES: Desastre[] = [];
 
-  constructor(private desastreService: DesastreFirestoreService, private roteador: Router) {
+  constructor(private desastreService: DesastreRestService, private roteador: Router) {
   }
+
+  trackDesastreId(index: number, item: any): number {
+    return item.id; 
+  }
+
+  getDisasterIcon(tipo: string): string {
+    switch (tipo.toLowerCase()) {
+      case 'enxurrada':
+        return 'water'; 
+      case 'deslizamento':
+        return 'terrain';  
+      case 'incendio':
+        return 'fireplace';  
+      case 'seca':
+        return 'invert_colors';  
+      case 'inundacao':
+        return 'waves';  
+      case 'vendaval':
+        return 'storm';  
+      case 'granizo':
+        return 'ac_unit';  
+      default:
+        return 'warning';  
+    }
+  }
+  
+  
+
 
   ngOnInit() {
     this.desastreService.listar().subscribe(
