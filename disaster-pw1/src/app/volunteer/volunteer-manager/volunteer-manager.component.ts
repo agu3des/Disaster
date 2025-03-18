@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { Volunteer } from '../../shared/model/volunteer';
 import { VolunteerRestService } from "../../shared/services/volunteer-rest.service";
+import { VolunteerFirestoreService } from "../../shared/services/volunteer-firestore.service";
 import { MensagemSweetService } from "../../shared/services/mensagem-sweet.service";
 
 @Component({
@@ -17,7 +18,7 @@ export class VolunteerManagerComponent {
   isRegistering: boolean;
 
   constructor(
-    private volunteerService: VolunteerRestService, 
+    private volunteerService: VolunteerFirestoreService, 
     private mensagemService: MensagemSweetService,
     private router: Router, 
     private activatedRoute: ActivatedRoute
@@ -26,7 +27,7 @@ export class VolunteerManagerComponent {
     this.isRegistering = true;
     this.volunteer = new Volunteer();
 
-    const editId = this.activatedRoute.snapshot.params['id'];
+    const editId = this.activatedRoute.snapshot.paramMap.get('id');
     if (editId) {
       this.actionButtonName = 'Update';
       this.isRegistering = false;

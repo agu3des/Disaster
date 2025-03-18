@@ -1,11 +1,18 @@
 export class Volunteer {
 
-    constructor(public id?: string,
-                public name?: string,
-                public email?: string,
-                public phone?: string,
-                public imagemUrl?: string
-    ) {
+    id?: string;
+    name = '';
+    email = '';
+    phone = '';
+    imagemUrl = '';
 
+
+    constructor(id?: string, volunteer: Volunteer = {name : '', email: '', phone: '', imagemUrl: ''}) {
+        this.id = id;
+        this.name = volunteer.name;
+        this.email = volunteer.email;
+        this.phone = volunteer.phone;
+        this.imagemUrl = volunteer.imagemUrl;
     }
+        
 }

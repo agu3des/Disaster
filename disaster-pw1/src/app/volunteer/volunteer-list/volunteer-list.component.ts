@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Volunteer } from '../../shared/model/volunteer';
 import { VOLUNTEERS } from '../../shared/model/VOLUNTEERS';
 import { VolunteerRestService } from "../../shared/services/volunteer-rest.service";
+import { VolunteerFirestoreService } from "../../shared/services/volunteer-firestore.service";
 
 @Component({
   selector: 'app-volunteer-list',
@@ -13,13 +14,25 @@ import { VolunteerRestService } from "../../shared/services/volunteer-rest.servi
 export class VolunteerListComponent implements OnInit {
   VOLUNTEERS: Volunteer[] = [];
 
-  constructor(private volunteerService: VolunteerRestService, private router: Router) {}
+  constructor(private volunteerService: VolunteerFirestoreService, private router: Router) {}
 
   ngOnInit() {
     this.volunteerService.list().subscribe(
       volunteers => this.VOLUNTEERS = volunteers
     );
   }
+
+  trackVolunteerId(index: number, volunteer: any): number {
+    return volunteer.id;  
+  }
+  
+  getVolunteerIcon(volunteer: any): string {
+    if (volunteer.name) {
+      return 'person';  
+    }
+    return 'account_circle'; 
+  }
+  
 
   remove(volunteerToRemove: Volunteer) {
     if (volunteerToRemove.id) {

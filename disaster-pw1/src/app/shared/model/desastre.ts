@@ -1,13 +1,25 @@
 export class Desastre {
 
-    constructor(public id?: string,
-                public dataDeOcorrencia?: string,
-                public duracaoDias?: number,
-                public intensidadeEscala?: number,
-                public qtdVitimas?: number,
-                public tipo?: string,
-                public regiao?: string,
-                public imagemUrl?: string
-                ) {
+
+    id?: string;
+    dataDeOcorrencia = '';
+    duracaoDias?: number;
+    intensidadeEscala?: number;
+    qtdVitimas?: number;
+    tipo = '';
+    regiao = '';
+    imagemUrl = '';
+
+
+    constructor(id?: string, desastre: Desastre = {dataDeOcorrencia: '', tipo: '', regiao: '', imagemUrl: ''}) {
+        this.id = id;
+        this.dataDeOcorrencia = desastre.dataDeOcorrencia;
+        this.duracaoDias = desastre.duracaoDias;
+        this.intensidadeEscala = desastre.intensidadeEscala;
+        this.qtdVitimas = desastre.qtdVitimas;
+        this.tipo = desastre.tipo;
+        this.regiao = desastre.regiao;
+        this.imagemUrl = desastre.imagemUrl;
     }
+        
 }
