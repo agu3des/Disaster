@@ -9,7 +9,7 @@ div {
 }
 
 h2 {
- text-align: center;
+  align-items: center;
 }
 
 form {
@@ -19,9 +19,6 @@ form {
   padding: 2rem;
   width: 100%;
   max-width: 600px;
-  margin: auto;
-  margin-top: 16px;
-  margin-bottom: 16px;
 }
 
 mat-form-field {
@@ -39,20 +36,25 @@ mat-input, mat-select {
 }
 
 mat-select .mat-select-arrow {
-  color: #00796b;
+  color: #000679;
 }
 
 button {
-  background-color: #3138a7;
+  background-color: #4550ed;
   color: white;
   font-size: 16px;
   padding: 12px;
   margin-top: 20px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  width: 100%;
+
 }
 
 button:hover {
   background-color: #000e4d;
+  color: white;
+}
+
+.mat-mdc-button:not(:disabled) {
+  color: white;
 }

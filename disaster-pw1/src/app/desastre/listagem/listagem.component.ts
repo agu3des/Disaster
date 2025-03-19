@@ -4,6 +4,8 @@ import { Desastre } from '../../shared/model/desastre';
 import { DESASTRES } from '../../shared/model/DESASTRES';
 import { DesastreRestService } from "../../shared/services/desastre-rest.service";
 //import { DesastreFirestoreService } from "../../shared/services/desastre-firestore.service";
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../../layout/confirmation-dialog/confirmation-dialog.component';
 
 
 
@@ -17,7 +19,7 @@ import { DesastreRestService } from "../../shared/services/desastre-rest.service
 export class ListagemComponent implements OnInit {
   DESASTRES: Desastre[] = [];
 
-  constructor(private desastreService: DesastreRestService, private roteador: Router) {
+  constructor(private desastreService: DesastreRestService, private roteador: Router, private dialog: MatDialog) {
   }
 
   trackDesastreId(index: number, item: any): number {
@@ -45,14 +47,25 @@ export class ListagemComponent implements OnInit {
     }
   }
   
-  
-
-
   ngOnInit() {
     this.desastreService.listar().subscribe(
         desastres => this.DESASTRES = desastres
     );
   }
+
+  confirmRemove(desastre: Desastre) {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '300px',
+      data: { message: `Are you sure you want to delete ${desastre.id}?` }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.remover(desastre);
+      }
+    });
+  }
+
 
   remover(desastreARemover: Desastre) {
     if (desastreARemover.id) {

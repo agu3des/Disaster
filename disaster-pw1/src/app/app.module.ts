@@ -31,7 +31,7 @@ import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptors
 import { DesastreRestService } from './shared/services/desastre-rest.service';
 
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
-import { ConfirmationDialogComponent } from './shared/components/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogComponent } from './layout/confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({

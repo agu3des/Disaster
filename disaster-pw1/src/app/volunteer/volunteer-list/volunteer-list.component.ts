@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { MatDialog } from '@angular/material/dialog';
 import { Volunteer } from '../../shared/model/volunteer';
 import { VolunteerFirestoreService } from "../../shared/services/volunteer-firestore.service";
-import { ConfirmationDialogComponent } from '../../shared/components/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogComponent } from '../../layout/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-volunteer-list',
