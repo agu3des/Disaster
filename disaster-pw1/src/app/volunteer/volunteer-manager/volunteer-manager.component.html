@@ -1,26 +1,42 @@
-<div>
-    <h2>Volunteer</h2>
-    <form>
-        <mat-form-field>
-            <mat-label>Name</mat-label>
-            <input matInput [(ngModel)]="volunteer.name" name="name" placeholder="Fulano de tal">
-        </mat-form-field>
-        
-        <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput [(ngModel)]="volunteer.email" name="email" placeholder="fulanodetal@mail.com">
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Phone</mat-label>
-            <input matInput [(ngModel)]="volunteer.phone" name="phone" placeholder="82 98964-8761">
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Link de Imagem</mat-label>
-            <input matInput [(ngModel)]="volunteer.imagemUrl" name="imagemUrl" placeholder="Link Imagem">
-          </mat-form-field>
-        
-        <button mat-raised-button (click)="registerOrUpdate()">{{ actionButtonName }}</button>
-    </form>
-</div>
+<form [formGroup]="volunteerForm" (ngSubmit)="registerOrUpdate()">
+    <!-- Name Field -->
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required>
+      <mat-error *ngIf="volunteerForm.get('name')?.hasError('required')">
+        Name is required.
+      </mat-error>
+    </mat-form-field>
+    
+    <!-- Email Field -->
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" required>
+      <mat-error *ngIf="volunteerForm.get('email')?.hasError('required')">
+        Email is required.
+      </mat-error>
+      <mat-error *ngIf="volunteerForm.get('email')?.hasError('email')">
+        Please enter a valid email.
+      </mat-error>
+    </mat-form-field>
+    
+    <!-- Phone Field -->
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone" required>
+      <mat-error *ngIf="volunteerForm.get('phone')?.hasError('required')">
+        Phone is required.
+      </mat-error>
+    </mat-form-field>
+    
+    <!-- Image URL Field -->
+    <mat-form-field>
+      <mat-label>Image URL</mat-label>
+      <input matInput formControlName="imagemUrl">
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" type="submit" [disabled]="volunteerForm.invalid">
+      {{ actionButtonName }}
+    </button>
+  </form>
+  

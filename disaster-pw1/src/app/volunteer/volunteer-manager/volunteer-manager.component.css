@@ -53,3 +53,9 @@ button {
 button:hover {
   background-color: #000e4d;
 }
+
+form {
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
