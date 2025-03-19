@@ -1,0 +1,77 @@
+<header>
+    <h1>NGOs</h1>
+    <nav>
+        <ul>
+            <li><a routerLink="/ongs">
+                Non-Governmental Organizations (NGOs) are vital players in addressing social, economic, and environmental challenges worldwide. They operate independently from the government and work towards the betterment of communities through initiatives in education, healthcare, disaster relief, and human rights. NGOs empower individuals, promote sustainable development, and create lasting change by tackling critical issues where governments and other institutions might fall short. 
+                Whether through volunteer work, donations, or advocacy, NGOs rely on collective efforts to make a meaningful impact on global and local scales.
+            </a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="carousel">
+    <button class="prev" (click)="moveSlide(-1)">&#10094;</button>
+    <div class="carousel-container" id="carousel">
+        <img src="https://via.placeholder.com/600x400?text=NGO+Image+1" alt="Image 1" class="slide">
+        <img src="https://via.placeholder.com/600x400?text=NGO+Image+2" alt="Image 2" class="slide">
+        <img src="https://via.placeholder.com/600x400?text=NGO+Image+3" alt="Image 3" class="slide">
+    </div>
+    <button class="next" (click)="moveSlide(1)">&#10095;</button>
+</section>
+
+<section class="cards">
+    <div class="card">
+        <h2>About NGOs</h2>
+        <p>Discover NGOs that are making a difference in the world.</p>
+        <a routerLink="/ongs" class="btn">Learn More</a>
+    </div>
+    <div class="card">
+        <h2>How to Donate</h2>
+        <p>Contribute to social causes and help those in need.</p>
+        <a routerLink="/doacoes" class="btn">Make a Donation</a>
+    </div>
+</section>
+
+<section class="featured-ngos">
+    <h2>Featured NGOs</h2>
+    <div class="ngo-list">
+        <div class="ngo-item">
+            <h3>NGO 1</h3>
+            <img src="https://via.placeholder.com/300x200?text=NGO+1" alt="NGO 1">
+            <p>Helping people in need around the world.</p>
+        </div>
+        <div class="ngo-item">
+            <h3>NGO 2</h3>
+            <img src="https://via.placeholder.com/300x200?text=NGO+2" alt="NGO 2">
+            <p>Providing education to children in underprivileged areas.</p>
+        </div>
+        <div class="ngo-item">
+            <h3>NGO 3</h3>
+            <img src="https://via.placeholder.com/300x200?text=NGO+3" alt="NGO 3">
+            <p>Promoting environmental sustainability and awareness.</p>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>What People Say</h2>
+    <div class="testimonial-carousel">
+        <button class="prev" (click)="moveTestimonial(-1)">&#10094;</button>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>"This NGO helped me get access to education when I had no other options. I'm forever grateful!"</p>
+                <span>- John Doe</span>
+            </div>
+            <div class="testimonial">
+                <p>"Thanks to their support, I can now feed my family and improve our living conditions."</p>
+                <span>- Jane Smith</span>
+            </div>
+            <div class="testimonial">
+                <p>"The work they do in underprivileged communities is truly inspiring. A great cause!"</p>
+                <span>- Mark Johnson</span>
+            </div>
+        </div>
+        <button class="next" (click)="moveTestimonial(1)">&#10095;</button>
+    </div>
+</section>

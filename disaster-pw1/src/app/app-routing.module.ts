@@ -9,6 +9,8 @@ import { VolunteerListComponent } from './volunteer/volunteer-list/volunteer-lis
 
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { OriginComponent } from './home/origin/origin.component';
+import { OngsComponent } from './home/ongs/ongs.component';
+
 import { LoginModalComponent } from './layout/login/login.component';
 import { MenuComponent } from './layout/menu/menu.component';
 
@@ -36,6 +38,10 @@ export const routes: Routes = [
         path: 'app-origin',
         component: OriginComponent
     },    
+    {
+        path: 'app-ongs',
+        component: OngsComponent
+    }, 
     {
         path: 'app-home-page',
         component: HomePageComponent

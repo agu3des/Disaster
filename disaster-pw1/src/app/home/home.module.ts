@@ -6,6 +6,7 @@ import { AppRoutingModule } from '../app-routing.module';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { OriginComponent } from './origin/origin.component';
+import { OngsComponent } from './ongs/ongs.component';
 
 import { VolunteerModule } from '../volunteer/volunteer.module';
 
@@ -27,7 +28,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 @NgModule({
   declarations: [
     HomePageComponent,
-    OriginComponent
+    OriginComponent,
+    OngsComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +49,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   ],
   exports: [    
     HomePageComponent,
-    OriginComponent
+    OriginComponent,
+    OngsComponent
   ]
 })
 export class HomeModule { 
