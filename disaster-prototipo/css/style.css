@@ -146,7 +146,7 @@ body {
 .header {
     position: relative;
     height: 500px;
-    background: url('../../../../public/assets/img/fundo-azul.png');
+    background: url('.././img/fundo-azul.png');
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: contain;
