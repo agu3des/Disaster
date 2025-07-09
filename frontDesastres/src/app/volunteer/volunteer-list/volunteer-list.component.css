@@ -1,0 +1,29 @@
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card-volunteer {
+  width: 300px;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;  /* Garante que a borda arredondada se aplique também à imagem */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Suaviza a transformação e a mudança de cor */
+}
+
+.card-volunteer:hover {
+  background-color: #e0f7fa; /* Azul claro ao passar o mouse */
+  transform: scale(1.05); /* Aumenta o tamanho do card em 5% */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar um efeito de elevação */
+}
+
+.card-volunteer img {
+  height: 180px;  /* Define a altura da imagem */
+  object-fit: cover;  /* Garante que a imagem preencha o espaço sem distorcer */
+  width: 100%;   /* Faz a imagem ocupar toda a largura do card */
+}
+  

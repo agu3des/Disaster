@@ -14,7 +14,12 @@ DISASTER: uma plataforma de gerenciamento e noticiamento de desastres naturais n
 ### GPS
 - [1º Sprint](https://app.asana.com/1/1210050606991754/project/1210060237697800/board/1210060661998215)
 - [2º Sprint](https://app.asana.com/1/1210050606991754/project/1210241551237989/board/1210244047989330)
+- [3º Sprint](https://app.asana.com/1/1210050606991754/project/1210443099416680/board/1210443039692889)
+- [4º Sprint](https://app.asana.com/1/1210050606991754/project/1210631043992239/board/1210632103516434)
 
 ### CE
 - [1º Sprint](https://app.asana.com/1/1210050606991754/project/1210050603817895/board/1210050577945118)
 - [2º Sprint](https://app.asana.com/1/1210050606991754/project/1210239956457318/board/1210240105134543)
+- [3º Sprint](https://app.asana.com/1/1210050606991754/project/1210443049812584/board/1210443356536694)
+- [4º Sprint](https://app.asana.com/1/1210050606991754/project/1210630566334157/board/1210632164951192)
+

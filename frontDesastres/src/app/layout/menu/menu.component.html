@@ -1,0 +1,12 @@
+<form>
+    <button class="menu" mat-button [matMenuTriggerFor]="menu">
+      <i class="fas" [ngClass]="icon"></i> {{ title }}
+    </button>
+  
+    <mat-menu #menu="matMenu">
+      <button *ngFor="let route of routes" mat-menu-item [routerLink]="[route.path]">
+        <i class="fas" [ngClass]="route.icon"></i> {{ route.label }}
+      </button>
+    </mat-menu>
+</form>
+  

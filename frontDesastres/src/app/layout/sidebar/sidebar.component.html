@@ -1,0 +1,61 @@
+
+<aside id="sidebar">
+    <nav>
+        <ul>
+            <li class="search-item">
+                <a [routerLink]="['/app-home-page']">
+                    <i class="fas fa-home"></i> Home
+                    <span></span>
+                </a>
+            </li>
+            
+            <li class="search-item">
+                <a href="#">
+                    <i class="fas fa-quote-left"></i> Testimonials
+                    <span></span>
+                </a>
+            </li>
+            <li class="search-item">
+                <a href="#">
+                    <i class="fas fa-donate"></i> Donate
+                    <span></span>
+                </a>
+            </li>
+
+            <!-- Menu de Voluntariado -->
+            <li class="search-item dropdown">
+                <a (click)="toggleMenu('volunteer')">
+                    <i class="fas fa-user"></i> Voluntariado <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul *ngIf="menuOpen === 'volunteer'">
+                    <li><a [routerLink]="['/app-volunteer-manager']"><i class="fas fa-plus-circle"></i> Cadastrar</a></li>
+                    <li><a [routerLink]="['/app-volunteer-list']"><i class="fas fa-list"></i> Listar</a></li>
+                </ul>
+            </li>
+
+            <!-- Menu de Desastres -->
+            <li class="search-item dropdown">
+                <a (click)="toggleMenu('disaster')">
+                    <i class="fas fa-exclamation-triangle"></i> Desastres <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul *ngIf="menuOpen === 'disaster'">
+                    <li><a [routerLink]="['/cadastro-desastre']"><i class="fas fa-plus-circle"></i> Cadastrar</a></li>
+                    <li><a [routerLink]="['/listagem-desastres']"><i class="fas fa-list"></i> Listar</a></li>
+                </ul>
+            </li>
+
+                        <!-- Menu de Desastres -->
+            <li class="search-item dropdown">
+                <a (click)="toggleMenu('ONGs')">
+                    <i class="fas fa-hands-helping"></i> ONGs <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul *ngIf="menuOpen === 'ONGs'">
+                    <li><a [routerLink]="['/app-ong-manager']"><i class="fas fa-plus-circle"></i> Cadastrar</a></li>
+                    <li><a [routerLink]="['/app-ong-list']"><i class="fas fa-list"></i> Listar</a></li>
+                </ul>
+            </li>
+
+
+        </ul>
+    </nav>
+</aside>

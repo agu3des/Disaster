@@ -1,0 +1,55 @@
+<form [formGroup]="ongForm" (ngSubmit)="registerOrUpdate()">
+  <h2>Ong</h2>
+
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="nome" required>
+    <mat-error *ngIf="ongForm.get('nome')?.hasError('required')">
+      Nome é obrigatório.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" required>
+    <mat-error *ngIf="ongForm.get('email')?.hasError('required')">
+      Email é obrigatório.
+    </mat-error>
+    <mat-error *ngIf="ongForm.get('email')?.hasError('email')">
+      Insira um email válido.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Telefone</mat-label>
+    <input matInput formControlName="telefone" required>
+    <mat-error *ngIf="ongForm.get('telefone')?.hasError('required')">
+      Telefone é obrigatório.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Região de Atuação</mat-label>
+    <input matInput formControlName="regiaoAtuacao">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Rede Social</mat-label>
+    <input matInput formControlName="rede_social">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>CNPJ</mat-label>
+    <input matInput formControlName="cnpj">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Chave Pix</mat-label>
+    <input matInput formControlName="pix">
+  </mat-form-field>
+
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="ongForm.invalid">
+    {{ actionButtonName }}
+  </button>
+</form>
