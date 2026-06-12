@@ -40,9 +40,9 @@ public class SecurityConfig {
                 .requestMatchers("/api/auth/**").permitAll() 
 
                 .requestMatchers("/error").permitAll()
-                
-                .requestMatchers(HttpMethod.GET, "/volunteers/**", "/disasters/**").permitAll()
-                
+
+                .requestMatchers(HttpMethod.GET, "/api/volunteers/**", "/api/disasters/**").permitAll()  
+
                 .anyRequest().authenticated()
             )
             .addFilterBefore(new JwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);

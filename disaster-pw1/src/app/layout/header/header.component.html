@@ -21,19 +21,20 @@
         </nav>
 
         <div *ngIf="!isLoggedIn()">
-            <button mat-raised-button color="accent" (click)="abrirModalLogin()">
-            <mat-icon>login</mat-icon> Entrar
+            <button mat-raised-button color="accent" (click)="meuModalLogin.openModal(); $any($event.target).blur()">                <mat-icon>login</mat-icon> Sign In
             </button>
         </div>
 
         <div *ngIf="isLoggedIn()" style="display: flex; align-items: center; gap: 15px;">
             <span style="font-size: 14px;">
-            Bem-vindo, <strong>{{ getUserEmail() }}</strong>
+                Welcome, <strong>{{ getUserEmail() }}</strong>
             </span>
             
-            <button mat-icon-button (click)="logout()" title="Sair do sistema">
-            <mat-icon>logout</mat-icon>
+            <button mat-icon-button (click)="logout()" title="Logout">
+                <mat-icon>logout</mat-icon>
             </button>
         </div>
     </div>
 </header>
+
+<app-login #meuModalLogin></app-login>

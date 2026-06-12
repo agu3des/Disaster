@@ -35,14 +35,25 @@ export class VolunteerListComponent implements OnInit {
     return volunteer.name ? 'person' : 'account_circle';
   }
   
-  private get currentUser(): any {
-    const userJson = localStorage.getItem('user_logged_in');
-    return userJson ? JSON.parse(userJson) : null;
+  private get currentUserEmail(): string | null {
+    const token = localStorage.getItem('jwt_token');
+    
+    if (!token) return null;
+
+    try {
+      const payloadBase64 = token.split('.')[1];
+      const payloadDecoded = atob(payloadBase64); 
+      const payloadJson = JSON.parse(payloadDecoded);
+      return payloadJson.sub; 
+    } catch (e) {
+      console.error('Erro ao decodificar o token', e);
+      return null;
+    }
   }
 
   isOwner(item: any): boolean {
-    const user = this.currentUser;
-    return !!(user && item.createdBy && item.createdBy.id === user.id);
+    const userEmail = this.currentUserEmail;
+    return !!(userEmail && item.createdBy && item.createdBy.email === userEmail);
   }
 
   canEdit(volunteer: any): boolean {

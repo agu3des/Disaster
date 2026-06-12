@@ -3,7 +3,7 @@ package br.edu.ifpb.gugawag.apiDesastres.service;
 import br.edu.ifpb.gugawag.apiDesastres.repositories.DisasterRepository;
 import br.edu.ifpb.gugawag.apiDesastres.model.Disaster;
 import br.edu.ifpb.gugawag.apiDesastres.model.User;
-import br.edu.ifpb.gugawag.apiDesastres.model.Volunteer;
+import br.edu.ifpb.gugawag.apiDesastres.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +18,9 @@ public class DisasterService {
 
     @Autowired
     private DisasterRepository disasterRepository;
+    
+    @Autowired
+    private UserRepository userRepository;
 
     public List<Disaster> getDisasters() {
         return this.disasterRepository.findAll();
@@ -28,10 +31,14 @@ public class DisasterService {
     }
 
     @Transactional
-    public Disaster createOrUpdate(Disaster disaster, User userLoggedIn) {
+    public Disaster createOrUpdate(Disaster disaster, String userEmail) {
+        // O Service resolve a busca do usuário sem expor o Repository para o Controller
+        User userLoggedIn = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found!"));
+
         if (disaster.getId() != null) {
             Disaster disasterExists = this.disasterRepository.findById(disaster.getId())
-                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Volunteer not found!"));
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Disaster not found!"));
             
             if (!disasterExists.getCreatedBy().getId().equals(userLoggedIn.getId())) {
                 throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Access denied: You are not the creator!");
@@ -43,7 +50,11 @@ public class DisasterService {
         }
         return this.disasterRepository.save(disaster);
     }
-    public void delete(Long id, User userLoggedIn) {
+    
+    public void delete(Long id, String userEmail) {
+        User userLoggedIn = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found!"));
+
         Disaster disasterExists = this.disasterRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Disaster not found!"));
 

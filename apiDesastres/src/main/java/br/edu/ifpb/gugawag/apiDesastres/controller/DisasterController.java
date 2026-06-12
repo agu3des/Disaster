@@ -28,19 +28,19 @@ public class DisasterController {
 
     @PostMapping
     public Disaster createDisaster(@RequestBody Disaster disaster) {
-        User userLoggedIn = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return this.disasterService.createOrUpdate(disaster, userLoggedIn);
+        String userEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return this.disasterService.createOrUpdate(disaster, userEmail);
     }
 
     @PutMapping("/{id}")
     public Disaster updateDisaster(@RequestBody Disaster disaster) {
-        User userLoggedIn = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return this.disasterService.createOrUpdate(disaster, userLoggedIn);
+        String userEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return this.disasterService.createOrUpdate(disaster, userEmail);
     }
 
     @DeleteMapping("/{id}")
     public void deleteDisaster(@PathVariable("id") Long id) {
-        User userLoggedIn = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        this.disasterService.delete(id, userLoggedIn);
+        String userEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        this.disasterService.delete(id, userEmail);
     }
 }

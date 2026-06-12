@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -10,8 +10,11 @@ declare var google: any;
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginModalComponent implements AfterViewInit {
-  isLoginModalOpen = false;
+export class LoginModalComponent {
+  isModalOpen = false;
+  isLoginMode = true; 
+
+  name = '';
   email = '';
   password = '';
 
@@ -20,13 +23,12 @@ export class LoginModalComponent implements AfterViewInit {
     private router: Router
   ) { }
 
-  ngAfterViewInit(): void {
-    this.renderizarBotaoGoogle();
-  }
-
-  renderizarBotaoGoogle(): void {
+renderGoogleButton(): void {
     const googleBtn = document.getElementById("google-btn");
-    if (googleBtn) googleBtn.innerHTML = ''; 
+    if (!googleBtn) {
+      return; 
+    }
+    googleBtn.innerHTML = ''; 
 
     if (typeof google !== 'undefined' && google.accounts) {
       google.accounts.id.initialize({
@@ -35,68 +37,105 @@ export class LoginModalComponent implements AfterViewInit {
       });
 
       google.accounts.id.renderButton(
-        document.getElementById("google-btn"),
+        googleBtn,
         { theme: "outline", size: "large", width: 250 }
       );
     }
   }
-
   handleGoogleResponse(response: any): void {
     const idToken = response.credential; 
-    console.log('Token recebido do Google com sucesso!');
-    this.enviarTokenParaOBackend(idToken);
+    console.log('Google token received successfully!');
+    this.sendTokenToBackend(idToken);
   }
 
-  enviarTokenParaOBackend(idToken: string): void {
+  sendTokenToBackend(idToken: string): void {
     this.http.post('http://localhost:8090/api/auth/google', { token: idToken })
     .subscribe({
-      next: (resposta: any) => {
-        console.log('Login na nossa API Spring Boot feito com sucesso!', resposta);
-        localStorage.setItem('jwt_token', resposta.token);
-        this.closeLoginModal();
-        this.router.navigate(['/']); 
+      next: (response: any) => {
+        console.log('Backend authentication successful!', response);
+        localStorage.setItem('jwt_token', response.token);
+        this.closeModal();
+        window.location.reload(); 
       },
-      error: (erro) => {
-        console.error('Erro ao enviar token para o back-end', erro);
+      error: (err) => {
+        console.error('Error sending token to backend', err);
       }
     });
   }
 
-  openLoginModal(): void {
-    this.isLoginModalOpen = true;
+  openModal(): void {
+    this.isModalOpen = true;
+    this.isLoginMode = true; 
+    setTimeout(() => this.renderGoogleButton(), 100); 
   }
 
-  closeLoginModal(): void {
-    this.isLoginModalOpen = false;
+  closeModal(): void {
+    this.isModalOpen = false;
+    this.clearFields();
+  }
+
+  toggleMode(): void {
+    this.isLoginMode = !this.isLoginMode;
+    this.clearFields();
+    setTimeout(() => this.renderGoogleButton(), 100); 
+  }
+
+  clearFields(): void {
+    this.name = '';
+    this.email = '';
+    this.password = '';
   }
 
   onLoginSubmit(): void {
-      if (this.email && this.password) {
-        const credentials = {
-          email: this.email,
-          password: this.password
-        };
+    if (this.email && this.password) {
+      const credentials = {
+        email: this.email,
+        password: this.password
+      };
 
-        this.http.post('http://localhost:8090/api/auth/login', credentials)
-          .subscribe({
-            next: (response: any) => {
-              console.log('Manual login successful!', response);
-              localStorage.setItem('jwt_token', response.token);
-              this.closeLoginModal();
-              window.location.reload(); 
-            },
-            error: (err) => {
-              console.error('Manual login error:', err);
-              alert('Incorrect email or password!');
-            }
-          });
+      this.http.post('http://localhost:8090/api/auth/login', credentials)
+        .subscribe({
+          next: (response: any) => {
+            console.log('Manual login successful!', response);
+            localStorage.setItem('jwt_token', response.token);
+            this.closeModal();
+            window.location.reload(); 
+          },
+          error: (err) => {
+            console.error('Manual login error:', err);
+            alert('Incorrect email or password!');
+          }
+        });
 
-      } else {
-        alert('Please fill in both the email and password fields.');
-      }
+    } else {
+      alert('Please fill in both the email and password fields.');
     }
+  }
 
-  openRegisterModal(): void {
-    this.closeLoginModal();
+  onRegisterSubmit(): void {
+    if (this.name && this.email && this.password) {
+      const newUser = {
+        name: this.name,
+        email: this.email,
+        password: this.password
+      };
+
+      this.http.post('http://localhost:8090/api/auth/register', newUser)
+        .subscribe({
+          next: (response: any) => {
+            console.log('Registration successful!', response);
+            localStorage.setItem('jwt_token', response.token);
+            this.closeModal();
+            window.location.reload(); 
+          },
+          error: (err) => {
+            console.error('Registration error:', err);
+            alert('Error creating account. The email might already be in use.');
+          }
+        });
+
+    } else {
+      alert('Please fill in all fields (Name, Email, and Password).');
+    }
   }
 }

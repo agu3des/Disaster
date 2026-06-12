@@ -1,6 +1,8 @@
 package br.edu.ifpb.gugawag.apiDesastres.model;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -67,8 +69,9 @@ public class Volunteer {
         this.imageUrl = imageUrl;
     }
     
-    @ManyToOne(fetch = FetchType.LAZY) 
-    @JoinColumn(name = "create_by_id", nullable = false, updatable = false) 
+    @ManyToOne
+    @JoinColumn(name = "create_by_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "password"}) 
     private User createdBy;
 
     public User getCreatedBy() {

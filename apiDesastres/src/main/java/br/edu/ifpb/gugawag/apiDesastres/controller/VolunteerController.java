@@ -35,19 +35,19 @@ public class VolunteerController {
 
     @PostMapping
     public Volunteer createVolunteer(@RequestBody Volunteer volunteer){
-        User userLoggedIn = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return this.volunteerService.createOrUpdate(volunteer, userLoggedIn);
+        String userEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return this.volunteerService.createOrUpdate(volunteer, userEmail);
     }
 
     @PutMapping("/{id}")
     public Volunteer updateVolunteer(@RequestBody Volunteer volunteer){
-        User userLoggedIn = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return this.volunteerService.createOrUpdate(volunteer, userLoggedIn);
+        String userEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return this.volunteerService.createOrUpdate(volunteer, userEmail);
     }
 
     @DeleteMapping("/{id}")
     public void deleteVolunteer(@PathVariable("id") Long id) {
-        User userLoggedIn = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        this.volunteerService.delete(id, userLoggedIn);
+        String userEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        this.volunteerService.delete(id, userEmail);
     }
 }
