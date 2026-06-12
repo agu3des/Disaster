@@ -71,16 +71,32 @@ export class LoginModalComponent implements AfterViewInit {
   }
 
   onLoginSubmit(): void {
-    if (this.email && this.password) {
-      console.log('Login manual com', this.email, this.password);
-      this.closeLoginModal();
-    } else {
-      console.log('Preencha os campos de e-mail e senha.');
+      if (this.email && this.password) {
+        const credentials = {
+          email: this.email,
+          password: this.password
+        };
+
+        this.http.post('http://localhost:8090/api/auth/login', credentials)
+          .subscribe({
+            next: (response: any) => {
+              console.log('Manual login successful!', response);
+              localStorage.setItem('jwt_token', response.token);
+              this.closeLoginModal();
+              window.location.reload(); 
+            },
+            error: (err) => {
+              console.error('Manual login error:', err);
+              alert('Incorrect email or password!');
+            }
+          });
+
+      } else {
+        alert('Please fill in both the email and password fields.');
+      }
     }
-  }
 
   openRegisterModal(): void {
-    console.log('Abrindo modal de registro...');
     this.closeLoginModal();
   }
 }
