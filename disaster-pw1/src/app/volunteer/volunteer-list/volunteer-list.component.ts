@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { MatDialog } from '@angular/material/dialog';
 import { Volunteer } from '../../shared/model/volunteer';
-import { VolunteerFirestoreService } from "../../shared/services/volunteer-firestore.service";
+import { VolunteerRestService } from "../../shared/services/volunteer-rest.service";
+// import { VolunteerFirestoreService } from "../../shared/services/volunteer-firestore.service";
 import { ConfirmationDialogComponent } from '../../layout/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
@@ -15,7 +16,7 @@ export class VolunteerListComponent implements OnInit {
   VOLUNTEERS: Volunteer[] = [];
 
   constructor(
-    private volunteerService: VolunteerFirestoreService, 
+    private volunteerService: VolunteerRestService, 
     private router: Router,
     private dialog: MatDialog
   ) {}
@@ -33,6 +34,20 @@ export class VolunteerListComponent implements OnInit {
   getVolunteerIcon(volunteer: any): string {
     return volunteer.name ? 'person' : 'account_circle';
   }
+  
+  private get currentUser(): any {
+    const userJson = localStorage.getItem('user_logged_in');
+    return userJson ? JSON.parse(userJson) : null;
+  }
+
+  isOwner(item: any): boolean {
+    const user = this.currentUser;
+    return !!(user && item.createdBy && item.createdBy.id === user.id);
+  }
+
+  canEdit(volunteer: any): boolean {
+    return this.isOwner(volunteer);
+  }
 
   confirmRemove(volunteer: Volunteer) {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
@@ -49,12 +64,17 @@ export class VolunteerListComponent implements OnInit {
 
   remove(volunteerToRemove: Volunteer) {
     if (volunteerToRemove.id) {
-      this.volunteerService.remove(volunteerToRemove.id).subscribe(() => {
-        this.VOLUNTEERS = this.VOLUNTEERS.filter(v => v.id !== volunteerToRemove.id);
+      this.volunteerService.remove(volunteerToRemove.id).subscribe({
+        next: () => {
+          this.VOLUNTEERS = this.VOLUNTEERS.filter(v => v.id !== volunteerToRemove.id);
+        },
+        error: (err) => {
+          console.error('Error to delete:', err);
+        }
       });
     }
   }
-
+  
   edit(volunteer: Volunteer) {
     this.router.navigate([`edit-volunteer`, volunteer.id]);
   }

@@ -14,7 +14,7 @@ import { MatFormFieldModule} from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatInputModule } from "@angular/material/input";
-import { MatButton, MatButtonModule } from "@angular/material/button";
+import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 
 import { LayoutModule } from "./layout/layout.module";
@@ -23,16 +23,17 @@ import { VolunteerModule } from "./volunteer/volunteer.module";
 
 import { MensagemIF } from './shared/model/MensagemIF';
 import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
+
 import { ErroInterceptor } from './interceptor/erro-interceptor';
+import { AuthInterceptor } from './interceptor/auth-interceptor';
 
-import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi} from "@angular/common/http";
-
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 
 import { DesastreRestService } from './shared/services/desastre-rest.service';
+import { VolunteerRestService } from './shared/services/volunteer-rest.service';
 
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from './layout/confirmation-dialog/confirmation-dialog.component';
-
 
 @NgModule({
     declarations: [
@@ -54,28 +55,37 @@ import { ConfirmationDialogComponent } from './layout/confirmation-dialog/confir
         LayoutModule,
         DesastreModule,
         VolunteerModule,
-        MatDialogModule
+        MatDialogModule,
     ],
     providers: [
         provideAnimationsAsync(),
-        provideHttpClient(),
         provideHttpClient(withInterceptorsFromDi()),
+        
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ErroInterceptor,
             multi: true
         },
-        {
-        provide: MensagemIF,
-        useClass: MensagemSweetService
+        { 
+            provide: HTTP_INTERCEPTORS, 
+            useClass: AuthInterceptor, 
+            multi: true 
+
         },
         {
-        provide: DesastreRestService,
-        useClass: DesastreRestService
+            provide: MensagemIF,
+            useClass: MensagemSweetService
+        },
+        {
+            provide: DesastreRestService,
+            useClass: DesastreRestService
+        },
+        {
+            provide: VolunteerRestService,
+            useClass: VolunteerRestService
         },
     ],
-    exports: [
-    ],
+    exports: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

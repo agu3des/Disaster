@@ -1,3 +1,11 @@
+<div class="action-header">
+  <h2>Lista de Voluntários</h2>
+  <button mat-raised-button color="primary" [routerLink]="['/app-volunteer-manager']">
+    <mat-icon>add</mat-icon>
+    Novo Voluntário
+  </button>
+</div>
+
 <div class="container-cards">
   <div *ngFor="let volunteer of VOLUNTEERS; trackBy: trackVolunteerId">
     <mat-card class="card-volunteer" appearance="outlined">
@@ -20,11 +28,11 @@
         </p>
       </mat-card-content>
 
-      <mat-card-actions>
-        <button mat-icon-button (click)="edit(volunteer)" aria-label="Edit volunteer">
+      <mat-card-actions *ngIf="isOwner(volunteer)">
+        <button mat-icon-button (click)="edit(volunteer)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button (click)="confirmRemove(volunteer)" aria-label="Remove volunteer">
+        <button mat-icon-button (click)="confirmRemove(volunteer)">
           <mat-icon>delete</mat-icon>
         </button>
       </mat-card-actions>

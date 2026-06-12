@@ -1,55 +1,80 @@
-
-<aside id="sidebar">
-    <nav>
-        <ul>
-            <li class="search-item">
-                <a [routerLink]="['/app-home-page']">
-                    <i class="fas fa-home"></i> Home
-                    <span></span>
+<aside id="modern-sidebar">
+    <nav class="sidebar-nav">
+        <ul class="nav-list">
+            
+            <li class="nav-item">
+                <a [routerLink]="['/app-home-page']" class="nav-link">
+                    <div class="link-content">
+                        <i class="fas fa-home"></i> <span>Home</span>
+                    </div>
                 </a>
             </li>
             
-            <li class="search-item">
-                <a href="testimonials.html">
-                    <i class="fas fa-quote-left"></i> Testimonials
-                    <span></span>
+            <li class="nav-item">
+                <a href="testimonials.html" class="nav-link">
+                    <div class="link-content">
+                        <i class="fas fa-quote-left"></i> <span>Testimonials</span>
+                    </div>
                 </a>
             </li>
-            <li class="search-item">
-                <a href="donations.html">
-                    <i class="fas fa-donate"></i> Donate
-                    <span></span>
+            
+            <li class="nav-item">
+                <a href="donations.html" class="nav-link">
+                    <div class="link-content">
+                        <i class="fas fa-donate"></i> <span>Donate</span>
+                    </div>
                 </a>
             </li>
-            <li class="search-item">
-                <a [routerLink]="['/app-ongs']">
-                    <i class="fas fa-hands-helping"></i> NGOs
-                    <span></span>
+            
+            <li class="nav-item">
+                <a [routerLink]="['/app-ongs']" class="nav-link">
+                    <div class="link-content">
+                        <i class="fas fa-hands-helping"></i> <span>NGOs</span>
+                    </div>
                 </a>
             </li>
 
-            <!-- Menu de Voluntariado -->
-            <li class="search-item dropdown">
-                <a (click)="toggleMenu('volunteer')">
-                    <i class="fas fa-user"></i> Voluntariado <i class="fas fa-chevron-down"></i>
+            <li class="nav-item dropdown">
+                <a (click)="toggleMenu('volunteer')" class="nav-link" [class.active]="menuOpen === 'volunteer'">
+                    <div class="link-content">
+                        <i class="fas fa-user"></i> <span>Voluntariado</span>
+                    </div>
+                    <i class="fas fa-chevron-down chevron-icon" [class.rotate]="menuOpen === 'volunteer'"></i>
                 </a>
-                <ul *ngIf="menuOpen === 'volunteer'">
-                    <li><a [routerLink]="['/app-volunteer-manager']"><i class="fas fa-plus-circle"></i> Cadastrar</a></li>
-                    <li><a [routerLink]="['/app-volunteer-list']"><i class="fas fa-list"></i> Listar</a></li>
+                <ul class="submenu" *ngIf="menuOpen === 'volunteer'">
+                    <li>
+                        <a [routerLink]="['/app-volunteer-manager']" class="submenu-link">
+                            <i class="fas fa-plus-circle"></i> Cadastrar
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/app-volunteer-list']" class="submenu-link">
+                            <i class="fas fa-list"></i> Listar
+                        </a>
+                    </li>
                 </ul>
             </li>
 
-            <!-- Menu de Desastres -->
-            <li class="search-item dropdown">
-                <a (click)="toggleMenu('disaster')">
-                    <i class="fas fa-exclamation-triangle"></i> Desastres <i class="fas fa-chevron-down"></i>
+            <li class="nav-item dropdown">
+                <a (click)="toggleMenu('disaster')" class="nav-link" [class.active]="menuOpen === 'disaster'">
+                    <div class="link-content">
+                        <i class="fas fa-exclamation-triangle"></i> <span>Desastres</span>
+                    </div>
+                    <i class="fas fa-chevron-down chevron-icon" [class.rotate]="menuOpen === 'disaster'"></i>
                 </a>
-                <ul *ngIf="menuOpen === 'disaster'">
-                    <li><a [routerLink]="['/cadastro-desastre']"><i class="fas fa-plus-circle"></i> Cadastrar</a></li>
-                    <li><a [routerLink]="['/listagem-desastres']"><i class="fas fa-list"></i> Listar</a></li>
+                <ul class="submenu" *ngIf="menuOpen === 'disaster'">
+                    <li>
+                        <a [routerLink]="['/cadastro-desastre']" class="submenu-link">
+                            <i class="fas fa-plus-circle"></i> Cadastrar
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/listagem-desastres']" class="submenu-link">
+                            <i class="fas fa-list"></i> Listar
+                        </a>
+                    </li>
                 </ul>
             </li>
-
 
         </ul>
     </nav>

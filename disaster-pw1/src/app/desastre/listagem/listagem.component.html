@@ -1,3 +1,11 @@
+<div class="action-header">
+  <h2>Lista de Desastres</h2>
+  <button mat-raised-button color="primary" [routerLink]="['/cadastro-desastre']">
+    <mat-icon>add</mat-icon>
+    Novo Desastre
+  </button>
+</div>
+
 <div class="container-cards">
   <div *ngFor="let desastre of DESASTRES; trackBy: trackDesastreId">
     <mat-card class="card-desastre" appearance="outlined">
@@ -27,11 +35,11 @@
         </p>
       </mat-card-content>
       
-      <mat-card-actions>
-        <button mat-icon-button (click)="alterar(desastre)" aria-label="Editar desastre">
+      <mat-card-actions *ngIf="isOwner(desastre)">
+        <button mat-icon-button (click)="edit(desastre)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button (click)="confirmRemove(desastre)" aria-label="Remover desastre">
+        <button mat-icon-button (click)="confirmRemove(desastre)">
           <mat-icon>delete</mat-icon>
         </button>
       </mat-card-actions>

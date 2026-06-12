@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 import { MatButton, MatButtonModule } from "@angular/material/button";
 import { RouterLink } from "@angular/router";
 
@@ -15,7 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginModalComponent } from './login/login.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MenuComponent } from './menu/menu.component';
-
+import { MatIcon } from "@angular/material/icon";
 
 
 @NgModule({
@@ -41,7 +40,8 @@ import { MenuComponent } from './menu/menu.component';
     RouterLink,
     FormsModule,
     MatMenuTrigger,
-    MatMenuModule, 
-  ]
+    MatMenuModule,
+    MatIcon
+],
 })
 export class LayoutModule { }

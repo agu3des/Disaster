@@ -27,3 +27,16 @@
   width: 100%;   /* Faz a imagem ocupar toda a largura do card */
 }
   
+.action-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px;
+  padding: 0 16px;
+}
+
+.action-header h2 {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}

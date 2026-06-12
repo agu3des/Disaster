@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from "@angular/router";
-import { VolunteerFirestoreService } from "../../shared/services/volunteer-firestore.service";
+import { VolunteerRestService } from "../../shared/services/volunteer-rest.service";
+// import { VolunteerFirestoreService } from "../../shared/services/volunteer-firestore.service";
 import { MensagemSweetService } from "../../shared/services/mensagem-sweet.service";
 
 @Component({
@@ -17,7 +18,7 @@ export class VolunteerManagerComponent {
 
   constructor(
     private fb: FormBuilder,
-    private volunteerService: VolunteerFirestoreService, 
+    private volunteerService: VolunteerRestService, 
     private mensagemService: MensagemSweetService,
     private router: Router, 
     private activatedRoute: ActivatedRoute

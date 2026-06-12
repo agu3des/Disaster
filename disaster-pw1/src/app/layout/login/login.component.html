@@ -1,21 +1,24 @@
-
 <div class="login-container">
   <div class="login-form">
     <h2 class="form-title">Login</h2>
-    <form id="loginForm" onsubmit="onLoginSubmit(event)">
+    
+    <form  class="form" id="loginForm" (ngSubmit)="onLoginSubmit()">
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required class="form-input">
+        <input type="email" id="email" name="email" [(ngModel)]="email" required class="form-input">
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required class="form-input">
+        <input type="password" id="password" name="password" [(ngModel)]="password" required class="form-input">
       </div>
-      <button type="submit" class="submit-button" id="submitButton" disabled>Login</button>
+      
+      <button type="submit" class="submit-button" id="submitButton">Login</button>
+      
+      <div id="google-btn" style="margin-top: 15px; display: flex; justify-content: center;"></div>
     </form>
+    
     <p class="register-link">
-      Don't have an account? <a [routerLink]="['/app-login']"onclick="openRegisterModal()">Sign up</a>
+      Don't have an account? <a [routerLink]="['/app-login']" (click)="openRegisterModal()" style="cursor: pointer;">Sign up</a>
     </p>
   </div>
 </div>
-

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { Desastre } from '../../shared/model/desastre';
-import { DESASTRES } from '../../shared/model/DESASTRES';
+// import { DESASTRES } from '../../shared/model/DESASTRES';
 import { DesastreRestService } from "../../shared/services/desastre-rest.service";
 //import { DesastreFirestoreService } from "../../shared/services/desastre-firestore.service";
 import { MatDialog } from '@angular/material/dialog';
@@ -12,14 +12,22 @@ import { ConfirmationDialogComponent } from '../../layout/confirmation-dialog/co
 @Component({
   selector: 'app-listagem',
   standalone: false,
-  
   templateUrl: './listagem.component.html',
   styleUrl: './listagem.component.css'
 })
 export class ListagemComponent implements OnInit {
   DESASTRES: Desastre[] = [];
 
-  constructor(private desastreService: DesastreRestService, private roteador: Router, private dialog: MatDialog) {
+  constructor(
+    private desastreService: DesastreRestService, 
+    private roteador: Router, 
+    private dialog: MatDialog) {
+  }
+  
+  ngOnInit() {
+    this.desastreService.listar().subscribe(
+        desastres => this.DESASTRES = desastres
+    );
   }
 
   trackDesastreId(index: number, item: any): number {
@@ -47,10 +55,18 @@ export class ListagemComponent implements OnInit {
     }
   }
   
-  ngOnInit() {
-    this.desastreService.listar().subscribe(
-        desastres => this.DESASTRES = desastres
-    );
+  private get currentUser(): any {
+    const userJson = localStorage.getItem('user_logged_in');
+    return userJson ? JSON.parse(userJson) : null;
+  }
+
+  isOwner(item: any): boolean {
+    const user = this.currentUser;
+    return !!(user && item.createdBy && item.createdBy.id === user.id);
+  }
+
+  canEdit(desastre: any): boolean {
+    return this.isOwner(desastre);
   }
 
   confirmRemove(desastre: Desastre) {
@@ -61,13 +77,13 @@ export class ListagemComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.remover(desastre);
+        this.remove(desastre);
       }
     });
   }
 
 
-  remover(desastreARemover: Desastre) {
+  remove(desastreARemover: Desastre) {
     if (desastreARemover.id) {
       this.desastreService.remover(desastreARemover.id).subscribe(
           () => {
@@ -76,10 +92,10 @@ export class ListagemComponent implements OnInit {
             this.DESASTRES.splice(desastreIndx, 1);
           }
       );
-    }
+    } 
   }
 
-  alterar(desastre: Desastre) {
+  edit(desastre: Desastre) {
     this.roteador.navigate([`edicao-desastre`, desastre.id]);
   }
 

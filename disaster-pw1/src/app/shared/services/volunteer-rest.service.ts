@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Volunteer } from "../model/volunteer";
 import { Observable } from "rxjs";
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VolunteerRestService {
 
-  private URL_VOLUNTEERS = 'http://localhost:3000/volunteers';
+  private URL_VOLUNTEERS = environment.URL_VOLUNTEERS;
 
   constructor(private http: HttpClient) { }
 

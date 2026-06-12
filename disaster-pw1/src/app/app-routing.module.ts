@@ -13,6 +13,7 @@ import { OngsComponent } from './home/ongs/ongs.component';
 
 import { LoginModalComponent } from './layout/login/login.component';
 import { MenuComponent } from './layout/menu/menu.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     { 
@@ -24,7 +25,8 @@ export const routes: Routes = [
     },
     {
         path: 'listagem-desastres',
-        component: ListagemComponent
+        component: ListagemComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'cadastro-desastre',
@@ -56,7 +58,8 @@ export const routes: Routes = [
     },
     {
         path: 'app-volunteer-list',
-        component: VolunteerListComponent
+        component: VolunteerListComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'edit-volunteer/:id',

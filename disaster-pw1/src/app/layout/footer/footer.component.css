@@ -1,87 +1,130 @@
-.footer {
-    background-color: #60A7DD;
-    color: #000000; 
-    padding: 24px;
-    text-align: center;
+/* =========================================
+   Rodapé (Footer)
+========================================= */
+.footer-modern {
+    background-color: #0f172a; /* Azul marinho quase preto, super elegante */
+    color: #94a3b8; /* Texto em cinza azulado claro */
+    padding: 60px 20px 20px 20px;
+    font-family: 'Inter', sans-serif;
 }
 
-.container {
+.footer-modern-container {
     max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* A 1ª coluna ocupa mais espaço */
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Colunas do Rodapé */
+.footer-col p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Coluna da Marca (Logo) */
+.footer-logo-img {
+    max-width: 140px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Deixa a logo branca caso ela seja preta. Remova se a logo já tiver as cores certas */
+}
+
+/* Redes Sociais Modernas */
+.modern-socials {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 12px;
+}
+
+.modern-socials a {
+    display: flex;
     align-items: center;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 250px;
-    padding: 16px;
-    text-align: center;
-}
-
-.footer-section h3 {
-    font-weight: bold;
-    font-size: 1.125rem;
-}
-
-.footer-section p {
-    font-size: 0.875rem;
-}
-
-
-.social-icons {
-    display: flex;
     justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #1e293b;
+    color: #f8fafc;
+    border-radius: 50%;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.modern-socials a:hover {
+    background-color: #60A7DD; /* Sua cor original vira o destaque */
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(96, 167, 221, 0.4);
+}
+
+/* Colunas de Ação (Testemunho e Doação) */
+.action-col h3 {
+    color: #f8fafc; /* Branco gelo */
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
     gap: 10px;
-    margin-top: 8px;
 }
 
-.social-icons a {
-    font-size: 20px;
-    transition: transform 0.3s ease, color 0.3s ease;
+.action-col h3 i {
+    color: #60A7DD; /* Ícones no seu azul original */
+    font-size: 1.3rem;
 }
 
-.social-icons a:hover {
-    color: #3b82f6; /* hover:text-blue-500 */
-    transform: scale(1.1);
+/* Botões em formato de link (Moderno) */
+.footer-link-btn {
+    display: inline-block;
+    color: #60A7DD;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, padding-left 0.3s ease;
 }
 
-/* Testemunho e Doação */
-.testimony, .donation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+.footer-link-btn:hover {
+    color: #ffffff;
+    padding-left: 5px; /* Efeito da setinha movendo pra frente */
 }
 
-.testimony a, .donation a {
-    font-size: 20px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.testimony a:hover, .donation a:hover {
-    color: #3b82f6;
-    transform: scale(1.1);
-}
-
-
-a:visited {
-    color: inherit; 
-}
-
-
-.footer-logo {
+/* Linha de Copyright */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #1e293b;
+    padding-top: 20px;
     text-align: center;
-    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #64748b;
 }
 
-.footer-logo img {
-    max-width: 130px;
+/* =========================================
+   Responsividade (Mobile e Tablet)
+========================================= */
+@media (max-width: 900px) {
+    .footer-modern-container {
+        grid-template-columns: 1fr 1fr; /* Duas colunas em tablets */
+    }
+    .brand-col {
+        grid-column: span 2; /* Logo ocupa a linha toda */
+        text-align: center;
+    }
+    .modern-socials {
+        justify-content: center;
+    }
 }
 
-.footer-logo p {
-    font-size: 0.875rem;
-    margin-top: 4px;
+@media (max-width: 600px) {
+    .footer-modern-container {
+        grid-template-columns: 1fr; /* Uma coluna em celulares */
+        text-align: center;
+    }
+    .brand-col {
+        grid-column: span 1;
+    }
+    .action-col h3 {
+        justify-content: center;
+    }
 }
