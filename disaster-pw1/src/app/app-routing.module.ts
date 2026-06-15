@@ -24,19 +24,6 @@ export const routes: Routes = [
         component: MenuComponent
     },
     {
-        path: 'listagem-desastres',
-        component: ListagemComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'cadastro-desastre',
-        component: ManutencaoComponent
-    },
-    {
-        path: 'edicao-desastre/:id',
-        component: ManutencaoComponent
-    },
-    {
         path: 'app-origin',
         component: OriginComponent
     },    
@@ -53,17 +40,32 @@ export const routes: Routes = [
         component: LoginModalComponent
     },
     {
-        path: 'app-volunteer-manager',
-        component: VolunteerManagerComponent
+        path: 'listagem-desastres',
+        component: ListagemComponent,
     },
     {
-        path: 'app-volunteer-list',
-        component: VolunteerListComponent,
+        path: 'cadastro-desastre',
+        component: ManutencaoComponent,
         canActivate: [AuthGuard]
     },
     {
+        path: 'edicao-desastre/:id',
+        component: ManutencaoComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'app-volunteer-list',
+        component: VolunteerListComponent
+    },
+    {
+        path: 'app-volunteer-manager',
+        component: VolunteerManagerComponent,
+                canActivate: [AuthGuard]
+    },
+    {
         path: 'edit-volunteer/:id',
-        component: VolunteerManagerComponent
+        component: VolunteerManagerComponent,
+        canActivate: [AuthGuard]
     },
     
 ];

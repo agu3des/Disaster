@@ -21,7 +21,7 @@
         </div>
         
         <mat-card-subtitle>Occurrence Date: {{ disaster.occurrenceDate | date:'dd/MM/yyyy' }}</mat-card-subtitle>
-        <mat-card-subtitle>Region: {{ disaster.region }}</mat-card-subtitle>
+        <mat-card-subtitle>Regions: {{ disaster.regions }}</mat-card-subtitle>
         <mat-card-subtitle>Intensity: {{ disaster.intensityScale }}</mat-card-subtitle>
         <mat-card-subtitle>Victims: {{ disaster.victimCount }}</mat-card-subtitle>
       </mat-card-header>
@@ -29,7 +29,7 @@
       <mat-card-content>
         <p>
           The {{ disaster.type }} disaster occurred on {{ disaster.occurrenceDate | date:'dd/MM/yyyy' }}, 
-          in the region(s) {{ disaster.region }} for {{ disaster.durationDays }} days, 
+          in the region(s) {{ disaster.regions }} for {{ disaster.durationDays }} days, 
           leaving a trail of {{ disaster.victimCount }} victims and reaching 
           {{ disaster.intensityScale }} on the Richter scale.
         </p>
