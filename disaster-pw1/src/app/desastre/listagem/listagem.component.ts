@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
-import { Desastre } from '../../shared/model/desastre';
-// import { DESASTRES } from '../../shared/model/DESASTRES';
-import { DesastreRestService } from "../../shared/services/desastre-rest.service";
-//import { DesastreFirestoreService } from "../../shared/services/desastre-firestore.service";
+import { Disaster } from '../../shared/model/disaster';
+import { DisasterRestService } from "../../shared/services/disaster-rest.service";
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../layout/confirmation-dialog/confirmation-dialog.component';
 
@@ -16,87 +14,103 @@ import { ConfirmationDialogComponent } from '../../layout/confirmation-dialog/co
   styleUrl: './listagem.component.css'
 })
 export class ListagemComponent implements OnInit {
-  DESASTRES: Desastre[] = [];
+  DISASTERS: Disaster[] = [];
 
   constructor(
-    private desastreService: DesastreRestService, 
-    private roteador: Router, 
-    private dialog: MatDialog) {
-  }
+    private disasterService: DisasterRestService, 
+    private router: Router, 
+    private dialog: MatDialog
+  ) {}
   
   ngOnInit() {
-    this.desastreService.listar().subscribe(
-        desastres => this.DESASTRES = desastres
+    this.disasterService.list().subscribe(
+        disasters => this.DISASTERS = disasters
     );
   }
 
-  trackDesastreId(index: number, item: any): number {
+  trackDisasterId(index: number, item: any): number {
     return item.id; 
   }
 
-  getDisasterIcon(tipo: string): string {
-    switch (tipo.toLowerCase()) {
-      case 'enxurrada':
+  getDisasterIcon(type: string): string {
+    if (!type) {
+      return 'warning';
+    }
+
+    switch (type.toLowerCase()) {
+      case 'flash_flood':
+      case 'flood':
         return 'water'; 
-      case 'deslizamento':
+      case 'landslide':
         return 'terrain';  
-      case 'incendio':
+      case 'fire':
         return 'fireplace';  
-      case 'seca':
+      case 'drought':
         return 'invert_colors';  
-      case 'inundacao':
-        return 'waves';  
-      case 'vendaval':
+      case 'windstorm':
         return 'storm';  
-      case 'granizo':
+      case 'hail':
         return 'ac_unit';  
       default:
         return 'warning';  
     }
   }
   
-  private get currentUser(): any {
-    const userJson = localStorage.getItem('user_logged_in');
-    return userJson ? JSON.parse(userJson) : null;
+  private get currentUserEmail(): string | null {
+    const token = localStorage.getItem('jwt_token');
+    
+    if (!token) return null;
+
+    try {
+      const payloadBase64 = token.split('.')[1];
+      const payloadDecoded = atob(payloadBase64); 
+      const payloadJson = JSON.parse(payloadDecoded);
+      return payloadJson.sub; 
+    } catch (e) {
+      console.error('Erro ao decodificar o token', e);
+      return null;
+    }
   }
 
   isOwner(item: any): boolean {
-    const user = this.currentUser;
-    return !!(user && item.createdBy && item.createdBy.id === user.id);
+    const userEmail = this.currentUserEmail;
+    return !!(userEmail && item.createdBy && item.createdBy.email === userEmail);
   }
 
-  canEdit(desastre: any): boolean {
-    return this.isOwner(desastre);
+  canEdit(disaster: any): boolean {
+    return this.isOwner(disaster);
   }
 
-  confirmRemove(desastre: Desastre) {
+
+  confirmRemove(disaster: Disaster) {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '300px',
-      data: { message: `Are you sure you want to delete ${desastre.id}?` }
+      data: { message: `Are you sure you want to delete this disaster?` }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.remove(desastre);
+        this.remove(disaster);
       }
     });
   }
 
-
-  remove(desastreARemover: Desastre) {
-    if (desastreARemover.id) {
-      this.desastreService.remover(desastreARemover.id).subscribe(
+  remove(disasterToRemove: Disaster) {
+    if (disasterToRemove.id) {
+      this.disasterService.remove(disasterToRemove.id).subscribe(
           () => {
-            console.log('removido');
-            const desastreIndx = this.DESASTRES.findIndex(desastre => desastre.id === desastreARemover.id);
-            this.DESASTRES.splice(desastreIndx, 1);
+            console.log('Successfully removed');
+            const disasterIndex = this.DISASTERS.findIndex(d => d.id === disasterToRemove.id);
+            if (disasterIndex !== -1) {
+              this.DISASTERS.splice(disasterIndex, 1);
+            }
           }
       );
     } 
   }
 
-  edit(desastre: Desastre) {
-    this.roteador.navigate([`edicao-desastre`, desastre.id]);
+  edit(disaster: Disaster) {
+    this.router.navigate([`edicao-desastre`, disaster.id]);
   }
 
 }

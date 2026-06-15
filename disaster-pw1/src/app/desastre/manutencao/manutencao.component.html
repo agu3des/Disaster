@@ -1,76 +1,76 @@
 <div class="form-container">
-  <form [formGroup]="desastreForm" (ngSubmit)="cadastrarOuAtualizar()">
-    <h2>Desastre</h2>
+  <form [formGroup]="disasterForm" (ngSubmit)="registerOrUpdate()">
+    <h2>Disaster</h2>
 
     <mat-form-field>
-      <mat-label>Data de ocorrência</mat-label>
-      <input matInput type="date" formControlName="dataDeOcorrencia" required>
-      <mat-error *ngIf="desastreForm.get('dataDeOcorrencia')?.hasError('required')">
-        Data de ocorrência é obrigatória.
+      <mat-label>Occurrence Date</mat-label>
+      <input matInput type="date" formControlName="occurrenceDate" required>
+      <mat-error *ngIf="disasterForm.get('occurrenceDate')?.hasError('required')">
+        Occurrence date is required.
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Duração em dias</mat-label>
-      <input matInput type="number" formControlName="duracaoDias" required>
-      <mat-error *ngIf="desastreForm.get('duracaoDias')?.hasError('required')">
-        A duração é obrigatória.
+      <mat-label>Duration (days)</mat-label>
+      <input matInput type="number" formControlName="durationDays" required>
+      <mat-error *ngIf="disasterForm.get('durationDays')?.hasError('required')">
+        Duration is required.
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Intensidade</mat-label>
-      <input matInput type="number" formControlName="intensidadeEscala" placeholder="0 a 10" required>
-      <mat-error *ngIf="desastreForm.get('intensidadeEscala')?.hasError('required')">
-        A intensidade é obrigatória.
+      <mat-label>Intensity</mat-label>
+      <input matInput type="number" step="0.1" formControlName="intensityScale" placeholder="0.0 to 10.0" required>
+      <mat-error *ngIf="disasterForm.get('intensityScale')?.hasError('required')">
+        Intensity is required.
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Quantidade de Vítimas</mat-label>
-      <input matInput type="number" formControlName="qtdVitimas" required>
-      <mat-error *ngIf="desastreForm.get('qtdVitimas')?.hasError('required')">
-        A quantidade de vítimas é obrigatória.
+      <mat-label>Victim Count</mat-label>
+      <input matInput type="number" formControlName="victimCount" required>
+      <mat-error *ngIf="disasterForm.get('victimCount')?.hasError('required')">
+        Victim count is required.
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Tipo</mat-label>
-      <mat-select formControlName="tipo" required>
-        <mat-option value="enxurrada">Enxurrada</mat-option>
-        <mat-option value="deslizamento">Deslizamento</mat-option>
-        <mat-option value="incendio">Incêndio</mat-option>
-        <mat-option value="seca">Seca</mat-option>
-        <mat-option value="inundacao">Inundação</mat-option>
-        <mat-option value="vendaval">Vendaval</mat-option>
-        <mat-option value="granizo">Granizo</mat-option>
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="type" required>
+        <mat-option value="flash_flood">Flash Flood</mat-option>
+        <mat-option value="landslide">Landslide</mat-option>
+        <mat-option value="fire">Fire</mat-option>
+        <mat-option value="drought">Drought</mat-option>
+        <mat-option value="flood">Flood</mat-option>
+        <mat-option value="windstorm">Windstorm</mat-option>
+        <mat-option value="hail">Hail</mat-option>
       </mat-select>
-      <mat-error *ngIf="desastreForm.get('tipo')?.hasError('required')">
-        O tipo de desastre é obrigatório.
+      <mat-error *ngIf="disasterForm.get('type')?.hasError('required')">
+        Disaster type is required.
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Região</mat-label>
-      <mat-select formControlName="regiao" multiple required>
-        <mat-option value="norte">Norte</mat-option>
-        <mat-option value="sul">Sul</mat-option>
-        <mat-option value="nordeste">Nordeste</mat-option>
-        <mat-option value="sudeste">Sudeste</mat-option>
-        <mat-option value="centroOeste">Centro-Oeste</mat-option>
+      <mat-label>Region</mat-label>
+      <mat-select formControlName="regions" multiple required>
+        <mat-option value="north">North</mat-option>
+        <mat-option value="south">South</mat-option>
+        <mat-option value="northeast">Northeast</mat-option>
+        <mat-option value="southeast">Southeast</mat-option>
+        <mat-option value="midwest">Midwest</mat-option>
       </mat-select>
-      <mat-error *ngIf="desastreForm.get('regiao')?.hasError('required')">
-        A região é obrigatória.
+      <mat-error *ngIf="disasterForm.get('regions')?.hasError('required')">
+        Region is required.
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Link de Imagem</mat-label>
-      <input matInput formControlName="imagemUrl" placeholder="https://...">
+      <mat-label>Image Link</mat-label>
+      <input matInput formControlName="imageUrl" placeholder="https://...">
     </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="desastreForm.invalid">
-      {{ nomeBotaoAcao }}
+    <button mat-raised-button color="primary" type="submit" [disabled]="disasterForm.invalid">
+      {{ actionButtonName }}
     </button>
   </form>
 </div>

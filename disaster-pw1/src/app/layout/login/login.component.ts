@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthModalService } from '../../shared/services/auth-modal.service';
 
 declare var google: any;
 
@@ -10,7 +11,7 @@ declare var google: any;
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginModalComponent {
+export class LoginModalComponent implements OnInit { 
   isModalOpen = false;
   isLoginMode = true; 
 
@@ -20,10 +21,23 @@ export class LoginModalComponent {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private authModalService: AuthModalService
   ) { }
 
-renderGoogleButton(): void {
+  ngOnInit(): void {
+    this.authModalService.modalCommand$.subscribe(comando => {
+      if (comando === 'register') {
+        this.isModalOpen = true;
+        this.isLoginMode = false; 
+        setTimeout(() => this.renderGoogleButton(), 100);
+      } else if (comando === 'login') {
+        this.openModal();
+      }
+    });
+  }
+
+  renderGoogleButton(): void {
     const googleBtn = document.getElementById("google-btn");
     if (!googleBtn) {
       return; 
@@ -42,6 +56,7 @@ renderGoogleButton(): void {
       );
     }
   }
+
   handleGoogleResponse(response: any): void {
     const idToken = response.credential; 
     console.log('Google token received successfully!');
@@ -54,6 +69,9 @@ renderGoogleButton(): void {
       next: (response: any) => {
         console.log('Backend authentication successful!', response);
         localStorage.setItem('jwt_token', response.token);
+        if (response.user) {
+          localStorage.setItem('user_logged_in', JSON.stringify(response.user));
+        }
         this.closeModal();
         window.location.reload(); 
       },
@@ -98,12 +116,14 @@ renderGoogleButton(): void {
           next: (response: any) => {
             console.log('Manual login successful!', response);
             localStorage.setItem('jwt_token', response.token);
+            if (response.user) {
+              localStorage.setItem('user_logged_in', JSON.stringify(response.user));
+            }
             this.closeModal();
             window.location.reload(); 
           },
           error: (err) => {
             console.error('Manual login error:', err);
-            alert('Incorrect email or password!');
           }
         });
 
@@ -125,12 +145,14 @@ renderGoogleButton(): void {
           next: (response: any) => {
             console.log('Registration successful!', response);
             localStorage.setItem('jwt_token', response.token);
+            if (response.user) {
+              localStorage.setItem('user_logged_in', JSON.stringify(response.user));
+            }
             this.closeModal();
             window.location.reload(); 
           },
           error: (err) => {
             console.error('Registration error:', err);
-            alert('Error creating account. The email might already be in use.');
           }
         });
 

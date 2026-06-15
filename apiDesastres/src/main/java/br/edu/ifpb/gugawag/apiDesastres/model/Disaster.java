@@ -94,7 +94,7 @@ public class Disaster {
 
     @ManyToOne
     @JoinColumn(name = "create_by_id")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "password"}) 
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "password", "volunteers", "disasters"}) 
     private User createdBy;
 
     public User getCreatedBy() {

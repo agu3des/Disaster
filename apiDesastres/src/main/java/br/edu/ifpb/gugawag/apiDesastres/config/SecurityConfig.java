@@ -2,6 +2,7 @@ package br.edu.ifpb.gugawag.apiDesastres.config;
 
 import br.edu.ifpb.gugawag.apiDesastres.security.CustomUserDetailsService;
 import br.edu.ifpb.gugawag.apiDesastres.security.JwtAuthenticationFilter;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,11 +34,21 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
 
             .csrf(csrf -> csrf.disable()) 
+
+            .httpBasic(basic -> basic.disable())
             
             .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            
+
+            .exceptionHandling(exceptions -> exceptions
+                            .authenticationEntryPoint((request, response, authException) -> {
+                                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                                response.setContentType("application/json;charset=UTF-8");
+                                response.setHeader("WWW-Authenticate", "Bearer");
+                                response.getWriter().write("{\"erro\": \"Acesso não autorizado ou credenciais inválidas\"}");
+                            })
+                        )
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**").permitAll() 
+                .requestMatchers("/api/auth/**", "/login/**").permitAll() 
 
                 .requestMatchers("/error").permitAll()
 
@@ -80,6 +91,9 @@ public class SecurityConfig {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService);
         authProvider.setPasswordEncoder(passwordEncoder);
+
+        authProvider.setHideUserNotFoundExceptions(false);
+        
         return authProvider;
     }
 }

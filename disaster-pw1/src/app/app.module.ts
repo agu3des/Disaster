@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { FirestoreModule } from "./firestore/firestore.module";
-
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -29,7 +27,7 @@ import { AuthInterceptor } from './interceptor/auth-interceptor';
 
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 
-import { DesastreRestService } from './shared/services/desastre-rest.service';
+import { DisasterRestService } from './shared/services/disaster-rest.service';
 import { VolunteerRestService } from './shared/services/volunteer-rest.service';
 
 import { MatDialogModule } from '@angular/material/dialog';
@@ -45,7 +43,6 @@ import { ConfirmationDialogComponent } from './layout/confirmation-dialog/confir
         FormsModule,
         ReactiveFormsModule,
         AppRoutingModule,
-        FirestoreModule,
         MatFormFieldModule,
         MatIconModule,
         MatBadgeModule,
@@ -77,8 +74,8 @@ import { ConfirmationDialogComponent } from './layout/confirmation-dialog/confir
             useClass: MensagemSweetService
         },
         {
-            provide: DesastreRestService,
-            useClass: DesastreRestService
+            provide: DisasterRestService,
+            useClass: DisasterRestService
         },
         {
             provide: VolunteerRestService,

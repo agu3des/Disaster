@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DoacaoRestService } from './doacao-rest.service';
+import { DisasterRestService } from './disaster-rest.service';
 
-describe('DoacaoRestService', () => {
-  let service: DoacaoRestService;
+describe('DisasterRestService', () => {
+  let service: DisasterRestService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DoacaoRestService);
+    service = TestBed.inject(DisasterRestService);
   });
 
   it('should be created', () => {

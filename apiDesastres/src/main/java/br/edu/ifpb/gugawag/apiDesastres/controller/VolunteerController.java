@@ -17,7 +17,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import java.util.List;
 
 @RestController
-@RequestMapping("/volunteers")
+@RequestMapping("api/volunteers")
 public class VolunteerController {
 
     @Autowired

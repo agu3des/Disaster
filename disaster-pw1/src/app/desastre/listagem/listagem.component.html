@@ -1,45 +1,45 @@
 <div class="action-header">
-  <h2>Lista de Desastres</h2>
+  <h2>Disaster List</h2>
   <button mat-raised-button color="primary" [routerLink]="['/cadastro-desastre']">
     <mat-icon>add</mat-icon>
-    Novo Desastre
+    New Disaster
   </button>
 </div>
 
 <div class="container-cards">
-  <div *ngFor="let desastre of DESASTRES; trackBy: trackDesastreId">
+  <div *ngFor="let disaster of DISASTERS; trackBy: trackDisasterId">
     <mat-card class="card-desastre" appearance="outlined">
       
       <img mat-card-image 
-           [src]="desastre.imagemUrl || 'assets/images/default-disaster.jpg'" 
-           alt="Imagem do desastre de {{desastre.tipo}}" 
+           [src]="disaster.imageUrl || 'assets/images/default-disaster.jpg'" 
+           alt="Image of the {{disaster.type}} disaster" 
            loading="lazy"> 
 
       <mat-card-header>
         <div mat-card-avatar>
-          <mat-icon>{{ getDisasterIcon(desastre.tipo) }}</mat-icon> 
+          <mat-icon>{{ getDisasterIcon(disaster.type) }}</mat-icon> 
         </div>
         
-        <mat-card-subtitle>Data: {{ desastre.dataDeOcorrencia}}</mat-card-subtitle>
-        <mat-card-subtitle>Região: {{ desastre.regiao }}</mat-card-subtitle>
-        <mat-card-subtitle>Intensidade: {{ desastre.intensidadeEscala }}</mat-card-subtitle>
-        <mat-card-subtitle>Vítimas: {{ desastre.qtdVitimas }}</mat-card-subtitle>
+        <mat-card-subtitle>Occurrence Date: {{ disaster.occurrenceDate | date:'dd/MM/yyyy' }}</mat-card-subtitle>
+        <mat-card-subtitle>Region: {{ disaster.region }}</mat-card-subtitle>
+        <mat-card-subtitle>Intensity: {{ disaster.intensityScale }}</mat-card-subtitle>
+        <mat-card-subtitle>Victims: {{ disaster.victimCount }}</mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content>
         <p>
-          O desastre de {{desastre.tipo}} ocorreu na data {{desastre.dataDeOcorrencia}}, 
-          pela(s) região(ões) {{ desastre.regiao }} durante {{desastre.duracaoDias }} dias, 
-          deixando um rastro de {{desastre.qtdVitimas}} vítimas e atingindo 
-          {{desastre.intensidadeEscala}} na escala Richter.
+          The {{ disaster.type }} disaster occurred on {{ disaster.occurrenceDate | date:'dd/MM/yyyy' }}, 
+          in the region(s) {{ disaster.region }} for {{ disaster.durationDays }} days, 
+          leaving a trail of {{ disaster.victimCount }} victims and reaching 
+          {{ disaster.intensityScale }} on the Richter scale.
         </p>
       </mat-card-content>
       
-      <mat-card-actions *ngIf="isOwner(desastre)">
-        <button mat-icon-button (click)="edit(desastre)">
+      <mat-card-actions *ngIf="isOwner(disaster)">
+        <button mat-icon-button (click)="edit(disaster)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button (click)="confirmRemove(desastre)">
+        <button mat-icon-button (click)="confirmRemove(disaster)">
           <mat-icon>delete</mat-icon>
         </button>
       </mat-card-actions>

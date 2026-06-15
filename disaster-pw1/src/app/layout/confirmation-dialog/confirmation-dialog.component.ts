@@ -14,10 +14,10 @@ export class ConfirmationDialogComponent {
   ) {}
 
   onConfirm(): void {
-    this.dialogRef.close(true); // Retorna verdadeiro ao fechar
+    this.dialogRef.close(true); 
   }
 
   onCancel(): void {
-    this.dialogRef.close(false); // Retorna falso ao fechar
+    this.dialogRef.close(false); 
   }
 }

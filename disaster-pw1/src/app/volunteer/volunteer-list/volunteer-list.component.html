@@ -10,7 +10,7 @@
   <div *ngFor="let volunteer of VOLUNTEERS; trackBy: trackVolunteerId">
     <mat-card class="card-volunteer" appearance="outlined">
 
-      <img mat-card-image [src]="volunteer.imagemUrl || 'assets/images/default-volunteer.jpg'" alt="Imagem do volunteer de {{volunteer.name}}" loading="lazy">
+      <img mat-card-image [src]="volunteer.imageUrl || 'assets/images/default-volunteer.jpg'" alt="Imagem do volunteer de {{volunteer.name}}" loading="lazy">
 
       <mat-card-header>
         <div mat-card-avatar>

@@ -29,8 +29,8 @@ export class VolunteerManagerComponent {
       id: [''],
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
-      imagemUrl: ['']
+      phone: ['', [Validators.required, Validators.pattern('^[0-9]{10,11}$')]],
+      imageUrl: ['', Validators.required]
     });
 
     const editId = this.activatedRoute.snapshot.paramMap.get('id');

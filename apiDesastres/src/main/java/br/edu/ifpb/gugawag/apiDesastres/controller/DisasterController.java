@@ -10,7 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import java.util.List;
 
 @RestController
-@RequestMapping("/disasters")
+@RequestMapping("api/disasters")
 public class DisasterController {
 
     @Autowired
