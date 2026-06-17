@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthModalService } from '../../shared/services/auth-modal.service';
+import { environment } from '../../../environments/environment';
 
 declare var google: any;
 
@@ -46,7 +47,7 @@ export class LoginModalComponent implements OnInit {
 
     if (typeof google !== 'undefined' && google.accounts) {
       google.accounts.id.initialize({
-        client_id: '546841987983-qtjbnjgiet03tbk03uqiavtsdvbpmee0.apps.googleusercontent.com',
+        client_id: environment.GOOGLE_CLIENT_ID,
         callback: (response: any) => this.handleGoogleResponse(response)
       });
 
